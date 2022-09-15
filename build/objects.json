@@ -7,7 +7,7 @@
     "fields": [
       {
         "name": "update_id",
-        "type": "Integer",
+        "type": "int",
         "required": true,
         "description": "The update's unique identifier. Update identifiers start from a certain positive number and increase sequentially. This ID becomes especially handy if you're using webhooks, since it allows you to ignore repeated updates or to restore the correct update sequence, should they get out of order. If there are no new updates for at least a week, then identifier of the next update will be chosen randomly instead of sequentially."
       },
@@ -105,55 +105,55 @@
     "fields": [
       {
         "name": "url",
-        "type": "String",
+        "type": "string",
         "required": true,
         "description": "Webhook URL, may be empty if webhook is not set up"
       },
       {
         "name": "has_custom_certificate",
-        "type": "Boolean",
+        "type": "bool",
         "required": true,
         "description": "True, if a custom certificate was provided for webhook certificate checks"
       },
       {
         "name": "pending_update_count",
-        "type": "Integer",
+        "type": "int",
         "required": true,
         "description": "Number of updates awaiting delivery"
       },
       {
         "name": "ip_address",
-        "type": "String",
+        "type": "string",
         "required": false,
         "description": "Optional. Currently used webhook IP address"
       },
       {
         "name": "last_error_date",
-        "type": "Integer",
+        "type": "int",
         "required": false,
         "description": "Optional. Unix time for the most recent error that happened when trying to deliver an update via webhook"
       },
       {
         "name": "last_error_message",
-        "type": "String",
+        "type": "string",
         "required": false,
         "description": "Optional. Error message in human-readable format for the most recent error that happened when trying to deliver an update via webhook"
       },
       {
         "name": "last_synchronization_error_date",
-        "type": "Integer",
+        "type": "int",
         "required": false,
         "description": "Optional. Unix time of the most recent error that happened when trying to synchronize available updates with Telegram datacenters"
       },
       {
         "name": "max_connections",
-        "type": "Integer",
+        "type": "int",
         "required": false,
         "description": "Optional. The maximum allowed number of simultaneous HTTPS connections to the webhook for update delivery"
       },
       {
         "name": "allowed_updates",
-        "type": "Array of String",
+        "type": "string[]",
         "required": false,
         "description": "Optional. A list of update types the bot is subscribed to. Defaults to all update types except chat_member"
       }
@@ -167,37 +167,37 @@
     "fields": [
       {
         "name": "id",
-        "type": "Integer",
+        "type": "int",
         "required": true,
         "description": "Unique identifier for this user or bot. This number may have more than 32 significant bits and some programming languages may have difficulty/silent defects in interpreting it. But it has at most 52 significant bits, so a 64-bit integer or double-precision float type are safe for storing this identifier."
       },
       {
         "name": "is_bot",
-        "type": "Boolean",
+        "type": "bool",
         "required": true,
         "description": "True, if this user is a bot"
       },
       {
         "name": "first_name",
-        "type": "String",
+        "type": "string",
         "required": true,
         "description": "User's or bot's first name"
       },
       {
         "name": "last_name",
-        "type": "String",
+        "type": "string",
         "required": false,
         "description": "Optional. User's or bot's last name"
       },
       {
         "name": "username",
-        "type": "String",
+        "type": "string",
         "required": false,
         "description": "Optional. User's or bot's username"
       },
       {
         "name": "language_code",
-        "type": "String",
+        "type": "string",
         "required": false,
         "description": "Optional. IETF language tag of the user's language"
       },
@@ -215,19 +215,19 @@
       },
       {
         "name": "can_join_groups",
-        "type": "Boolean",
+        "type": "bool",
         "required": false,
         "description": "Optional. True, if the bot can be invited to groups. Returned only in getMe."
       },
       {
         "name": "can_read_all_group_messages",
-        "type": "Boolean",
+        "type": "bool",
         "required": false,
         "description": "Optional. True, if privacy mode is disabled for the bot. Returned only in getMe."
       },
       {
         "name": "supports_inline_queries",
-        "type": "Boolean",
+        "type": "bool",
         "required": false,
         "description": "Optional. True, if the bot supports inline queries. Returned only in getMe."
       }
@@ -241,37 +241,37 @@
     "fields": [
       {
         "name": "id",
-        "type": "Integer",
+        "type": "int",
         "required": true,
         "description": "Unique identifier for this chat. This number may have more than 32 significant bits and some programming languages may have difficulty/silent defects in interpreting it. But it has at most 52 significant bits, so a signed 64-bit integer or double-precision float type are safe for storing this identifier."
       },
       {
         "name": "type",
-        "type": "String",
+        "type": "string",
         "required": true,
         "description": "Type of chat, can be either “private”, “group”, “supergroup” or “channel”"
       },
       {
         "name": "title",
-        "type": "String",
+        "type": "string",
         "required": false,
         "description": "Optional. Title, for supergroups, channels and group chats"
       },
       {
         "name": "username",
-        "type": "String",
+        "type": "string",
         "required": false,
         "description": "Optional. Username, for private chats, supergroups and channels if available"
       },
       {
         "name": "first_name",
-        "type": "String",
+        "type": "string",
         "required": false,
         "description": "Optional. First name of the other party in a private chat"
       },
       {
         "name": "last_name",
-        "type": "String",
+        "type": "string",
         "required": false,
         "description": "Optional. Last name of the other party in a private chat"
       },
@@ -283,7 +283,7 @@
       },
       {
         "name": "bio",
-        "type": "String",
+        "type": "string",
         "required": false,
         "description": "Optional. Bio of the other party in a private chat. Returned only in getChat."
       },
@@ -313,13 +313,13 @@
       },
       {
         "name": "description",
-        "type": "String",
+        "type": "string",
         "required": false,
         "description": "Optional. Description, for groups, supergroups and channel chats. Returned only in getChat."
       },
       {
         "name": "invite_link",
-        "type": "String",
+        "type": "string",
         "required": false,
         "description": "Optional. Primary invite link, for groups, supergroups and channel chats. Returned only in getChat."
       },
@@ -337,13 +337,13 @@
       },
       {
         "name": "slow_mode_delay",
-        "type": "Integer",
+        "type": "int",
         "required": false,
         "description": "Optional. For supergroups, the minimum allowed delay between consecutive messages sent by each unpriviledged user; in seconds. Returned only in getChat."
       },
       {
         "name": "message_auto_delete_time",
-        "type": "Integer",
+        "type": "int",
         "required": false,
         "description": "Optional. The time after which all messages sent to the chat will be automatically deleted; in seconds. Returned only in getChat."
       },
@@ -355,7 +355,7 @@
       },
       {
         "name": "sticker_set_name",
-        "type": "String",
+        "type": "string",
         "required": false,
         "description": "Optional. For supergroups, name of group sticker set. Returned only in getChat."
       },
@@ -367,7 +367,7 @@
       },
       {
         "name": "linked_chat_id",
-        "type": "Integer",
+        "type": "int",
         "required": false,
         "description": "Optional. Unique identifier for the linked chat, i.e. the discussion group identifier for a channel and vice versa; for supergroups and channel chats. This identifier may be greater than 32 bits and some programming languages may have difficulty/silent defects in interpreting it. But it is smaller than 52 bits, so a signed 64 bit integer or double-precision float type are safe for storing this identifier. Returned only in getChat."
       },
@@ -387,7 +387,7 @@
     "fields": [
       {
         "name": "message_id",
-        "type": "Integer",
+        "type": "int",
         "required": true,
         "description": "Unique message identifier inside this chat"
       },
@@ -405,7 +405,7 @@
       },
       {
         "name": "date",
-        "type": "Integer",
+        "type": "int",
         "required": true,
         "description": "Date the message was sent in Unix time"
       },
@@ -429,25 +429,25 @@
       },
       {
         "name": "forward_from_message_id",
-        "type": "Integer",
+        "type": "int",
         "required": false,
         "description": "Optional. For messages forwarded from channels, identifier of the original message in the channel"
       },
       {
         "name": "forward_signature",
-        "type": "String",
+        "type": "string",
         "required": false,
         "description": "Optional. For forwarded messages that were originally sent in channels or by an anonymous chat administrator, signature of the message sender if present"
       },
       {
         "name": "forward_sender_name",
-        "type": "String",
+        "type": "string",
         "required": false,
         "description": "Optional. Sender's name for messages forwarded from users who disallow adding a link to their account in forwarded messages"
       },
       {
         "name": "forward_date",
-        "type": "Integer",
+        "type": "int",
         "required": false,
         "description": "Optional. For forwarded messages, date the original message was sent in Unix time"
       },
@@ -471,7 +471,7 @@
       },
       {
         "name": "edit_date",
-        "type": "Integer",
+        "type": "int",
         "required": false,
         "description": "Optional. Date the message was last edited in Unix time"
       },
@@ -483,25 +483,25 @@
       },
       {
         "name": "media_group_id",
-        "type": "String",
+        "type": "string",
         "required": false,
         "description": "Optional. The unique identifier of a media message group this message belongs to"
       },
       {
         "name": "author_signature",
-        "type": "String",
+        "type": "string",
         "required": false,
         "description": "Optional. Signature of the post author for messages in channels, or the custom title of an anonymous group administrator"
       },
       {
         "name": "text",
-        "type": "String",
+        "type": "string",
         "required": false,
         "description": "Optional. For text messages, the actual UTF-8 text of the message"
       },
       {
         "name": "entities",
-        "type": "Array of MessageEntity",
+        "type": "MessageEntity[]",
         "required": false,
         "description": "Optional. For text messages, special entities like usernames, URLs, bot commands, etc. that appear in the text"
       },
@@ -525,7 +525,7 @@
       },
       {
         "name": "photo",
-        "type": "Array of PhotoSize",
+        "type": "PhotoSize[]",
         "required": false,
         "description": "Optional. Message is a photo, available sizes of the photo"
       },
@@ -555,13 +555,13 @@
       },
       {
         "name": "caption",
-        "type": "String",
+        "type": "string",
         "required": false,
         "description": "Optional. Caption for the animation, audio, document, photo, video or voice"
       },
       {
         "name": "caption_entities",
-        "type": "Array of MessageEntity",
+        "type": "MessageEntity[]",
         "required": false,
         "description": "Optional. For messages with a caption, special entities like usernames, URLs, bot commands, etc. that appear in the caption"
       },
@@ -603,7 +603,7 @@
       },
       {
         "name": "new_chat_members",
-        "type": "Array of User",
+        "type": "User[]",
         "required": false,
         "description": "Optional. New members that were added to the group or supergroup and information about them (the bot itself may be one of these members)"
       },
@@ -615,13 +615,13 @@
       },
       {
         "name": "new_chat_title",
-        "type": "String",
+        "type": "string",
         "required": false,
         "description": "Optional. A chat title was changed to this value"
       },
       {
         "name": "new_chat_photo",
-        "type": "Array of PhotoSize",
+        "type": "PhotoSize[]",
         "required": false,
         "description": "Optional. A chat photo was change to this value"
       },
@@ -657,13 +657,13 @@
       },
       {
         "name": "migrate_to_chat_id",
-        "type": "Integer",
+        "type": "int",
         "required": false,
         "description": "Optional. The group has been migrated to a supergroup with the specified identifier. This number may have more than 32 significant bits and some programming languages may have difficulty/silent defects in interpreting it. But it has at most 52 significant bits, so a signed 64-bit integer or double-precision float type are safe for storing this identifier."
       },
       {
         "name": "migrate_from_chat_id",
-        "type": "Integer",
+        "type": "int",
         "required": false,
         "description": "Optional. The supergroup has been migrated from a group with the specified identifier. This number may have more than 32 significant bits and some programming languages may have difficulty/silent defects in interpreting it. But it has at most 52 significant bits, so a signed 64-bit integer or double-precision float type are safe for storing this identifier."
       },
@@ -687,7 +687,7 @@
       },
       {
         "name": "connected_website",
-        "type": "String",
+        "type": "string",
         "required": false,
         "description": "Optional. The domain name of the website on which the user has logged in. More about Telegram Login »"
       },
@@ -749,7 +749,7 @@
     "fields": [
       {
         "name": "message_id",
-        "type": "Integer",
+        "type": "int",
         "required": true,
         "description": "Unique message identifier"
       }
@@ -763,25 +763,25 @@
     "fields": [
       {
         "name": "type",
-        "type": "String",
+        "type": "string",
         "required": true,
         "description": "Type of the entity. Currently, can be “mention” (@username), “hashtag” (#hashtag), “cashtag” ($USD), “bot_command” (/start@jobs_bot), “url” (https://telegram.org), “email” (do-not-reply@telegram.org), “phone_number” (+1-212-555-0123), “bold” (bold text), “italic” (italic text), “underline” (underlined text), “strikethrough” (strikethrough text), “spoiler” (spoiler message), “code” (monowidth string), “pre” (monowidth block), “text_link” (for clickable text URLs), “text_mention” (for users without usernames), “custom_emoji” (for inline custom emoji stickers)"
       },
       {
         "name": "offset",
-        "type": "Integer",
+        "type": "int",
         "required": true,
         "description": "Offset in UTF-16 code units to the start of the entity"
       },
       {
         "name": "length",
-        "type": "Integer",
+        "type": "int",
         "required": true,
         "description": "Length of the entity in UTF-16 code units"
       },
       {
         "name": "url",
-        "type": "String",
+        "type": "string",
         "required": false,
         "description": "Optional. For “text_link” only, URL that will be opened after user taps on the text"
       },
@@ -793,13 +793,13 @@
       },
       {
         "name": "language",
-        "type": "String",
+        "type": "string",
         "required": false,
         "description": "Optional. For “pre” only, the programming language of the entity text"
       },
       {
         "name": "custom_emoji_id",
-        "type": "String",
+        "type": "string",
         "required": false,
         "description": "Optional. For “custom_emoji” only, unique identifier of the custom emoji. Use getCustomEmojiStickers to get full information about the sticker"
       }
@@ -813,31 +813,31 @@
     "fields": [
       {
         "name": "file_id",
-        "type": "String",
+        "type": "string",
         "required": true,
         "description": "Identifier for this file, which can be used to download or reuse the file"
       },
       {
         "name": "file_unique_id",
-        "type": "String",
+        "type": "string",
         "required": true,
         "description": "Unique identifier for this file, which is supposed to be the same over time and for different bots. Can't be used to download or reuse the file."
       },
       {
         "name": "width",
-        "type": "Integer",
+        "type": "int",
         "required": true,
         "description": "Photo width"
       },
       {
         "name": "height",
-        "type": "Integer",
+        "type": "int",
         "required": true,
         "description": "Photo height"
       },
       {
         "name": "file_size",
-        "type": "Integer",
+        "type": "int",
         "required": false,
         "description": "Optional. File size in bytes"
       }
@@ -851,31 +851,31 @@
     "fields": [
       {
         "name": "file_id",
-        "type": "String",
+        "type": "string",
         "required": true,
         "description": "Identifier for this file, which can be used to download or reuse the file"
       },
       {
         "name": "file_unique_id",
-        "type": "String",
+        "type": "string",
         "required": true,
         "description": "Unique identifier for this file, which is supposed to be the same over time and for different bots. Can't be used to download or reuse the file."
       },
       {
         "name": "width",
-        "type": "Integer",
+        "type": "int",
         "required": true,
         "description": "Video width as defined by sender"
       },
       {
         "name": "height",
-        "type": "Integer",
+        "type": "int",
         "required": true,
         "description": "Video height as defined by sender"
       },
       {
         "name": "duration",
-        "type": "Integer",
+        "type": "int",
         "required": true,
         "description": "Duration of the video in seconds as defined by sender"
       },
@@ -887,19 +887,19 @@
       },
       {
         "name": "file_name",
-        "type": "String",
+        "type": "string",
         "required": false,
         "description": "Optional. Original animation filename as defined by sender"
       },
       {
         "name": "mime_type",
-        "type": "String",
+        "type": "string",
         "required": false,
         "description": "Optional. MIME type of the file as defined by sender"
       },
       {
         "name": "file_size",
-        "type": "Integer",
+        "type": "int",
         "required": false,
         "description": "Optional. File size in bytes. It can be bigger than 2^31 and some programming languages may have difficulty/silent defects in interpreting it. But it has at most 52 significant bits, so a signed 64-bit integer or double-precision float type are safe for storing this value."
       }
@@ -913,49 +913,49 @@
     "fields": [
       {
         "name": "file_id",
-        "type": "String",
+        "type": "string",
         "required": true,
         "description": "Identifier for this file, which can be used to download or reuse the file"
       },
       {
         "name": "file_unique_id",
-        "type": "String",
+        "type": "string",
         "required": true,
         "description": "Unique identifier for this file, which is supposed to be the same over time and for different bots. Can't be used to download or reuse the file."
       },
       {
         "name": "duration",
-        "type": "Integer",
+        "type": "int",
         "required": true,
         "description": "Duration of the audio in seconds as defined by sender"
       },
       {
         "name": "performer",
-        "type": "String",
+        "type": "string",
         "required": false,
         "description": "Optional. Performer of the audio as defined by sender or by audio tags"
       },
       {
         "name": "title",
-        "type": "String",
+        "type": "string",
         "required": false,
         "description": "Optional. Title of the audio as defined by sender or by audio tags"
       },
       {
         "name": "file_name",
-        "type": "String",
+        "type": "string",
         "required": false,
         "description": "Optional. Original filename as defined by sender"
       },
       {
         "name": "mime_type",
-        "type": "String",
+        "type": "string",
         "required": false,
         "description": "Optional. MIME type of the file as defined by sender"
       },
       {
         "name": "file_size",
-        "type": "Integer",
+        "type": "int",
         "required": false,
         "description": "Optional. File size in bytes. It can be bigger than 2^31 and some programming languages may have difficulty/silent defects in interpreting it. But it has at most 52 significant bits, so a signed 64-bit integer or double-precision float type are safe for storing this value."
       },
@@ -975,13 +975,13 @@
     "fields": [
       {
         "name": "file_id",
-        "type": "String",
+        "type": "string",
         "required": true,
         "description": "Identifier for this file, which can be used to download or reuse the file"
       },
       {
         "name": "file_unique_id",
-        "type": "String",
+        "type": "string",
         "required": true,
         "description": "Unique identifier for this file, which is supposed to be the same over time and for different bots. Can't be used to download or reuse the file."
       },
@@ -993,19 +993,19 @@
       },
       {
         "name": "file_name",
-        "type": "String",
+        "type": "string",
         "required": false,
         "description": "Optional. Original filename as defined by sender"
       },
       {
         "name": "mime_type",
-        "type": "String",
+        "type": "string",
         "required": false,
         "description": "Optional. MIME type of the file as defined by sender"
       },
       {
         "name": "file_size",
-        "type": "Integer",
+        "type": "int",
         "required": false,
         "description": "Optional. File size in bytes. It can be bigger than 2^31 and some programming languages may have difficulty/silent defects in interpreting it. But it has at most 52 significant bits, so a signed 64-bit integer or double-precision float type are safe for storing this value."
       }
@@ -1019,31 +1019,31 @@
     "fields": [
       {
         "name": "file_id",
-        "type": "String",
+        "type": "string",
         "required": true,
         "description": "Identifier for this file, which can be used to download or reuse the file"
       },
       {
         "name": "file_unique_id",
-        "type": "String",
+        "type": "string",
         "required": true,
         "description": "Unique identifier for this file, which is supposed to be the same over time and for different bots. Can't be used to download or reuse the file."
       },
       {
         "name": "width",
-        "type": "Integer",
+        "type": "int",
         "required": true,
         "description": "Video width as defined by sender"
       },
       {
         "name": "height",
-        "type": "Integer",
+        "type": "int",
         "required": true,
         "description": "Video height as defined by sender"
       },
       {
         "name": "duration",
-        "type": "Integer",
+        "type": "int",
         "required": true,
         "description": "Duration of the video in seconds as defined by sender"
       },
@@ -1055,19 +1055,19 @@
       },
       {
         "name": "file_name",
-        "type": "String",
+        "type": "string",
         "required": false,
         "description": "Optional. Original filename as defined by sender"
       },
       {
         "name": "mime_type",
-        "type": "String",
+        "type": "string",
         "required": false,
         "description": "Optional. MIME type of the file as defined by sender"
       },
       {
         "name": "file_size",
-        "type": "Integer",
+        "type": "int",
         "required": false,
         "description": "Optional. File size in bytes. It can be bigger than 2^31 and some programming languages may have difficulty/silent defects in interpreting it. But it has at most 52 significant bits, so a signed 64-bit integer or double-precision float type are safe for storing this value."
       }
@@ -1081,25 +1081,25 @@
     "fields": [
       {
         "name": "file_id",
-        "type": "String",
+        "type": "string",
         "required": true,
         "description": "Identifier for this file, which can be used to download or reuse the file"
       },
       {
         "name": "file_unique_id",
-        "type": "String",
+        "type": "string",
         "required": true,
         "description": "Unique identifier for this file, which is supposed to be the same over time and for different bots. Can't be used to download or reuse the file."
       },
       {
         "name": "length",
-        "type": "Integer",
+        "type": "int",
         "required": true,
         "description": "Video width and height (diameter of the video message) as defined by sender"
       },
       {
         "name": "duration",
-        "type": "Integer",
+        "type": "int",
         "required": true,
         "description": "Duration of the video in seconds as defined by sender"
       },
@@ -1111,7 +1111,7 @@
       },
       {
         "name": "file_size",
-        "type": "Integer",
+        "type": "int",
         "required": false,
         "description": "Optional. File size in bytes"
       }
@@ -1125,31 +1125,31 @@
     "fields": [
       {
         "name": "file_id",
-        "type": "String",
+        "type": "string",
         "required": true,
         "description": "Identifier for this file, which can be used to download or reuse the file"
       },
       {
         "name": "file_unique_id",
-        "type": "String",
+        "type": "string",
         "required": true,
         "description": "Unique identifier for this file, which is supposed to be the same over time and for different bots. Can't be used to download or reuse the file."
       },
       {
         "name": "duration",
-        "type": "Integer",
+        "type": "int",
         "required": true,
         "description": "Duration of the audio in seconds as defined by sender"
       },
       {
         "name": "mime_type",
-        "type": "String",
+        "type": "string",
         "required": false,
         "description": "Optional. MIME type of the file as defined by sender"
       },
       {
         "name": "file_size",
-        "type": "Integer",
+        "type": "int",
         "required": false,
         "description": "Optional. File size in bytes. It can be bigger than 2^31 and some programming languages may have difficulty/silent defects in interpreting it. But it has at most 52 significant bits, so a signed 64-bit integer or double-precision float type are safe for storing this value."
       }
@@ -1163,31 +1163,31 @@
     "fields": [
       {
         "name": "phone_number",
-        "type": "String",
+        "type": "string",
         "required": true,
         "description": "Contact's phone number"
       },
       {
         "name": "first_name",
-        "type": "String",
+        "type": "string",
         "required": true,
         "description": "Contact's first name"
       },
       {
         "name": "last_name",
-        "type": "String",
+        "type": "string",
         "required": false,
         "description": "Optional. Contact's last name"
       },
       {
         "name": "user_id",
-        "type": "Integer",
+        "type": "int",
         "required": false,
         "description": "Optional. Contact's user identifier in Telegram. This number may have more than 32 significant bits and some programming languages may have difficulty/silent defects in interpreting it. But it has at most 52 significant bits, so a 64-bit integer or double-precision float type are safe for storing this identifier."
       },
       {
         "name": "vcard",
-        "type": "String",
+        "type": "string",
         "required": false,
         "description": "Optional. Additional data about the contact in the form of a vCard"
       }
@@ -1201,13 +1201,13 @@
     "fields": [
       {
         "name": "emoji",
-        "type": "String",
+        "type": "string",
         "required": true,
         "description": "Emoji on which the dice throw animation is based"
       },
       {
         "name": "value",
-        "type": "Integer",
+        "type": "int",
         "required": true,
         "description": "Value of the dice, 1-6 for “”, “” and “” base emoji, 1-5 for “” and “” base emoji, 1-64 for “” base emoji"
       }
@@ -1221,13 +1221,13 @@
     "fields": [
       {
         "name": "text",
-        "type": "String",
+        "type": "string",
         "required": true,
         "description": "Option text, 1-100 characters"
       },
       {
         "name": "voter_count",
-        "type": "Integer",
+        "type": "int",
         "required": true,
         "description": "Number of users that voted for this option"
       }
@@ -1241,7 +1241,7 @@
     "fields": [
       {
         "name": "poll_id",
-        "type": "String",
+        "type": "string",
         "required": true,
         "description": "Unique poll identifier"
       },
@@ -1253,7 +1253,7 @@
       },
       {
         "name": "option_ids",
-        "type": "Array of Integer",
+        "type": "int[]",
         "required": true,
         "description": "0-based identifiers of answer options, chosen by the user. May be empty if the user retracted their vote."
       }
@@ -1267,79 +1267,79 @@
     "fields": [
       {
         "name": "id",
-        "type": "String",
+        "type": "string",
         "required": true,
         "description": "Unique poll identifier"
       },
       {
         "name": "question",
-        "type": "String",
+        "type": "string",
         "required": true,
         "description": "Poll question, 1-300 characters"
       },
       {
         "name": "options",
-        "type": "Array of PollOption",
+        "type": "PollOption[]",
         "required": true,
         "description": "List of poll options"
       },
       {
         "name": "total_voter_count",
-        "type": "Integer",
+        "type": "int",
         "required": true,
         "description": "Total number of users that voted in the poll"
       },
       {
         "name": "is_closed",
-        "type": "Boolean",
+        "type": "bool",
         "required": true,
         "description": "True, if the poll is closed"
       },
       {
         "name": "is_anonymous",
-        "type": "Boolean",
+        "type": "bool",
         "required": true,
         "description": "True, if the poll is anonymous"
       },
       {
         "name": "type",
-        "type": "String",
+        "type": "string",
         "required": true,
         "description": "Poll type, currently can be “regular” or “quiz”"
       },
       {
         "name": "allows_multiple_answers",
-        "type": "Boolean",
+        "type": "bool",
         "required": true,
         "description": "True, if the poll allows multiple answers"
       },
       {
         "name": "correct_option_id",
-        "type": "Integer",
+        "type": "int",
         "required": false,
         "description": "Optional. 0-based identifier of the correct answer option. Available only for polls in the quiz mode, which are closed, or was sent (not forwarded) by the bot or to the private chat with the bot."
       },
       {
         "name": "explanation",
-        "type": "String",
+        "type": "string",
         "required": false,
         "description": "Optional. Text that is shown when a user chooses an incorrect answer or taps on the lamp icon in a quiz-style poll, 0-200 characters"
       },
       {
         "name": "explanation_entities",
-        "type": "Array of MessageEntity",
+        "type": "MessageEntity[]",
         "required": false,
         "description": "Optional. Special entities like usernames, URLs, bot commands, etc. that appear in the explanation"
       },
       {
         "name": "open_period",
-        "type": "Integer",
+        "type": "int",
         "required": false,
         "description": "Optional. Amount of time in seconds the poll will be active after creation"
       },
       {
         "name": "close_date",
-        "type": "Integer",
+        "type": "int",
         "required": false,
         "description": "Optional. Point in time (Unix timestamp) when the poll will be automatically closed"
       }
@@ -1353,37 +1353,37 @@
     "fields": [
       {
         "name": "longitude",
-        "type": "Float",
+        "type": "float",
         "required": true,
         "description": "Longitude as defined by sender"
       },
       {
         "name": "latitude",
-        "type": "Float",
+        "type": "float",
         "required": true,
         "description": "Latitude as defined by sender"
       },
       {
         "name": "horizontal_accuracy",
-        "type": "Float number",
+        "type": "float",
         "required": false,
         "description": "Optional. The radius of uncertainty for the location, measured in meters; 0-1500"
       },
       {
         "name": "live_period",
-        "type": "Integer",
+        "type": "int",
         "required": false,
         "description": "Optional. Time relative to the message sending date, during which the location can be updated; in seconds. For active live locations only."
       },
       {
         "name": "heading",
-        "type": "Integer",
+        "type": "int",
         "required": false,
         "description": "Optional. The direction in which user is moving, in degrees; 1-360. For active live locations only."
       },
       {
         "name": "proximity_alert_radius",
-        "type": "Integer",
+        "type": "int",
         "required": false,
         "description": "Optional. The maximum distance for proximity alerts about approaching another chat member, in meters. For sent live locations only."
       }
@@ -1403,37 +1403,37 @@
       },
       {
         "name": "title",
-        "type": "String",
+        "type": "string",
         "required": true,
         "description": "Name of the venue"
       },
       {
         "name": "address",
-        "type": "String",
+        "type": "string",
         "required": true,
         "description": "Address of the venue"
       },
       {
         "name": "foursquare_id",
-        "type": "String",
+        "type": "string",
         "required": false,
         "description": "Optional. Foursquare identifier of the venue"
       },
       {
         "name": "foursquare_type",
-        "type": "String",
+        "type": "string",
         "required": false,
         "description": "Optional. Foursquare type of the venue. (For example, “arts_entertainment/default”, “arts_entertainment/aquarium” or “food/icecream”.)"
       },
       {
         "name": "google_place_id",
-        "type": "String",
+        "type": "string",
         "required": false,
         "description": "Optional. Google Places identifier of the venue"
       },
       {
         "name": "google_place_type",
-        "type": "String",
+        "type": "string",
         "required": false,
         "description": "Optional. Google Places type of the venue. (See supported types.)"
       }
@@ -1447,13 +1447,13 @@
     "fields": [
       {
         "name": "data",
-        "type": "String",
+        "type": "string",
         "required": true,
         "description": "The data. Be aware that a bad client can send arbitrary data in this field."
       },
       {
         "name": "button_text",
-        "type": "String",
+        "type": "string",
         "required": true,
         "description": "Text of the web_app keyboard button from which the Web App was opened. Be aware that a bad client can send arbitrary data in this field."
       }
@@ -1479,7 +1479,7 @@
       },
       {
         "name": "distance",
-        "type": "Integer",
+        "type": "int",
         "required": true,
         "description": "The distance between the users"
       }
@@ -1493,7 +1493,7 @@
     "fields": [
       {
         "name": "message_auto_delete_time",
-        "type": "Integer",
+        "type": "int",
         "required": true,
         "description": "New auto-delete time for messages in the chat; in seconds"
       }
@@ -1507,7 +1507,7 @@
     "fields": [
       {
         "name": "start_date",
-        "type": "Integer",
+        "type": "int",
         "required": true,
         "description": "Point in time (Unix timestamp) when the video chat is supposed to be started by a chat administrator"
       }
@@ -1528,7 +1528,7 @@
     "fields": [
       {
         "name": "duration",
-        "type": "Integer",
+        "type": "int",
         "required": true,
         "description": "Video chat duration in seconds"
       }
@@ -1542,7 +1542,7 @@
     "fields": [
       {
         "name": "users",
-        "type": "Array of User",
+        "type": "User[]",
         "required": true,
         "description": "New members that were invited to the video chat"
       }
@@ -1556,13 +1556,13 @@
     "fields": [
       {
         "name": "total_count",
-        "type": "Integer",
+        "type": "int",
         "required": true,
         "description": "Total number of profile pictures the target user has"
       },
       {
         "name": "photos",
-        "type": "Array of Array of PhotoSize",
+        "type": "PhotoSize[][]",
         "required": true,
         "description": "Requested profile pictures (in up to 4 sizes each)"
       }
@@ -1576,25 +1576,25 @@
     "fields": [
       {
         "name": "file_id",
-        "type": "String",
+        "type": "string",
         "required": true,
         "description": "Identifier for this file, which can be used to download or reuse the file"
       },
       {
         "name": "file_unique_id",
-        "type": "String",
+        "type": "string",
         "required": true,
         "description": "Unique identifier for this file, which is supposed to be the same over time and for different bots. Can't be used to download or reuse the file."
       },
       {
         "name": "file_size",
-        "type": "Integer",
+        "type": "int",
         "required": false,
         "description": "Optional. File size in bytes. It can be bigger than 2^31 and some programming languages may have difficulty/silent defects in interpreting it. But it has at most 52 significant bits, so a signed 64-bit integer or double-precision float type are safe for storing this value."
       },
       {
         "name": "file_path",
-        "type": "String",
+        "type": "string",
         "required": false,
         "description": "Optional. File path. Use https://api.telegram.org/file/bot<token>/<file_path> to get the file."
       }
@@ -1608,7 +1608,7 @@
     "fields": [
       {
         "name": "url",
-        "type": "String",
+        "type": "string",
         "required": true,
         "description": "An HTTPS URL of a Web App to be opened with additional data as specified in Initializing Web Apps"
       }
@@ -1622,31 +1622,31 @@
     "fields": [
       {
         "name": "keyboard",
-        "type": "Array of Array of KeyboardButton",
+        "type": "KeyboardButton[][]",
         "required": true,
         "description": "Array of button rows, each represented by an Array of KeyboardButton objects"
       },
       {
         "name": "resize_keyboard",
-        "type": "Boolean",
+        "type": "bool",
         "required": false,
         "description": "Optional. Requests clients to resize the keyboard vertically for optimal fit (e.g., make the keyboard smaller if there are just two rows of buttons). Defaults to false, in which case the custom keyboard is always of the same height as the app's standard keyboard."
       },
       {
         "name": "one_time_keyboard",
-        "type": "Boolean",
+        "type": "bool",
         "required": false,
         "description": "Optional. Requests clients to hide the keyboard as soon as it's been used. The keyboard will still be available, but clients will automatically display the usual letter-keyboard in the chat - the user can press a special button in the input field to see the custom keyboard again. Defaults to false."
       },
       {
         "name": "input_field_placeholder",
-        "type": "String",
+        "type": "string",
         "required": false,
         "description": "Optional. The placeholder to be shown in the input field when the keyboard is active; 1-64 characters"
       },
       {
         "name": "selective",
-        "type": "Boolean",
+        "type": "bool",
         "required": false,
         "description": "Optional. Use this parameter if you want to show the keyboard to specific users only. Targets: 1) users that are @mentioned in the text of the Message object; 2) if the bot's message is a reply (has reply_to_message_id), sender of the original message.Example: A user requests to change the bot's language, bot replies to the request with a keyboard to select the new language. Other users in the group don't see the keyboard."
       }
@@ -1660,19 +1660,19 @@
     "fields": [
       {
         "name": "text",
-        "type": "String",
+        "type": "string",
         "required": true,
         "description": "Text of the button. If none of the optional fields are used, it will be sent as a message when the button is pressed"
       },
       {
         "name": "request_contact",
-        "type": "Boolean",
+        "type": "bool",
         "required": false,
         "description": "Optional. If True, the user's phone number will be sent as a contact when the button is pressed. Available in private chats only."
       },
       {
         "name": "request_location",
-        "type": "Boolean",
+        "type": "bool",
         "required": false,
         "description": "Optional. If True, the user's current location will be sent when the button is pressed. Available in private chats only."
       },
@@ -1698,7 +1698,7 @@
     "fields": [
       {
         "name": "type",
-        "type": "String",
+        "type": "string",
         "required": false,
         "description": "Optional. If quiz is passed, the user will be allowed to create only polls in the quiz mode. If regular is passed, only regular polls will be allowed. Otherwise, the user will be allowed to create a poll of any type."
       }
@@ -1718,7 +1718,7 @@
       },
       {
         "name": "selective",
-        "type": "Boolean",
+        "type": "bool",
         "required": false,
         "description": "Optional. Use this parameter if you want to remove the keyboard for specific users only. Targets: 1) users that are @mentioned in the text of the Message object; 2) if the bot's message is a reply (has reply_to_message_id), sender of the original message.Example: A user votes in a poll, bot returns confirmation message in reply to the vote and removes the keyboard for that user, while still showing the keyboard with poll options to users who haven't voted yet."
       }
@@ -1732,7 +1732,7 @@
     "fields": [
       {
         "name": "inline_keyboard",
-        "type": "Array of Array of InlineKeyboardButton",
+        "type": "InlineKeyboardButton[][]",
         "required": true,
         "description": "Array of button rows, each represented by an Array of InlineKeyboardButton objects"
       }
@@ -1746,19 +1746,19 @@
     "fields": [
       {
         "name": "text",
-        "type": "String",
+        "type": "string",
         "required": true,
         "description": "Label text on the button"
       },
       {
         "name": "url",
-        "type": "String",
+        "type": "string",
         "required": false,
         "description": "Optional. HTTP or tg:// URL to be opened when the button is pressed. Links tg://user?id=<user_id> can be used to mention a user by their ID without using a username, if this is allowed by their privacy settings."
       },
       {
         "name": "callback_data",
-        "type": "String",
+        "type": "string",
         "required": false,
         "description": "Optional. Data to be sent in a callback query to the bot when button is pressed, 1-64 bytes"
       },
@@ -1776,13 +1776,13 @@
       },
       {
         "name": "switch_inline_query",
-        "type": "String",
+        "type": "string",
         "required": false,
         "description": "Optional. If set, pressing the button will prompt the user to select one of their chats, open that chat and insert the bot's username and the specified inline query in the input field. May be empty, in which case just the bot's username will be inserted.Note: This offers an easy way for users to start using your bot in inline mode when they are currently in a private chat with it. Especially useful when combined with switch_pm… actions - in this case the user will be automatically returned to the chat they switched from, skipping the chat selection screen."
       },
       {
         "name": "switch_inline_query_current_chat",
-        "type": "String",
+        "type": "string",
         "required": false,
         "description": "Optional. If set, pressing the button will insert the bot's username and the specified inline query in the current chat's input field. May be empty, in which case only the bot's username will be inserted.This offers a quick way for the user to open your bot in inline mode in the same chat - good for selecting something from multiple options."
       },
@@ -1794,7 +1794,7 @@
       },
       {
         "name": "pay",
-        "type": "Boolean",
+        "type": "bool",
         "required": false,
         "description": "Optional. Specify True, to send a Pay button.NOTE: This type of button must always be the first button in the first row and can only be used in invoice messages."
       }
@@ -1808,25 +1808,25 @@
     "fields": [
       {
         "name": "url",
-        "type": "String",
+        "type": "string",
         "required": true,
         "description": "An HTTPS URL to be opened with user authorization data added to the query string when the button is pressed. If the user refuses to provide authorization data, the original URL without information about the user will be opened. The data added is the same as described in Receiving authorization data.NOTE: You must always check the hash of the received data to verify the authentication and the integrity of the data as described in Checking authorization."
       },
       {
         "name": "forward_text",
-        "type": "String",
+        "type": "string",
         "required": false,
         "description": "Optional. New text of the button in forwarded messages."
       },
       {
         "name": "bot_username",
-        "type": "String",
+        "type": "string",
         "required": false,
         "description": "Optional. Username of a bot, which will be used for user authorization. See Setting up a bot for more details. If not specified, the current bot's username will be assumed. The url's domain must be the same as the domain linked with the bot. See Linking your domain to the bot for more details."
       },
       {
         "name": "request_write_access",
-        "type": "Boolean",
+        "type": "bool",
         "required": false,
         "description": "Optional. Pass True to request the permission for your bot to send messages to the user."
       }
@@ -1840,7 +1840,7 @@
     "fields": [
       {
         "name": "id",
-        "type": "String",
+        "type": "string",
         "required": true,
         "description": "Unique identifier for this query"
       },
@@ -1858,25 +1858,25 @@
       },
       {
         "name": "inline_message_id",
-        "type": "String",
+        "type": "string",
         "required": false,
         "description": "Optional. Identifier of the message sent via the bot in inline mode, that originated the query."
       },
       {
         "name": "chat_instance",
-        "type": "String",
+        "type": "string",
         "required": true,
         "description": "Global identifier, uniquely corresponding to the chat to which the message with the callback button was sent. Useful for high scores in games."
       },
       {
         "name": "data",
-        "type": "String",
+        "type": "string",
         "required": false,
         "description": "Optional. Data associated with the callback button. Be aware that the message originated the query can contain no callback buttons with this data."
       },
       {
         "name": "game_short_name",
-        "type": "String",
+        "type": "string",
         "required": false,
         "description": "Optional. Short name of a Game to be returned, serves as the unique identifier for the game"
       }
@@ -1896,13 +1896,13 @@
       },
       {
         "name": "input_field_placeholder",
-        "type": "String",
+        "type": "string",
         "required": false,
         "description": "Optional. The placeholder to be shown in the input field when the reply is active; 1-64 characters"
       },
       {
         "name": "selective",
-        "type": "Boolean",
+        "type": "bool",
         "required": false,
         "description": "Optional. Use this parameter if you want to force reply from specific users only. Targets: 1) users that are @mentioned in the text of the Message object; 2) if the bot's message is a reply (has reply_to_message_id), sender of the original message."
       }
@@ -1916,25 +1916,25 @@
     "fields": [
       {
         "name": "small_file_id",
-        "type": "String",
+        "type": "string",
         "required": true,
         "description": "File identifier of small (160x160) chat photo. This file_id can be used only for photo download and only for as long as the photo is not changed."
       },
       {
         "name": "small_file_unique_id",
-        "type": "String",
+        "type": "string",
         "required": true,
         "description": "Unique file identifier of small (160x160) chat photo, which is supposed to be the same over time and for different bots. Can't be used to download or reuse the file."
       },
       {
         "name": "big_file_id",
-        "type": "String",
+        "type": "string",
         "required": true,
         "description": "File identifier of big (640x640) chat photo. This file_id can be used only for photo download and only for as long as the photo is not changed."
       },
       {
         "name": "big_file_unique_id",
-        "type": "String",
+        "type": "string",
         "required": true,
         "description": "Unique file identifier of big (640x640) chat photo, which is supposed to be the same over time and for different bots. Can't be used to download or reuse the file."
       }
@@ -1948,7 +1948,7 @@
     "fields": [
       {
         "name": "invite_link",
-        "type": "String",
+        "type": "string",
         "required": true,
         "description": "The invite link. If the link was created by another chat administrator, then the second part of the link will be replaced with “…”."
       },
@@ -1960,43 +1960,43 @@
       },
       {
         "name": "creates_join_request",
-        "type": "Boolean",
+        "type": "bool",
         "required": true,
         "description": "True, if users joining the chat via the link need to be approved by chat administrators"
       },
       {
         "name": "is_primary",
-        "type": "Boolean",
+        "type": "bool",
         "required": true,
         "description": "True, if the link is primary"
       },
       {
         "name": "is_revoked",
-        "type": "Boolean",
+        "type": "bool",
         "required": true,
         "description": "True, if the link is revoked"
       },
       {
         "name": "name",
-        "type": "String",
+        "type": "string",
         "required": false,
         "description": "Optional. Invite link name"
       },
       {
         "name": "expire_date",
-        "type": "Integer",
+        "type": "int",
         "required": false,
         "description": "Optional. Point in time (Unix timestamp) when the link will expire or has been expired"
       },
       {
         "name": "member_limit",
-        "type": "Integer",
+        "type": "int",
         "required": false,
         "description": "Optional. The maximum number of users that can be members of the chat simultaneously after joining the chat via this invite link; 1-99999"
       },
       {
         "name": "pending_join_request_count",
-        "type": "Integer",
+        "type": "int",
         "required": false,
         "description": "Optional. Number of pending join requests created using this link"
       }
@@ -2010,67 +2010,67 @@
     "fields": [
       {
         "name": "is_anonymous",
-        "type": "Boolean",
+        "type": "bool",
         "required": true,
         "description": "True, if the user's presence in the chat is hidden"
       },
       {
         "name": "can_manage_chat",
-        "type": "Boolean",
+        "type": "bool",
         "required": true,
         "description": "True, if the administrator can access the chat event log, chat statistics, message statistics in channels, see channel members, see anonymous administrators in supergroups and ignore slow mode. Implied by any other administrator privilege"
       },
       {
         "name": "can_delete_messages",
-        "type": "Boolean",
+        "type": "bool",
         "required": true,
         "description": "True, if the administrator can delete messages of other users"
       },
       {
         "name": "can_manage_video_chats",
-        "type": "Boolean",
+        "type": "bool",
         "required": true,
         "description": "True, if the administrator can manage video chats"
       },
       {
         "name": "can_restrict_members",
-        "type": "Boolean",
+        "type": "bool",
         "required": true,
         "description": "True, if the administrator can restrict, ban or unban chat members"
       },
       {
         "name": "can_promote_members",
-        "type": "Boolean",
+        "type": "bool",
         "required": true,
         "description": "True, if the administrator can add new administrators with a subset of their own privileges or demote administrators that he has promoted, directly or indirectly (promoted by administrators that were appointed by the user)"
       },
       {
         "name": "can_change_info",
-        "type": "Boolean",
+        "type": "bool",
         "required": true,
         "description": "True, if the user is allowed to change the chat title, photo and other settings"
       },
       {
         "name": "can_invite_users",
-        "type": "Boolean",
+        "type": "bool",
         "required": true,
         "description": "True, if the user is allowed to invite new users to the chat"
       },
       {
         "name": "can_post_messages",
-        "type": "Boolean",
+        "type": "bool",
         "required": false,
         "description": "Optional. True, if the administrator can post in the channel; channels only"
       },
       {
         "name": "can_edit_messages",
-        "type": "Boolean",
+        "type": "bool",
         "required": false,
         "description": "Optional. True, if the administrator can edit messages of other users and can pin messages; channels only"
       },
       {
         "name": "can_pin_messages",
-        "type": "Boolean",
+        "type": "bool",
         "required": false,
         "description": "Optional. True, if the user is allowed to pin messages; groups and supergroups only"
       }
@@ -2091,7 +2091,7 @@
     "fields": [
       {
         "name": "status",
-        "type": "String",
+        "type": "string",
         "required": true,
         "description": "The member's status in the chat, always “creator”"
       },
@@ -2103,13 +2103,13 @@
       },
       {
         "name": "is_anonymous",
-        "type": "Boolean",
+        "type": "bool",
         "required": true,
         "description": "True, if the user's presence in the chat is hidden"
       },
       {
         "name": "custom_title",
-        "type": "String",
+        "type": "string",
         "required": false,
         "description": "Optional. Custom title for this user"
       }
@@ -2123,7 +2123,7 @@
     "fields": [
       {
         "name": "status",
-        "type": "String",
+        "type": "string",
         "required": true,
         "description": "The member's status in the chat, always “administrator”"
       },
@@ -2135,79 +2135,79 @@
       },
       {
         "name": "can_be_edited",
-        "type": "Boolean",
+        "type": "bool",
         "required": true,
         "description": "True, if the bot is allowed to edit administrator privileges of that user"
       },
       {
         "name": "is_anonymous",
-        "type": "Boolean",
+        "type": "bool",
         "required": true,
         "description": "True, if the user's presence in the chat is hidden"
       },
       {
         "name": "can_manage_chat",
-        "type": "Boolean",
+        "type": "bool",
         "required": true,
         "description": "True, if the administrator can access the chat event log, chat statistics, message statistics in channels, see channel members, see anonymous administrators in supergroups and ignore slow mode. Implied by any other administrator privilege"
       },
       {
         "name": "can_delete_messages",
-        "type": "Boolean",
+        "type": "bool",
         "required": true,
         "description": "True, if the administrator can delete messages of other users"
       },
       {
         "name": "can_manage_video_chats",
-        "type": "Boolean",
+        "type": "bool",
         "required": true,
         "description": "True, if the administrator can manage video chats"
       },
       {
         "name": "can_restrict_members",
-        "type": "Boolean",
+        "type": "bool",
         "required": true,
         "description": "True, if the administrator can restrict, ban or unban chat members"
       },
       {
         "name": "can_promote_members",
-        "type": "Boolean",
+        "type": "bool",
         "required": true,
         "description": "True, if the administrator can add new administrators with a subset of their own privileges or demote administrators that he has promoted, directly or indirectly (promoted by administrators that were appointed by the user)"
       },
       {
         "name": "can_change_info",
-        "type": "Boolean",
+        "type": "bool",
         "required": true,
         "description": "True, if the user is allowed to change the chat title, photo and other settings"
       },
       {
         "name": "can_invite_users",
-        "type": "Boolean",
+        "type": "bool",
         "required": true,
         "description": "True, if the user is allowed to invite new users to the chat"
       },
       {
         "name": "can_post_messages",
-        "type": "Boolean",
+        "type": "bool",
         "required": false,
         "description": "Optional. True, if the administrator can post in the channel; channels only"
       },
       {
         "name": "can_edit_messages",
-        "type": "Boolean",
+        "type": "bool",
         "required": false,
         "description": "Optional. True, if the administrator can edit messages of other users and can pin messages; channels only"
       },
       {
         "name": "can_pin_messages",
-        "type": "Boolean",
+        "type": "bool",
         "required": false,
         "description": "Optional. True, if the user is allowed to pin messages; groups and supergroups only"
       },
       {
         "name": "custom_title",
-        "type": "String",
+        "type": "string",
         "required": false,
         "description": "Optional. Custom title for this user"
       }
@@ -2221,7 +2221,7 @@
     "fields": [
       {
         "name": "status",
-        "type": "String",
+        "type": "string",
         "required": true,
         "description": "The member's status in the chat, always “member”"
       },
@@ -2241,7 +2241,7 @@
     "fields": [
       {
         "name": "status",
-        "type": "String",
+        "type": "string",
         "required": true,
         "description": "The member's status in the chat, always “restricted”"
       },
@@ -2253,61 +2253,61 @@
       },
       {
         "name": "is_member",
-        "type": "Boolean",
+        "type": "bool",
         "required": true,
         "description": "True, if the user is a member of the chat at the moment of the request"
       },
       {
         "name": "can_change_info",
-        "type": "Boolean",
+        "type": "bool",
         "required": true,
         "description": "True, if the user is allowed to change the chat title, photo and other settings"
       },
       {
         "name": "can_invite_users",
-        "type": "Boolean",
+        "type": "bool",
         "required": true,
         "description": "True, if the user is allowed to invite new users to the chat"
       },
       {
         "name": "can_pin_messages",
-        "type": "Boolean",
+        "type": "bool",
         "required": true,
         "description": "True, if the user is allowed to pin messages"
       },
       {
         "name": "can_send_messages",
-        "type": "Boolean",
+        "type": "bool",
         "required": true,
         "description": "True, if the user is allowed to send text messages, contacts, locations and venues"
       },
       {
         "name": "can_send_media_messages",
-        "type": "Boolean",
+        "type": "bool",
         "required": true,
         "description": "True, if the user is allowed to send audios, documents, photos, videos, video notes and voice notes"
       },
       {
         "name": "can_send_polls",
-        "type": "Boolean",
+        "type": "bool",
         "required": true,
         "description": "True, if the user is allowed to send polls"
       },
       {
         "name": "can_send_other_messages",
-        "type": "Boolean",
+        "type": "bool",
         "required": true,
         "description": "True, if the user is allowed to send animations, games, stickers and use inline bots"
       },
       {
         "name": "can_add_web_page_previews",
-        "type": "Boolean",
+        "type": "bool",
         "required": true,
         "description": "True, if the user is allowed to add web page previews to their messages"
       },
       {
         "name": "until_date",
-        "type": "Integer",
+        "type": "int",
         "required": true,
         "description": "Date when restrictions will be lifted for this user; unix time. If 0, then the user is restricted forever"
       }
@@ -2321,7 +2321,7 @@
     "fields": [
       {
         "name": "status",
-        "type": "String",
+        "type": "string",
         "required": true,
         "description": "The member's status in the chat, always “left”"
       },
@@ -2341,7 +2341,7 @@
     "fields": [
       {
         "name": "status",
-        "type": "String",
+        "type": "string",
         "required": true,
         "description": "The member's status in the chat, always “kicked”"
       },
@@ -2353,7 +2353,7 @@
       },
       {
         "name": "until_date",
-        "type": "Integer",
+        "type": "int",
         "required": true,
         "description": "Date when restrictions will be lifted for this user; unix time. If 0, then the user is banned forever"
       }
@@ -2379,7 +2379,7 @@
       },
       {
         "name": "date",
-        "type": "Integer",
+        "type": "int",
         "required": true,
         "description": "Date the change was done in Unix time"
       },
@@ -2423,13 +2423,13 @@
       },
       {
         "name": "date",
-        "type": "Integer",
+        "type": "int",
         "required": true,
         "description": "Date the request was sent in Unix time"
       },
       {
         "name": "bio",
-        "type": "String",
+        "type": "string",
         "required": false,
         "description": "Optional. Bio of the user."
       },
@@ -2449,49 +2449,49 @@
     "fields": [
       {
         "name": "can_send_messages",
-        "type": "Boolean",
+        "type": "bool",
         "required": false,
         "description": "Optional. True, if the user is allowed to send text messages, contacts, locations and venues"
       },
       {
         "name": "can_send_media_messages",
-        "type": "Boolean",
+        "type": "bool",
         "required": false,
         "description": "Optional. True, if the user is allowed to send audios, documents, photos, videos, video notes and voice notes, implies can_send_messages"
       },
       {
         "name": "can_send_polls",
-        "type": "Boolean",
+        "type": "bool",
         "required": false,
         "description": "Optional. True, if the user is allowed to send polls, implies can_send_messages"
       },
       {
         "name": "can_send_other_messages",
-        "type": "Boolean",
+        "type": "bool",
         "required": false,
         "description": "Optional. True, if the user is allowed to send animations, games, stickers and use inline bots, implies can_send_media_messages"
       },
       {
         "name": "can_add_web_page_previews",
-        "type": "Boolean",
+        "type": "bool",
         "required": false,
         "description": "Optional. True, if the user is allowed to add web page previews to their messages, implies can_send_media_messages"
       },
       {
         "name": "can_change_info",
-        "type": "Boolean",
+        "type": "bool",
         "required": false,
         "description": "Optional. True, if the user is allowed to change the chat title, photo and other settings. Ignored in public supergroups"
       },
       {
         "name": "can_invite_users",
-        "type": "Boolean",
+        "type": "bool",
         "required": false,
         "description": "Optional. True, if the user is allowed to invite new users to the chat"
       },
       {
         "name": "can_pin_messages",
-        "type": "Boolean",
+        "type": "bool",
         "required": false,
         "description": "Optional. True, if the user is allowed to pin messages. Ignored in public supergroups"
       }
@@ -2511,7 +2511,7 @@
       },
       {
         "name": "address",
-        "type": "String",
+        "type": "string",
         "required": true,
         "description": "Location address; 1-64 characters, as defined by the chat owner"
       }
@@ -2525,13 +2525,13 @@
     "fields": [
       {
         "name": "command",
-        "type": "String",
+        "type": "string",
         "required": true,
         "description": "Text of the command; 1-32 characters. Can contain only lowercase English letters, digits and underscores."
       },
       {
         "name": "description",
-        "type": "String",
+        "type": "string",
         "required": true,
         "description": "Description of the command; 1-256 characters."
       }
@@ -2552,7 +2552,7 @@
     "fields": [
       {
         "name": "type",
-        "type": "String",
+        "type": "string",
         "required": true,
         "description": "Scope type, must be default"
       }
@@ -2566,7 +2566,7 @@
     "fields": [
       {
         "name": "type",
-        "type": "String",
+        "type": "string",
         "required": true,
         "description": "Scope type, must be all_private_chats"
       }
@@ -2580,7 +2580,7 @@
     "fields": [
       {
         "name": "type",
-        "type": "String",
+        "type": "string",
         "required": true,
         "description": "Scope type, must be all_group_chats"
       }
@@ -2594,7 +2594,7 @@
     "fields": [
       {
         "name": "type",
-        "type": "String",
+        "type": "string",
         "required": true,
         "description": "Scope type, must be all_chat_administrators"
       }
@@ -2608,13 +2608,13 @@
     "fields": [
       {
         "name": "type",
-        "type": "String",
+        "type": "string",
         "required": true,
         "description": "Scope type, must be chat"
       },
       {
         "name": "chat_id",
-        "type": "Integer or String",
+        "type": "int|string",
         "required": true,
         "description": "Unique identifier for the target chat or username of the target supergroup (in the format @supergroupusername)"
       }
@@ -2628,13 +2628,13 @@
     "fields": [
       {
         "name": "type",
-        "type": "String",
+        "type": "string",
         "required": true,
         "description": "Scope type, must be chat_administrators"
       },
       {
         "name": "chat_id",
-        "type": "Integer or String",
+        "type": "int|string",
         "required": true,
         "description": "Unique identifier for the target chat or username of the target supergroup (in the format @supergroupusername)"
       }
@@ -2648,19 +2648,19 @@
     "fields": [
       {
         "name": "type",
-        "type": "String",
+        "type": "string",
         "required": true,
         "description": "Scope type, must be chat_member"
       },
       {
         "name": "chat_id",
-        "type": "Integer or String",
+        "type": "int|string",
         "required": true,
         "description": "Unique identifier for the target chat or username of the target supergroup (in the format @supergroupusername)"
       },
       {
         "name": "user_id",
-        "type": "Integer",
+        "type": "int",
         "required": true,
         "description": "Unique identifier of the target user"
       }
@@ -2681,7 +2681,7 @@
     "fields": [
       {
         "name": "type",
-        "type": "String",
+        "type": "string",
         "required": true,
         "description": "Type of the button, must be commands"
       }
@@ -2695,13 +2695,13 @@
     "fields": [
       {
         "name": "type",
-        "type": "String",
+        "type": "string",
         "required": true,
         "description": "Type of the button, must be web_app"
       },
       {
         "name": "text",
-        "type": "String",
+        "type": "string",
         "required": true,
         "description": "Text on the button"
       },
@@ -2721,7 +2721,7 @@
     "fields": [
       {
         "name": "type",
-        "type": "String",
+        "type": "string",
         "required": true,
         "description": "Type of the button, must be default"
       }
@@ -2735,13 +2735,13 @@
     "fields": [
       {
         "name": "migrate_to_chat_id",
-        "type": "Integer",
+        "type": "int",
         "required": false,
         "description": "Optional. The group has been migrated to a supergroup with the specified identifier. This number may have more than 32 significant bits and some programming languages may have difficulty/silent defects in interpreting it. But it has at most 52 significant bits, so a signed 64-bit integer or double-precision float type are safe for storing this identifier."
       },
       {
         "name": "retry_after",
-        "type": "Integer",
+        "type": "int",
         "required": false,
         "description": "Optional. In case of exceeding flood control, the number of seconds left to wait before the request can be repeated"
       }
@@ -2762,31 +2762,31 @@
     "fields": [
       {
         "name": "type",
-        "type": "String",
+        "type": "string",
         "required": true,
         "description": "Type of the result, must be photo"
       },
       {
         "name": "media",
-        "type": "String",
+        "type": "string",
         "required": true,
         "description": "File to send. Pass a file_id to send a file that exists on the Telegram servers (recommended), pass an HTTP URL for Telegram to get a file from the Internet, or pass “attach://<file_attach_name>” to upload a new one using multipart/form-data under <file_attach_name> name. More information on Sending Files »"
       },
       {
         "name": "caption",
-        "type": "String",
+        "type": "string",
         "required": false,
         "description": "Optional. Caption of the photo to be sent, 0-1024 characters after entities parsing"
       },
       {
         "name": "parse_mode",
-        "type": "String",
+        "type": "string",
         "required": false,
         "description": "Optional. Mode for parsing entities in the photo caption. See formatting options for more details."
       },
       {
         "name": "caption_entities",
-        "type": "Array of MessageEntity",
+        "type": "MessageEntity[]",
         "required": false,
         "description": "Optional. List of special entities that appear in the caption, which can be specified instead of parse_mode"
       }
@@ -2800,61 +2800,61 @@
     "fields": [
       {
         "name": "type",
-        "type": "String",
+        "type": "string",
         "required": true,
         "description": "Type of the result, must be video"
       },
       {
         "name": "media",
-        "type": "String",
+        "type": "string",
         "required": true,
         "description": "File to send. Pass a file_id to send a file that exists on the Telegram servers (recommended), pass an HTTP URL for Telegram to get a file from the Internet, or pass “attach://<file_attach_name>” to upload a new one using multipart/form-data under <file_attach_name> name. More information on Sending Files »"
       },
       {
         "name": "thumb",
-        "type": "InputFile or String",
+        "type": "InputFile|string",
         "required": false,
         "description": "Optional. Thumbnail of the file sent; can be ignored if thumbnail generation for the file is supported server-side. The thumbnail should be in JPEG format and less than 200 kB in size. A thumbnail's width and height should not exceed 320. Ignored if the file is not uploaded using multipart/form-data. Thumbnails can't be reused and can be only uploaded as a new file, so you can pass “attach://<file_attach_name>” if the thumbnail was uploaded using multipart/form-data under <file_attach_name>. More information on Sending Files »"
       },
       {
         "name": "caption",
-        "type": "String",
+        "type": "string",
         "required": false,
         "description": "Optional. Caption of the video to be sent, 0-1024 characters after entities parsing"
       },
       {
         "name": "parse_mode",
-        "type": "String",
+        "type": "string",
         "required": false,
         "description": "Optional. Mode for parsing entities in the video caption. See formatting options for more details."
       },
       {
         "name": "caption_entities",
-        "type": "Array of MessageEntity",
+        "type": "MessageEntity[]",
         "required": false,
         "description": "Optional. List of special entities that appear in the caption, which can be specified instead of parse_mode"
       },
       {
         "name": "width",
-        "type": "Integer",
+        "type": "int",
         "required": false,
         "description": "Optional. Video width"
       },
       {
         "name": "height",
-        "type": "Integer",
+        "type": "int",
         "required": false,
         "description": "Optional. Video height"
       },
       {
         "name": "duration",
-        "type": "Integer",
+        "type": "int",
         "required": false,
         "description": "Optional. Video duration in seconds"
       },
       {
         "name": "supports_streaming",
-        "type": "Boolean",
+        "type": "bool",
         "required": false,
         "description": "Optional. Pass True if the uploaded video is suitable for streaming"
       }
@@ -2868,55 +2868,55 @@
     "fields": [
       {
         "name": "type",
-        "type": "String",
+        "type": "string",
         "required": true,
         "description": "Type of the result, must be animation"
       },
       {
         "name": "media",
-        "type": "String",
+        "type": "string",
         "required": true,
         "description": "File to send. Pass a file_id to send a file that exists on the Telegram servers (recommended), pass an HTTP URL for Telegram to get a file from the Internet, or pass “attach://<file_attach_name>” to upload a new one using multipart/form-data under <file_attach_name> name. More information on Sending Files »"
       },
       {
         "name": "thumb",
-        "type": "InputFile or String",
+        "type": "InputFile|string",
         "required": false,
         "description": "Optional. Thumbnail of the file sent; can be ignored if thumbnail generation for the file is supported server-side. The thumbnail should be in JPEG format and less than 200 kB in size. A thumbnail's width and height should not exceed 320. Ignored if the file is not uploaded using multipart/form-data. Thumbnails can't be reused and can be only uploaded as a new file, so you can pass “attach://<file_attach_name>” if the thumbnail was uploaded using multipart/form-data under <file_attach_name>. More information on Sending Files »"
       },
       {
         "name": "caption",
-        "type": "String",
+        "type": "string",
         "required": false,
         "description": "Optional. Caption of the animation to be sent, 0-1024 characters after entities parsing"
       },
       {
         "name": "parse_mode",
-        "type": "String",
+        "type": "string",
         "required": false,
         "description": "Optional. Mode for parsing entities in the animation caption. See formatting options for more details."
       },
       {
         "name": "caption_entities",
-        "type": "Array of MessageEntity",
+        "type": "MessageEntity[]",
         "required": false,
         "description": "Optional. List of special entities that appear in the caption, which can be specified instead of parse_mode"
       },
       {
         "name": "width",
-        "type": "Integer",
+        "type": "int",
         "required": false,
         "description": "Optional. Animation width"
       },
       {
         "name": "height",
-        "type": "Integer",
+        "type": "int",
         "required": false,
         "description": "Optional. Animation height"
       },
       {
         "name": "duration",
-        "type": "Integer",
+        "type": "int",
         "required": false,
         "description": "Optional. Animation duration in seconds"
       }
@@ -2930,55 +2930,55 @@
     "fields": [
       {
         "name": "type",
-        "type": "String",
+        "type": "string",
         "required": true,
         "description": "Type of the result, must be audio"
       },
       {
         "name": "media",
-        "type": "String",
+        "type": "string",
         "required": true,
         "description": "File to send. Pass a file_id to send a file that exists on the Telegram servers (recommended), pass an HTTP URL for Telegram to get a file from the Internet, or pass “attach://<file_attach_name>” to upload a new one using multipart/form-data under <file_attach_name> name. More information on Sending Files »"
       },
       {
         "name": "thumb",
-        "type": "InputFile or String",
+        "type": "InputFile|string",
         "required": false,
         "description": "Optional. Thumbnail of the file sent; can be ignored if thumbnail generation for the file is supported server-side. The thumbnail should be in JPEG format and less than 200 kB in size. A thumbnail's width and height should not exceed 320. Ignored if the file is not uploaded using multipart/form-data. Thumbnails can't be reused and can be only uploaded as a new file, so you can pass “attach://<file_attach_name>” if the thumbnail was uploaded using multipart/form-data under <file_attach_name>. More information on Sending Files »"
       },
       {
         "name": "caption",
-        "type": "String",
+        "type": "string",
         "required": false,
         "description": "Optional. Caption of the audio to be sent, 0-1024 characters after entities parsing"
       },
       {
         "name": "parse_mode",
-        "type": "String",
+        "type": "string",
         "required": false,
         "description": "Optional. Mode for parsing entities in the audio caption. See formatting options for more details."
       },
       {
         "name": "caption_entities",
-        "type": "Array of MessageEntity",
+        "type": "MessageEntity[]",
         "required": false,
         "description": "Optional. List of special entities that appear in the caption, which can be specified instead of parse_mode"
       },
       {
         "name": "duration",
-        "type": "Integer",
+        "type": "int",
         "required": false,
         "description": "Optional. Duration of the audio in seconds"
       },
       {
         "name": "performer",
-        "type": "String",
+        "type": "string",
         "required": false,
         "description": "Optional. Performer of the audio"
       },
       {
         "name": "title",
-        "type": "String",
+        "type": "string",
         "required": false,
         "description": "Optional. Title of the audio"
       }
@@ -2992,43 +2992,43 @@
     "fields": [
       {
         "name": "type",
-        "type": "String",
+        "type": "string",
         "required": true,
         "description": "Type of the result, must be document"
       },
       {
         "name": "media",
-        "type": "String",
+        "type": "string",
         "required": true,
         "description": "File to send. Pass a file_id to send a file that exists on the Telegram servers (recommended), pass an HTTP URL for Telegram to get a file from the Internet, or pass “attach://<file_attach_name>” to upload a new one using multipart/form-data under <file_attach_name> name. More information on Sending Files »"
       },
       {
         "name": "thumb",
-        "type": "InputFile or String",
+        "type": "InputFile|string",
         "required": false,
         "description": "Optional. Thumbnail of the file sent; can be ignored if thumbnail generation for the file is supported server-side. The thumbnail should be in JPEG format and less than 200 kB in size. A thumbnail's width and height should not exceed 320. Ignored if the file is not uploaded using multipart/form-data. Thumbnails can't be reused and can be only uploaded as a new file, so you can pass “attach://<file_attach_name>” if the thumbnail was uploaded using multipart/form-data under <file_attach_name>. More information on Sending Files »"
       },
       {
         "name": "caption",
-        "type": "String",
+        "type": "string",
         "required": false,
         "description": "Optional. Caption of the document to be sent, 0-1024 characters after entities parsing"
       },
       {
         "name": "parse_mode",
-        "type": "String",
+        "type": "string",
         "required": false,
         "description": "Optional. Mode for parsing entities in the document caption. See formatting options for more details."
       },
       {
         "name": "caption_entities",
-        "type": "Array of MessageEntity",
+        "type": "MessageEntity[]",
         "required": false,
         "description": "Optional. List of special entities that appear in the caption, which can be specified instead of parse_mode"
       },
       {
         "name": "disable_content_type_detection",
-        "type": "Boolean",
+        "type": "bool",
         "required": false,
         "description": "Optional. Disables automatic server-side content type detection for files uploaded using multipart/form-data. Always True, if the document is sent as part of an album."
       }
@@ -3063,43 +3063,43 @@
     "fields": [
       {
         "name": "file_id",
-        "type": "String",
+        "type": "string",
         "required": true,
         "description": "Identifier for this file, which can be used to download or reuse the file"
       },
       {
         "name": "file_unique_id",
-        "type": "String",
+        "type": "string",
         "required": true,
         "description": "Unique identifier for this file, which is supposed to be the same over time and for different bots. Can't be used to download or reuse the file."
       },
       {
         "name": "type",
-        "type": "String",
+        "type": "string",
         "required": true,
         "description": "Type of the sticker, currently one of “regular”, “mask”, “custom_emoji”. The type of the sticker is independent from its format, which is determined by the fields is_animated and is_video."
       },
       {
         "name": "width",
-        "type": "Integer",
+        "type": "int",
         "required": true,
         "description": "Sticker width"
       },
       {
         "name": "height",
-        "type": "Integer",
+        "type": "int",
         "required": true,
         "description": "Sticker height"
       },
       {
         "name": "is_animated",
-        "type": "Boolean",
+        "type": "bool",
         "required": true,
         "description": "True, if the sticker is animated"
       },
       {
         "name": "is_video",
-        "type": "Boolean",
+        "type": "bool",
         "required": true,
         "description": "True, if the sticker is a video sticker"
       },
@@ -3111,13 +3111,13 @@
       },
       {
         "name": "emoji",
-        "type": "String",
+        "type": "string",
         "required": false,
         "description": "Optional. Emoji associated with the sticker"
       },
       {
         "name": "set_name",
-        "type": "String",
+        "type": "string",
         "required": false,
         "description": "Optional. Name of the sticker set to which the sticker belongs"
       },
@@ -3135,13 +3135,13 @@
       },
       {
         "name": "custom_emoji_id",
-        "type": "String",
+        "type": "string",
         "required": false,
         "description": "Optional. For custom emoji stickers, unique identifier of the custom emoji"
       },
       {
         "name": "file_size",
-        "type": "Integer",
+        "type": "int",
         "required": false,
         "description": "Optional. File size in bytes"
       }
@@ -3155,37 +3155,37 @@
     "fields": [
       {
         "name": "name",
-        "type": "String",
+        "type": "string",
         "required": true,
         "description": "Sticker set name"
       },
       {
         "name": "title",
-        "type": "String",
+        "type": "string",
         "required": true,
         "description": "Sticker set title"
       },
       {
         "name": "sticker_type",
-        "type": "String",
+        "type": "string",
         "required": true,
         "description": "Type of stickers in the set, currently one of “regular”, “mask”, “custom_emoji”"
       },
       {
         "name": "is_animated",
-        "type": "Boolean",
+        "type": "bool",
         "required": true,
         "description": "True, if the sticker set contains animated stickers"
       },
       {
         "name": "is_video",
-        "type": "Boolean",
+        "type": "bool",
         "required": true,
         "description": "True, if the sticker set contains video stickers"
       },
       {
         "name": "stickers",
-        "type": "Array of Sticker",
+        "type": "Sticker[]",
         "required": true,
         "description": "List of all set stickers"
       },
@@ -3205,25 +3205,25 @@
     "fields": [
       {
         "name": "point",
-        "type": "String",
+        "type": "string",
         "required": true,
         "description": "The part of the face relative to which the mask should be placed. One of “forehead”, “eyes”, “mouth”, or “chin”."
       },
       {
         "name": "x_shift",
-        "type": "Float number",
+        "type": "float",
         "required": true,
         "description": "Shift by X-axis measured in widths of the mask scaled to the face size, from left to right. For example, choosing -1.0 will place mask just to the left of the default mask position."
       },
       {
         "name": "y_shift",
-        "type": "Float number",
+        "type": "float",
         "required": true,
         "description": "Shift by Y-axis measured in heights of the mask scaled to the face size, from top to bottom. For example, 1.0 will place the mask just below the default mask position."
       },
       {
         "name": "scale",
-        "type": "Float number",
+        "type": "float",
         "required": true,
         "description": "Mask scaling coefficient. For example, 2.0 means double size."
       }
@@ -3237,7 +3237,7 @@
     "fields": [
       {
         "name": "id",
-        "type": "String",
+        "type": "string",
         "required": true,
         "description": "Unique identifier for this query"
       },
@@ -3249,19 +3249,19 @@
       },
       {
         "name": "query",
-        "type": "String",
+        "type": "string",
         "required": true,
         "description": "Text of the query (up to 256 characters)"
       },
       {
         "name": "offset",
-        "type": "String",
+        "type": "string",
         "required": true,
         "description": "Offset of the results to be returned, can be controlled by the bot"
       },
       {
         "name": "chat_type",
-        "type": "String",
+        "type": "string",
         "required": false,
         "description": "Optional. Type of the chat from which the inline query was sent. Can be either “sender” for a private chat with the inline query sender, “private”, “group”, “supergroup”, or “channel”. The chat type should be always known for requests sent from official clients and most third-party clients, unless the request was sent from a secret chat"
       },
@@ -3288,19 +3288,19 @@
     "fields": [
       {
         "name": "type",
-        "type": "String",
+        "type": "string",
         "required": true,
         "description": "Type of the result, must be article"
       },
       {
         "name": "id",
-        "type": "String",
+        "type": "string",
         "required": true,
         "description": "Unique identifier for this result, 1-64 Bytes"
       },
       {
         "name": "title",
-        "type": "String",
+        "type": "string",
         "required": true,
         "description": "Title of the result"
       },
@@ -3318,37 +3318,37 @@
       },
       {
         "name": "url",
-        "type": "String",
+        "type": "string",
         "required": false,
         "description": "Optional. URL of the result"
       },
       {
         "name": "hide_url",
-        "type": "Boolean",
+        "type": "bool",
         "required": false,
         "description": "Optional. Pass True if you don't want the URL to be shown in the message"
       },
       {
         "name": "description",
-        "type": "String",
+        "type": "string",
         "required": false,
         "description": "Optional. Short description of the result"
       },
       {
         "name": "thumb_url",
-        "type": "String",
+        "type": "string",
         "required": false,
         "description": "Optional. Url of the thumbnail for the result"
       },
       {
         "name": "thumb_width",
-        "type": "Integer",
+        "type": "int",
         "required": false,
         "description": "Optional. Thumbnail width"
       },
       {
         "name": "thumb_height",
-        "type": "Integer",
+        "type": "int",
         "required": false,
         "description": "Optional. Thumbnail height"
       }
@@ -3362,67 +3362,67 @@
     "fields": [
       {
         "name": "type",
-        "type": "String",
+        "type": "string",
         "required": true,
         "description": "Type of the result, must be photo"
       },
       {
         "name": "id",
-        "type": "String",
+        "type": "string",
         "required": true,
         "description": "Unique identifier for this result, 1-64 bytes"
       },
       {
         "name": "photo_url",
-        "type": "String",
+        "type": "string",
         "required": true,
         "description": "A valid URL of the photo. Photo must be in JPEG format. Photo size must not exceed 5MB"
       },
       {
         "name": "thumb_url",
-        "type": "String",
+        "type": "string",
         "required": true,
         "description": "URL of the thumbnail for the photo"
       },
       {
         "name": "photo_width",
-        "type": "Integer",
+        "type": "int",
         "required": false,
         "description": "Optional. Width of the photo"
       },
       {
         "name": "photo_height",
-        "type": "Integer",
+        "type": "int",
         "required": false,
         "description": "Optional. Height of the photo"
       },
       {
         "name": "title",
-        "type": "String",
+        "type": "string",
         "required": false,
         "description": "Optional. Title for the result"
       },
       {
         "name": "description",
-        "type": "String",
+        "type": "string",
         "required": false,
         "description": "Optional. Short description of the result"
       },
       {
         "name": "caption",
-        "type": "String",
+        "type": "string",
         "required": false,
         "description": "Optional. Caption of the photo to be sent, 0-1024 characters after entities parsing"
       },
       {
         "name": "parse_mode",
-        "type": "String",
+        "type": "string",
         "required": false,
         "description": "Optional. Mode for parsing entities in the photo caption. See formatting options for more details."
       },
       {
         "name": "caption_entities",
-        "type": "Array of MessageEntity",
+        "type": "MessageEntity[]",
         "required": false,
         "description": "Optional. List of special entities that appear in the caption, which can be specified instead of parse_mode"
       },
@@ -3448,73 +3448,73 @@
     "fields": [
       {
         "name": "type",
-        "type": "String",
+        "type": "string",
         "required": true,
         "description": "Type of the result, must be gif"
       },
       {
         "name": "id",
-        "type": "String",
+        "type": "string",
         "required": true,
         "description": "Unique identifier for this result, 1-64 bytes"
       },
       {
         "name": "gif_url",
-        "type": "String",
+        "type": "string",
         "required": true,
         "description": "A valid URL for the GIF file. File size must not exceed 1MB"
       },
       {
         "name": "gif_width",
-        "type": "Integer",
+        "type": "int",
         "required": false,
         "description": "Optional. Width of the GIF"
       },
       {
         "name": "gif_height",
-        "type": "Integer",
+        "type": "int",
         "required": false,
         "description": "Optional. Height of the GIF"
       },
       {
         "name": "gif_duration",
-        "type": "Integer",
+        "type": "int",
         "required": false,
         "description": "Optional. Duration of the GIF in seconds"
       },
       {
         "name": "thumb_url",
-        "type": "String",
+        "type": "string",
         "required": true,
         "description": "URL of the static (JPEG or GIF) or animated (MPEG4) thumbnail for the result"
       },
       {
         "name": "thumb_mime_type",
-        "type": "String",
+        "type": "string",
         "required": false,
         "description": "Optional. MIME type of the thumbnail, must be one of “image/jpeg”, “image/gif”, or “video/mp4”. Defaults to “image/jpeg”"
       },
       {
         "name": "title",
-        "type": "String",
+        "type": "string",
         "required": false,
         "description": "Optional. Title for the result"
       },
       {
         "name": "caption",
-        "type": "String",
+        "type": "string",
         "required": false,
         "description": "Optional. Caption of the GIF file to be sent, 0-1024 characters after entities parsing"
       },
       {
         "name": "parse_mode",
-        "type": "String",
+        "type": "string",
         "required": false,
         "description": "Optional. Mode for parsing entities in the caption. See formatting options for more details."
       },
       {
         "name": "caption_entities",
-        "type": "Array of MessageEntity",
+        "type": "MessageEntity[]",
         "required": false,
         "description": "Optional. List of special entities that appear in the caption, which can be specified instead of parse_mode"
       },
@@ -3540,73 +3540,73 @@
     "fields": [
       {
         "name": "type",
-        "type": "String",
+        "type": "string",
         "required": true,
         "description": "Type of the result, must be mpeg4_gif"
       },
       {
         "name": "id",
-        "type": "String",
+        "type": "string",
         "required": true,
         "description": "Unique identifier for this result, 1-64 bytes"
       },
       {
         "name": "mpeg4_url",
-        "type": "String",
+        "type": "string",
         "required": true,
         "description": "A valid URL for the MPEG4 file. File size must not exceed 1MB"
       },
       {
         "name": "mpeg4_width",
-        "type": "Integer",
+        "type": "int",
         "required": false,
         "description": "Optional. Video width"
       },
       {
         "name": "mpeg4_height",
-        "type": "Integer",
+        "type": "int",
         "required": false,
         "description": "Optional. Video height"
       },
       {
         "name": "mpeg4_duration",
-        "type": "Integer",
+        "type": "int",
         "required": false,
         "description": "Optional. Video duration in seconds"
       },
       {
         "name": "thumb_url",
-        "type": "String",
+        "type": "string",
         "required": true,
         "description": "URL of the static (JPEG or GIF) or animated (MPEG4) thumbnail for the result"
       },
       {
         "name": "thumb_mime_type",
-        "type": "String",
+        "type": "string",
         "required": false,
         "description": "Optional. MIME type of the thumbnail, must be one of “image/jpeg”, “image/gif”, or “video/mp4”. Defaults to “image/jpeg”"
       },
       {
         "name": "title",
-        "type": "String",
+        "type": "string",
         "required": false,
         "description": "Optional. Title for the result"
       },
       {
         "name": "caption",
-        "type": "String",
+        "type": "string",
         "required": false,
         "description": "Optional. Caption of the MPEG-4 file to be sent, 0-1024 characters after entities parsing"
       },
       {
         "name": "parse_mode",
-        "type": "String",
+        "type": "string",
         "required": false,
         "description": "Optional. Mode for parsing entities in the caption. See formatting options for more details."
       },
       {
         "name": "caption_entities",
-        "type": "Array of MessageEntity",
+        "type": "MessageEntity[]",
         "required": false,
         "description": "Optional. List of special entities that appear in the caption, which can be specified instead of parse_mode"
       },
@@ -3632,79 +3632,79 @@
     "fields": [
       {
         "name": "type",
-        "type": "String",
+        "type": "string",
         "required": true,
         "description": "Type of the result, must be video"
       },
       {
         "name": "id",
-        "type": "String",
+        "type": "string",
         "required": true,
         "description": "Unique identifier for this result, 1-64 bytes"
       },
       {
         "name": "video_url",
-        "type": "String",
+        "type": "string",
         "required": true,
         "description": "A valid URL for the embedded video player or video file"
       },
       {
         "name": "mime_type",
-        "type": "String",
+        "type": "string",
         "required": true,
         "description": "MIME type of the content of the video URL, “text/html” or “video/mp4”"
       },
       {
         "name": "thumb_url",
-        "type": "String",
+        "type": "string",
         "required": true,
         "description": "URL of the thumbnail (JPEG only) for the video"
       },
       {
         "name": "title",
-        "type": "String",
+        "type": "string",
         "required": true,
         "description": "Title for the result"
       },
       {
         "name": "caption",
-        "type": "String",
+        "type": "string",
         "required": false,
         "description": "Optional. Caption of the video to be sent, 0-1024 characters after entities parsing"
       },
       {
         "name": "parse_mode",
-        "type": "String",
+        "type": "string",
         "required": false,
         "description": "Optional. Mode for parsing entities in the video caption. See formatting options for more details."
       },
       {
         "name": "caption_entities",
-        "type": "Array of MessageEntity",
+        "type": "MessageEntity[]",
         "required": false,
         "description": "Optional. List of special entities that appear in the caption, which can be specified instead of parse_mode"
       },
       {
         "name": "video_width",
-        "type": "Integer",
+        "type": "int",
         "required": false,
         "description": "Optional. Video width"
       },
       {
         "name": "video_height",
-        "type": "Integer",
+        "type": "int",
         "required": false,
         "description": "Optional. Video height"
       },
       {
         "name": "video_duration",
-        "type": "Integer",
+        "type": "int",
         "required": false,
         "description": "Optional. Video duration in seconds"
       },
       {
         "name": "description",
-        "type": "String",
+        "type": "string",
         "required": false,
         "description": "Optional. Short description of the result"
       },
@@ -3730,55 +3730,55 @@
     "fields": [
       {
         "name": "type",
-        "type": "String",
+        "type": "string",
         "required": true,
         "description": "Type of the result, must be audio"
       },
       {
         "name": "id",
-        "type": "String",
+        "type": "string",
         "required": true,
         "description": "Unique identifier for this result, 1-64 bytes"
       },
       {
         "name": "audio_url",
-        "type": "String",
+        "type": "string",
         "required": true,
         "description": "A valid URL for the audio file"
       },
       {
         "name": "title",
-        "type": "String",
+        "type": "string",
         "required": true,
         "description": "Title"
       },
       {
         "name": "caption",
-        "type": "String",
+        "type": "string",
         "required": false,
         "description": "Optional. Caption, 0-1024 characters after entities parsing"
       },
       {
         "name": "parse_mode",
-        "type": "String",
+        "type": "string",
         "required": false,
         "description": "Optional. Mode for parsing entities in the audio caption. See formatting options for more details."
       },
       {
         "name": "caption_entities",
-        "type": "Array of MessageEntity",
+        "type": "MessageEntity[]",
         "required": false,
         "description": "Optional. List of special entities that appear in the caption, which can be specified instead of parse_mode"
       },
       {
         "name": "performer",
-        "type": "String",
+        "type": "string",
         "required": false,
         "description": "Optional. Performer"
       },
       {
         "name": "audio_duration",
-        "type": "Integer",
+        "type": "int",
         "required": false,
         "description": "Optional. Audio duration in seconds"
       },
@@ -3804,49 +3804,49 @@
     "fields": [
       {
         "name": "type",
-        "type": "String",
+        "type": "string",
         "required": true,
         "description": "Type of the result, must be voice"
       },
       {
         "name": "id",
-        "type": "String",
+        "type": "string",
         "required": true,
         "description": "Unique identifier for this result, 1-64 bytes"
       },
       {
         "name": "voice_url",
-        "type": "String",
+        "type": "string",
         "required": true,
         "description": "A valid URL for the voice recording"
       },
       {
         "name": "title",
-        "type": "String",
+        "type": "string",
         "required": true,
         "description": "Recording title"
       },
       {
         "name": "caption",
-        "type": "String",
+        "type": "string",
         "required": false,
         "description": "Optional. Caption, 0-1024 characters after entities parsing"
       },
       {
         "name": "parse_mode",
-        "type": "String",
+        "type": "string",
         "required": false,
         "description": "Optional. Mode for parsing entities in the voice message caption. See formatting options for more details."
       },
       {
         "name": "caption_entities",
-        "type": "Array of MessageEntity",
+        "type": "MessageEntity[]",
         "required": false,
         "description": "Optional. List of special entities that appear in the caption, which can be specified instead of parse_mode"
       },
       {
         "name": "voice_duration",
-        "type": "Integer",
+        "type": "int",
         "required": false,
         "description": "Optional. Recording duration in seconds"
       },
@@ -3872,55 +3872,55 @@
     "fields": [
       {
         "name": "type",
-        "type": "String",
+        "type": "string",
         "required": true,
         "description": "Type of the result, must be document"
       },
       {
         "name": "id",
-        "type": "String",
+        "type": "string",
         "required": true,
         "description": "Unique identifier for this result, 1-64 bytes"
       },
       {
         "name": "title",
-        "type": "String",
+        "type": "string",
         "required": true,
         "description": "Title for the result"
       },
       {
         "name": "caption",
-        "type": "String",
+        "type": "string",
         "required": false,
         "description": "Optional. Caption of the document to be sent, 0-1024 characters after entities parsing"
       },
       {
         "name": "parse_mode",
-        "type": "String",
+        "type": "string",
         "required": false,
         "description": "Optional. Mode for parsing entities in the document caption. See formatting options for more details."
       },
       {
         "name": "caption_entities",
-        "type": "Array of MessageEntity",
+        "type": "MessageEntity[]",
         "required": false,
         "description": "Optional. List of special entities that appear in the caption, which can be specified instead of parse_mode"
       },
       {
         "name": "document_url",
-        "type": "String",
+        "type": "string",
         "required": true,
         "description": "A valid URL for the file"
       },
       {
         "name": "mime_type",
-        "type": "String",
+        "type": "string",
         "required": true,
         "description": "MIME type of the content of the file, either “application/pdf” or “application/zip”"
       },
       {
         "name": "description",
-        "type": "String",
+        "type": "string",
         "required": false,
         "description": "Optional. Short description of the result"
       },
@@ -3938,19 +3938,19 @@
       },
       {
         "name": "thumb_url",
-        "type": "String",
+        "type": "string",
         "required": false,
         "description": "Optional. URL of the thumbnail (JPEG only) for the file"
       },
       {
         "name": "thumb_width",
-        "type": "Integer",
+        "type": "int",
         "required": false,
         "description": "Optional. Thumbnail width"
       },
       {
         "name": "thumb_height",
-        "type": "Integer",
+        "type": "int",
         "required": false,
         "description": "Optional. Thumbnail height"
       }
@@ -3964,55 +3964,55 @@
     "fields": [
       {
         "name": "type",
-        "type": "String",
+        "type": "string",
         "required": true,
         "description": "Type of the result, must be location"
       },
       {
         "name": "id",
-        "type": "String",
+        "type": "string",
         "required": true,
         "description": "Unique identifier for this result, 1-64 Bytes"
       },
       {
         "name": "latitude",
-        "type": "Float number",
+        "type": "float",
         "required": true,
         "description": "Location latitude in degrees"
       },
       {
         "name": "longitude",
-        "type": "Float number",
+        "type": "float",
         "required": true,
         "description": "Location longitude in degrees"
       },
       {
         "name": "title",
-        "type": "String",
+        "type": "string",
         "required": true,
         "description": "Location title"
       },
       {
         "name": "horizontal_accuracy",
-        "type": "Float number",
+        "type": "float",
         "required": false,
         "description": "Optional. The radius of uncertainty for the location, measured in meters; 0-1500"
       },
       {
         "name": "live_period",
-        "type": "Integer",
+        "type": "int",
         "required": false,
         "description": "Optional. Period in seconds for which the location can be updated, should be between 60 and 86400."
       },
       {
         "name": "heading",
-        "type": "Integer",
+        "type": "int",
         "required": false,
         "description": "Optional. For live locations, a direction in which the user is moving, in degrees. Must be between 1 and 360 if specified."
       },
       {
         "name": "proximity_alert_radius",
-        "type": "Integer",
+        "type": "int",
         "required": false,
         "description": "Optional. For live locations, a maximum distance for proximity alerts about approaching another chat member, in meters. Must be between 1 and 100000 if specified."
       },
@@ -4030,19 +4030,19 @@
       },
       {
         "name": "thumb_url",
-        "type": "String",
+        "type": "string",
         "required": false,
         "description": "Optional. Url of the thumbnail for the result"
       },
       {
         "name": "thumb_width",
-        "type": "Integer",
+        "type": "int",
         "required": false,
         "description": "Optional. Thumbnail width"
       },
       {
         "name": "thumb_height",
-        "type": "Integer",
+        "type": "int",
         "required": false,
         "description": "Optional. Thumbnail height"
       }
@@ -4056,61 +4056,61 @@
     "fields": [
       {
         "name": "type",
-        "type": "String",
+        "type": "string",
         "required": true,
         "description": "Type of the result, must be venue"
       },
       {
         "name": "id",
-        "type": "String",
+        "type": "string",
         "required": true,
         "description": "Unique identifier for this result, 1-64 Bytes"
       },
       {
         "name": "latitude",
-        "type": "Float",
+        "type": "float",
         "required": true,
         "description": "Latitude of the venue location in degrees"
       },
       {
         "name": "longitude",
-        "type": "Float",
+        "type": "float",
         "required": true,
         "description": "Longitude of the venue location in degrees"
       },
       {
         "name": "title",
-        "type": "String",
+        "type": "string",
         "required": true,
         "description": "Title of the venue"
       },
       {
         "name": "address",
-        "type": "String",
+        "type": "string",
         "required": true,
         "description": "Address of the venue"
       },
       {
         "name": "foursquare_id",
-        "type": "String",
+        "type": "string",
         "required": false,
         "description": "Optional. Foursquare identifier of the venue if known"
       },
       {
         "name": "foursquare_type",
-        "type": "String",
+        "type": "string",
         "required": false,
         "description": "Optional. Foursquare type of the venue, if known. (For example, “arts_entertainment/default”, “arts_entertainment/aquarium” or “food/icecream”.)"
       },
       {
         "name": "google_place_id",
-        "type": "String",
+        "type": "string",
         "required": false,
         "description": "Optional. Google Places identifier of the venue"
       },
       {
         "name": "google_place_type",
-        "type": "String",
+        "type": "string",
         "required": false,
         "description": "Optional. Google Places type of the venue. (See supported types.)"
       },
@@ -4128,19 +4128,19 @@
       },
       {
         "name": "thumb_url",
-        "type": "String",
+        "type": "string",
         "required": false,
         "description": "Optional. Url of the thumbnail for the result"
       },
       {
         "name": "thumb_width",
-        "type": "Integer",
+        "type": "int",
         "required": false,
         "description": "Optional. Thumbnail width"
       },
       {
         "name": "thumb_height",
-        "type": "Integer",
+        "type": "int",
         "required": false,
         "description": "Optional. Thumbnail height"
       }
@@ -4154,37 +4154,37 @@
     "fields": [
       {
         "name": "type",
-        "type": "String",
+        "type": "string",
         "required": true,
         "description": "Type of the result, must be contact"
       },
       {
         "name": "id",
-        "type": "String",
+        "type": "string",
         "required": true,
         "description": "Unique identifier for this result, 1-64 Bytes"
       },
       {
         "name": "phone_number",
-        "type": "String",
+        "type": "string",
         "required": true,
         "description": "Contact's phone number"
       },
       {
         "name": "first_name",
-        "type": "String",
+        "type": "string",
         "required": true,
         "description": "Contact's first name"
       },
       {
         "name": "last_name",
-        "type": "String",
+        "type": "string",
         "required": false,
         "description": "Optional. Contact's last name"
       },
       {
         "name": "vcard",
-        "type": "String",
+        "type": "string",
         "required": false,
         "description": "Optional. Additional data about the contact in the form of a vCard, 0-2048 bytes"
       },
@@ -4202,19 +4202,19 @@
       },
       {
         "name": "thumb_url",
-        "type": "String",
+        "type": "string",
         "required": false,
         "description": "Optional. Url of the thumbnail for the result"
       },
       {
         "name": "thumb_width",
-        "type": "Integer",
+        "type": "int",
         "required": false,
         "description": "Optional. Thumbnail width"
       },
       {
         "name": "thumb_height",
-        "type": "Integer",
+        "type": "int",
         "required": false,
         "description": "Optional. Thumbnail height"
       }
@@ -4228,19 +4228,19 @@
     "fields": [
       {
         "name": "type",
-        "type": "String",
+        "type": "string",
         "required": true,
         "description": "Type of the result, must be game"
       },
       {
         "name": "id",
-        "type": "String",
+        "type": "string",
         "required": true,
         "description": "Unique identifier for this result, 1-64 bytes"
       },
       {
         "name": "game_short_name",
-        "type": "String",
+        "type": "string",
         "required": true,
         "description": "Short name of the game"
       },
@@ -4260,49 +4260,49 @@
     "fields": [
       {
         "name": "type",
-        "type": "String",
+        "type": "string",
         "required": true,
         "description": "Type of the result, must be photo"
       },
       {
         "name": "id",
-        "type": "String",
+        "type": "string",
         "required": true,
         "description": "Unique identifier for this result, 1-64 bytes"
       },
       {
         "name": "photo_file_id",
-        "type": "String",
+        "type": "string",
         "required": true,
         "description": "A valid file identifier of the photo"
       },
       {
         "name": "title",
-        "type": "String",
+        "type": "string",
         "required": false,
         "description": "Optional. Title for the result"
       },
       {
         "name": "description",
-        "type": "String",
+        "type": "string",
         "required": false,
         "description": "Optional. Short description of the result"
       },
       {
         "name": "caption",
-        "type": "String",
+        "type": "string",
         "required": false,
         "description": "Optional. Caption of the photo to be sent, 0-1024 characters after entities parsing"
       },
       {
         "name": "parse_mode",
-        "type": "String",
+        "type": "string",
         "required": false,
         "description": "Optional. Mode for parsing entities in the photo caption. See formatting options for more details."
       },
       {
         "name": "caption_entities",
-        "type": "Array of MessageEntity",
+        "type": "MessageEntity[]",
         "required": false,
         "description": "Optional. List of special entities that appear in the caption, which can be specified instead of parse_mode"
       },
@@ -4328,43 +4328,43 @@
     "fields": [
       {
         "name": "type",
-        "type": "String",
+        "type": "string",
         "required": true,
         "description": "Type of the result, must be gif"
       },
       {
         "name": "id",
-        "type": "String",
+        "type": "string",
         "required": true,
         "description": "Unique identifier for this result, 1-64 bytes"
       },
       {
         "name": "gif_file_id",
-        "type": "String",
+        "type": "string",
         "required": true,
         "description": "A valid file identifier for the GIF file"
       },
       {
         "name": "title",
-        "type": "String",
+        "type": "string",
         "required": false,
         "description": "Optional. Title for the result"
       },
       {
         "name": "caption",
-        "type": "String",
+        "type": "string",
         "required": false,
         "description": "Optional. Caption of the GIF file to be sent, 0-1024 characters after entities parsing"
       },
       {
         "name": "parse_mode",
-        "type": "String",
+        "type": "string",
         "required": false,
         "description": "Optional. Mode for parsing entities in the caption. See formatting options for more details."
       },
       {
         "name": "caption_entities",
-        "type": "Array of MessageEntity",
+        "type": "MessageEntity[]",
         "required": false,
         "description": "Optional. List of special entities that appear in the caption, which can be specified instead of parse_mode"
       },
@@ -4390,43 +4390,43 @@
     "fields": [
       {
         "name": "type",
-        "type": "String",
+        "type": "string",
         "required": true,
         "description": "Type of the result, must be mpeg4_gif"
       },
       {
         "name": "id",
-        "type": "String",
+        "type": "string",
         "required": true,
         "description": "Unique identifier for this result, 1-64 bytes"
       },
       {
         "name": "mpeg4_file_id",
-        "type": "String",
+        "type": "string",
         "required": true,
         "description": "A valid file identifier for the MPEG4 file"
       },
       {
         "name": "title",
-        "type": "String",
+        "type": "string",
         "required": false,
         "description": "Optional. Title for the result"
       },
       {
         "name": "caption",
-        "type": "String",
+        "type": "string",
         "required": false,
         "description": "Optional. Caption of the MPEG-4 file to be sent, 0-1024 characters after entities parsing"
       },
       {
         "name": "parse_mode",
-        "type": "String",
+        "type": "string",
         "required": false,
         "description": "Optional. Mode for parsing entities in the caption. See formatting options for more details."
       },
       {
         "name": "caption_entities",
-        "type": "Array of MessageEntity",
+        "type": "MessageEntity[]",
         "required": false,
         "description": "Optional. List of special entities that appear in the caption, which can be specified instead of parse_mode"
       },
@@ -4452,19 +4452,19 @@
     "fields": [
       {
         "name": "type",
-        "type": "String",
+        "type": "string",
         "required": true,
         "description": "Type of the result, must be sticker"
       },
       {
         "name": "id",
-        "type": "String",
+        "type": "string",
         "required": true,
         "description": "Unique identifier for this result, 1-64 bytes"
       },
       {
         "name": "sticker_file_id",
-        "type": "String",
+        "type": "string",
         "required": true,
         "description": "A valid file identifier of the sticker"
       },
@@ -4490,49 +4490,49 @@
     "fields": [
       {
         "name": "type",
-        "type": "String",
+        "type": "string",
         "required": true,
         "description": "Type of the result, must be document"
       },
       {
         "name": "id",
-        "type": "String",
+        "type": "string",
         "required": true,
         "description": "Unique identifier for this result, 1-64 bytes"
       },
       {
         "name": "title",
-        "type": "String",
+        "type": "string",
         "required": true,
         "description": "Title for the result"
       },
       {
         "name": "document_file_id",
-        "type": "String",
+        "type": "string",
         "required": true,
         "description": "A valid file identifier for the file"
       },
       {
         "name": "description",
-        "type": "String",
+        "type": "string",
         "required": false,
         "description": "Optional. Short description of the result"
       },
       {
         "name": "caption",
-        "type": "String",
+        "type": "string",
         "required": false,
         "description": "Optional. Caption of the document to be sent, 0-1024 characters after entities parsing"
       },
       {
         "name": "parse_mode",
-        "type": "String",
+        "type": "string",
         "required": false,
         "description": "Optional. Mode for parsing entities in the document caption. See formatting options for more details."
       },
       {
         "name": "caption_entities",
-        "type": "Array of MessageEntity",
+        "type": "MessageEntity[]",
         "required": false,
         "description": "Optional. List of special entities that appear in the caption, which can be specified instead of parse_mode"
       },
@@ -4558,49 +4558,49 @@
     "fields": [
       {
         "name": "type",
-        "type": "String",
+        "type": "string",
         "required": true,
         "description": "Type of the result, must be video"
       },
       {
         "name": "id",
-        "type": "String",
+        "type": "string",
         "required": true,
         "description": "Unique identifier for this result, 1-64 bytes"
       },
       {
         "name": "video_file_id",
-        "type": "String",
+        "type": "string",
         "required": true,
         "description": "A valid file identifier for the video file"
       },
       {
         "name": "title",
-        "type": "String",
+        "type": "string",
         "required": true,
         "description": "Title for the result"
       },
       {
         "name": "description",
-        "type": "String",
+        "type": "string",
         "required": false,
         "description": "Optional. Short description of the result"
       },
       {
         "name": "caption",
-        "type": "String",
+        "type": "string",
         "required": false,
         "description": "Optional. Caption of the video to be sent, 0-1024 characters after entities parsing"
       },
       {
         "name": "parse_mode",
-        "type": "String",
+        "type": "string",
         "required": false,
         "description": "Optional. Mode for parsing entities in the video caption. See formatting options for more details."
       },
       {
         "name": "caption_entities",
-        "type": "Array of MessageEntity",
+        "type": "MessageEntity[]",
         "required": false,
         "description": "Optional. List of special entities that appear in the caption, which can be specified instead of parse_mode"
       },
@@ -4626,43 +4626,43 @@
     "fields": [
       {
         "name": "type",
-        "type": "String",
+        "type": "string",
         "required": true,
         "description": "Type of the result, must be voice"
       },
       {
         "name": "id",
-        "type": "String",
+        "type": "string",
         "required": true,
         "description": "Unique identifier for this result, 1-64 bytes"
       },
       {
         "name": "voice_file_id",
-        "type": "String",
+        "type": "string",
         "required": true,
         "description": "A valid file identifier for the voice message"
       },
       {
         "name": "title",
-        "type": "String",
+        "type": "string",
         "required": true,
         "description": "Voice message title"
       },
       {
         "name": "caption",
-        "type": "String",
+        "type": "string",
         "required": false,
         "description": "Optional. Caption, 0-1024 characters after entities parsing"
       },
       {
         "name": "parse_mode",
-        "type": "String",
+        "type": "string",
         "required": false,
         "description": "Optional. Mode for parsing entities in the voice message caption. See formatting options for more details."
       },
       {
         "name": "caption_entities",
-        "type": "Array of MessageEntity",
+        "type": "MessageEntity[]",
         "required": false,
         "description": "Optional. List of special entities that appear in the caption, which can be specified instead of parse_mode"
       },
@@ -4688,37 +4688,37 @@
     "fields": [
       {
         "name": "type",
-        "type": "String",
+        "type": "string",
         "required": true,
         "description": "Type of the result, must be audio"
       },
       {
         "name": "id",
-        "type": "String",
+        "type": "string",
         "required": true,
         "description": "Unique identifier for this result, 1-64 bytes"
       },
       {
         "name": "audio_file_id",
-        "type": "String",
+        "type": "string",
         "required": true,
         "description": "A valid file identifier for the audio file"
       },
       {
         "name": "caption",
-        "type": "String",
+        "type": "string",
         "required": false,
         "description": "Optional. Caption, 0-1024 characters after entities parsing"
       },
       {
         "name": "parse_mode",
-        "type": "String",
+        "type": "string",
         "required": false,
         "description": "Optional. Mode for parsing entities in the audio caption. See formatting options for more details."
       },
       {
         "name": "caption_entities",
-        "type": "Array of MessageEntity",
+        "type": "MessageEntity[]",
         "required": false,
         "description": "Optional. List of special entities that appear in the caption, which can be specified instead of parse_mode"
       },
@@ -4751,25 +4751,25 @@
     "fields": [
       {
         "name": "message_text",
-        "type": "String",
+        "type": "string",
         "required": true,
         "description": "Text of the message to be sent, 1-4096 characters"
       },
       {
         "name": "parse_mode",
-        "type": "String",
+        "type": "string",
         "required": false,
         "description": "Optional. Mode for parsing entities in the message text. See formatting options for more details."
       },
       {
         "name": "entities",
-        "type": "Array of MessageEntity",
+        "type": "MessageEntity[]",
         "required": false,
         "description": "Optional. List of special entities that appear in message text, which can be specified instead of parse_mode"
       },
       {
         "name": "disable_web_page_preview",
-        "type": "Boolean",
+        "type": "bool",
         "required": false,
         "description": "Optional. Disables link previews for links in the sent message"
       }
@@ -4783,37 +4783,37 @@
     "fields": [
       {
         "name": "latitude",
-        "type": "Float",
+        "type": "float",
         "required": true,
         "description": "Latitude of the location in degrees"
       },
       {
         "name": "longitude",
-        "type": "Float",
+        "type": "float",
         "required": true,
         "description": "Longitude of the location in degrees"
       },
       {
         "name": "horizontal_accuracy",
-        "type": "Float number",
+        "type": "float",
         "required": false,
         "description": "Optional. The radius of uncertainty for the location, measured in meters; 0-1500"
       },
       {
         "name": "live_period",
-        "type": "Integer",
+        "type": "int",
         "required": false,
         "description": "Optional. Period in seconds for which the location can be updated, should be between 60 and 86400."
       },
       {
         "name": "heading",
-        "type": "Integer",
+        "type": "int",
         "required": false,
         "description": "Optional. For live locations, a direction in which the user is moving, in degrees. Must be between 1 and 360 if specified."
       },
       {
         "name": "proximity_alert_radius",
-        "type": "Integer",
+        "type": "int",
         "required": false,
         "description": "Optional. For live locations, a maximum distance for proximity alerts about approaching another chat member, in meters. Must be between 1 and 100000 if specified."
       }
@@ -4827,49 +4827,49 @@
     "fields": [
       {
         "name": "latitude",
-        "type": "Float",
+        "type": "float",
         "required": true,
         "description": "Latitude of the venue in degrees"
       },
       {
         "name": "longitude",
-        "type": "Float",
+        "type": "float",
         "required": true,
         "description": "Longitude of the venue in degrees"
       },
       {
         "name": "title",
-        "type": "String",
+        "type": "string",
         "required": true,
         "description": "Name of the venue"
       },
       {
         "name": "address",
-        "type": "String",
+        "type": "string",
         "required": true,
         "description": "Address of the venue"
       },
       {
         "name": "foursquare_id",
-        "type": "String",
+        "type": "string",
         "required": false,
         "description": "Optional. Foursquare identifier of the venue, if known"
       },
       {
         "name": "foursquare_type",
-        "type": "String",
+        "type": "string",
         "required": false,
         "description": "Optional. Foursquare type of the venue, if known. (For example, “arts_entertainment/default”, “arts_entertainment/aquarium” or “food/icecream”.)"
       },
       {
         "name": "google_place_id",
-        "type": "String",
+        "type": "string",
         "required": false,
         "description": "Optional. Google Places identifier of the venue"
       },
       {
         "name": "google_place_type",
-        "type": "String",
+        "type": "string",
         "required": false,
         "description": "Optional. Google Places type of the venue. (See supported types.)"
       }
@@ -4883,25 +4883,25 @@
     "fields": [
       {
         "name": "phone_number",
-        "type": "String",
+        "type": "string",
         "required": true,
         "description": "Contact's phone number"
       },
       {
         "name": "first_name",
-        "type": "String",
+        "type": "string",
         "required": true,
         "description": "Contact's first name"
       },
       {
         "name": "last_name",
-        "type": "String",
+        "type": "string",
         "required": false,
         "description": "Optional. Contact's last name"
       },
       {
         "name": "vcard",
-        "type": "String",
+        "type": "string",
         "required": false,
         "description": "Optional. Additional data about the contact in the form of a vCard, 0-2048 bytes"
       }
@@ -4915,121 +4915,121 @@
     "fields": [
       {
         "name": "title",
-        "type": "String",
+        "type": "string",
         "required": true,
         "description": "Product name, 1-32 characters"
       },
       {
         "name": "description",
-        "type": "String",
+        "type": "string",
         "required": true,
         "description": "Product description, 1-255 characters"
       },
       {
         "name": "payload",
-        "type": "String",
+        "type": "string",
         "required": true,
         "description": "Bot-defined invoice payload, 1-128 bytes. This will not be displayed to the user, use for your internal processes."
       },
       {
         "name": "provider_token",
-        "type": "String",
+        "type": "string",
         "required": true,
         "description": "Payment provider token, obtained via @BotFather"
       },
       {
         "name": "currency",
-        "type": "String",
+        "type": "string",
         "required": true,
         "description": "Three-letter ISO 4217 currency code, see more on currencies"
       },
       {
         "name": "prices",
-        "type": "Array of LabeledPrice",
+        "type": "LabeledPrice[]",
         "required": true,
         "description": "Price breakdown, a JSON-serialized list of components (e.g. product price, tax, discount, delivery cost, delivery tax, bonus, etc.)"
       },
       {
         "name": "max_tip_amount",
-        "type": "Integer",
+        "type": "int",
         "required": false,
         "description": "Optional. The maximum accepted amount for tips in the smallest units of the currency (integer, not float/double). For example, for a maximum tip of US$ 1.45 pass max_tip_amount = 145. See the exp parameter in currencies.json, it shows the number of digits past the decimal point for each currency (2 for the majority of currencies). Defaults to 0"
       },
       {
         "name": "suggested_tip_amounts",
-        "type": "Array of Integer",
+        "type": "int[]",
         "required": false,
         "description": "Optional. A JSON-serialized array of suggested amounts of tip in the smallest units of the currency (integer, not float/double). At most 4 suggested tip amounts can be specified. The suggested tip amounts must be positive, passed in a strictly increased order and must not exceed max_tip_amount."
       },
       {
         "name": "provider_data",
-        "type": "String",
+        "type": "string",
         "required": false,
         "description": "Optional. A JSON-serialized object for data about the invoice, which will be shared with the payment provider. A detailed description of the required fields should be provided by the payment provider."
       },
       {
         "name": "photo_url",
-        "type": "String",
+        "type": "string",
         "required": false,
         "description": "Optional. URL of the product photo for the invoice. Can be a photo of the goods or a marketing image for a service."
       },
       {
         "name": "photo_size",
-        "type": "Integer",
+        "type": "int",
         "required": false,
         "description": "Optional. Photo size in bytes"
       },
       {
         "name": "photo_width",
-        "type": "Integer",
+        "type": "int",
         "required": false,
         "description": "Optional. Photo width"
       },
       {
         "name": "photo_height",
-        "type": "Integer",
+        "type": "int",
         "required": false,
         "description": "Optional. Photo height"
       },
       {
         "name": "need_name",
-        "type": "Boolean",
+        "type": "bool",
         "required": false,
         "description": "Optional. Pass True if you require the user's full name to complete the order"
       },
       {
         "name": "need_phone_number",
-        "type": "Boolean",
+        "type": "bool",
         "required": false,
         "description": "Optional. Pass True if you require the user's phone number to complete the order"
       },
       {
         "name": "need_email",
-        "type": "Boolean",
+        "type": "bool",
         "required": false,
         "description": "Optional. Pass True if you require the user's email address to complete the order"
       },
       {
         "name": "need_shipping_address",
-        "type": "Boolean",
+        "type": "bool",
         "required": false,
         "description": "Optional. Pass True if you require the user's shipping address to complete the order"
       },
       {
         "name": "send_phone_number_to_provider",
-        "type": "Boolean",
+        "type": "bool",
         "required": false,
         "description": "Optional. Pass True if the user's phone number should be sent to provider"
       },
       {
         "name": "send_email_to_provider",
-        "type": "Boolean",
+        "type": "bool",
         "required": false,
         "description": "Optional. Pass True if the user's email address should be sent to provider"
       },
       {
         "name": "is_flexible",
-        "type": "Boolean",
+        "type": "bool",
         "required": false,
         "description": "Optional. Pass True if the final price depends on the shipping method"
       }
@@ -5043,7 +5043,7 @@
     "fields": [
       {
         "name": "result_id",
-        "type": "String",
+        "type": "string",
         "required": true,
         "description": "The unique identifier for the result that was chosen"
       },
@@ -5061,13 +5061,13 @@
       },
       {
         "name": "inline_message_id",
-        "type": "String",
+        "type": "string",
         "required": false,
         "description": "Optional. Identifier of the sent inline message. Available only if there is an inline keyboard attached to the message. Will be also received in callback queries and can be used to edit the message."
       },
       {
         "name": "query",
-        "type": "String",
+        "type": "string",
         "required": true,
         "description": "The query that was used to obtain the result"
       }
@@ -5081,7 +5081,7 @@
     "fields": [
       {
         "name": "inline_message_id",
-        "type": "String",
+        "type": "string",
         "required": false,
         "description": "Optional. Identifier of the sent inline message. Available only if there is an inline keyboard attached to the message."
       }
@@ -5095,13 +5095,13 @@
     "fields": [
       {
         "name": "label",
-        "type": "String",
+        "type": "string",
         "required": true,
         "description": "Portion label"
       },
       {
         "name": "amount",
-        "type": "Integer",
+        "type": "int",
         "required": true,
         "description": "Price of the product in the smallest units of the currency (integer, not float/double). For example, for a price of US$ 1.45 pass amount = 145. See the exp parameter in currencies.json, it shows the number of digits past the decimal point for each currency (2 for the majority of currencies)."
       }
@@ -5115,31 +5115,31 @@
     "fields": [
       {
         "name": "title",
-        "type": "String",
+        "type": "string",
         "required": true,
         "description": "Product name"
       },
       {
         "name": "description",
-        "type": "String",
+        "type": "string",
         "required": true,
         "description": "Product description"
       },
       {
         "name": "start_parameter",
-        "type": "String",
+        "type": "string",
         "required": true,
         "description": "Unique bot deep-linking parameter that can be used to generate this invoice"
       },
       {
         "name": "currency",
-        "type": "String",
+        "type": "string",
         "required": true,
         "description": "Three-letter ISO 4217 currency code"
       },
       {
         "name": "total_amount",
-        "type": "Integer",
+        "type": "int",
         "required": true,
         "description": "Total price in the smallest units of the currency (integer, not float/double). For example, for a price of US$ 1.45 pass amount = 145. See the exp parameter in currencies.json, it shows the number of digits past the decimal point for each currency (2 for the majority of currencies)."
       }
@@ -5153,37 +5153,37 @@
     "fields": [
       {
         "name": "country_code",
-        "type": "String",
+        "type": "string",
         "required": true,
         "description": "Two-letter ISO 3166-1 alpha-2 country code"
       },
       {
         "name": "state",
-        "type": "String",
+        "type": "string",
         "required": true,
         "description": "State, if applicable"
       },
       {
         "name": "city",
-        "type": "String",
+        "type": "string",
         "required": true,
         "description": "City"
       },
       {
         "name": "street_line1",
-        "type": "String",
+        "type": "string",
         "required": true,
         "description": "First line for the address"
       },
       {
         "name": "street_line2",
-        "type": "String",
+        "type": "string",
         "required": true,
         "description": "Second line for the address"
       },
       {
         "name": "post_code",
-        "type": "String",
+        "type": "string",
         "required": true,
         "description": "Address post code"
       }
@@ -5197,19 +5197,19 @@
     "fields": [
       {
         "name": "name",
-        "type": "String",
+        "type": "string",
         "required": false,
         "description": "Optional. User name"
       },
       {
         "name": "phone_number",
-        "type": "String",
+        "type": "string",
         "required": false,
         "description": "Optional. User's phone number"
       },
       {
         "name": "email",
-        "type": "String",
+        "type": "string",
         "required": false,
         "description": "Optional. User email"
       },
@@ -5229,19 +5229,19 @@
     "fields": [
       {
         "name": "id",
-        "type": "String",
+        "type": "string",
         "required": true,
         "description": "Shipping option identifier"
       },
       {
         "name": "title",
-        "type": "String",
+        "type": "string",
         "required": true,
         "description": "Option title"
       },
       {
         "name": "prices",
-        "type": "Array of LabeledPrice",
+        "type": "LabeledPrice[]",
         "required": true,
         "description": "List of price portions"
       }
@@ -5255,25 +5255,25 @@
     "fields": [
       {
         "name": "currency",
-        "type": "String",
+        "type": "string",
         "required": true,
         "description": "Three-letter ISO 4217 currency code"
       },
       {
         "name": "total_amount",
-        "type": "Integer",
+        "type": "int",
         "required": true,
         "description": "Total price in the smallest units of the currency (integer, not float/double). For example, for a price of US$ 1.45 pass amount = 145. See the exp parameter in currencies.json, it shows the number of digits past the decimal point for each currency (2 for the majority of currencies)."
       },
       {
         "name": "invoice_payload",
-        "type": "String",
+        "type": "string",
         "required": true,
         "description": "Bot specified invoice payload"
       },
       {
         "name": "shipping_option_id",
-        "type": "String",
+        "type": "string",
         "required": false,
         "description": "Optional. Identifier of the shipping option chosen by the user"
       },
@@ -5285,13 +5285,13 @@
       },
       {
         "name": "telegram_payment_charge_id",
-        "type": "String",
+        "type": "string",
         "required": true,
         "description": "Telegram payment identifier"
       },
       {
         "name": "provider_payment_charge_id",
-        "type": "String",
+        "type": "string",
         "required": true,
         "description": "Provider payment identifier"
       }
@@ -5305,7 +5305,7 @@
     "fields": [
       {
         "name": "id",
-        "type": "String",
+        "type": "string",
         "required": true,
         "description": "Unique query identifier"
       },
@@ -5317,7 +5317,7 @@
       },
       {
         "name": "invoice_payload",
-        "type": "String",
+        "type": "string",
         "required": true,
         "description": "Bot specified invoice payload"
       },
@@ -5337,7 +5337,7 @@
     "fields": [
       {
         "name": "id",
-        "type": "String",
+        "type": "string",
         "required": true,
         "description": "Unique query identifier"
       },
@@ -5349,25 +5349,25 @@
       },
       {
         "name": "currency",
-        "type": "String",
+        "type": "string",
         "required": true,
         "description": "Three-letter ISO 4217 currency code"
       },
       {
         "name": "total_amount",
-        "type": "Integer",
+        "type": "int",
         "required": true,
         "description": "Total price in the smallest units of the currency (integer, not float/double). For example, for a price of US$ 1.45 pass amount = 145. See the exp parameter in currencies.json, it shows the number of digits past the decimal point for each currency (2 for the majority of currencies)."
       },
       {
         "name": "invoice_payload",
-        "type": "String",
+        "type": "string",
         "required": true,
         "description": "Bot specified invoice payload"
       },
       {
         "name": "shipping_option_id",
-        "type": "String",
+        "type": "string",
         "required": false,
         "description": "Optional. Identifier of the shipping option chosen by the user"
       },
@@ -5387,7 +5387,7 @@
     "fields": [
       {
         "name": "data",
-        "type": "Array of EncryptedPassportElement",
+        "type": "EncryptedPassportElement[]",
         "required": true,
         "description": "Array with information about documents and other Telegram Passport elements that was shared with the bot"
       },
@@ -5407,25 +5407,25 @@
     "fields": [
       {
         "name": "file_id",
-        "type": "String",
+        "type": "string",
         "required": true,
         "description": "Identifier for this file, which can be used to download or reuse the file"
       },
       {
         "name": "file_unique_id",
-        "type": "String",
+        "type": "string",
         "required": true,
         "description": "Unique identifier for this file, which is supposed to be the same over time and for different bots. Can't be used to download or reuse the file."
       },
       {
         "name": "file_size",
-        "type": "Integer",
+        "type": "int",
         "required": true,
         "description": "File size in bytes"
       },
       {
         "name": "file_date",
-        "type": "Integer",
+        "type": "int",
         "required": true,
         "description": "Unix time when the file was uploaded"
       }
@@ -5439,31 +5439,31 @@
     "fields": [
       {
         "name": "type",
-        "type": "String",
+        "type": "string",
         "required": true,
         "description": "Element type. One of “personal_details”, “passport”, “driver_license”, “identity_card”, “internal_passport”, “address”, “utility_bill”, “bank_statement”, “rental_agreement”, “passport_registration”, “temporary_registration”, “phone_number”, “email”."
       },
       {
         "name": "data",
-        "type": "String",
+        "type": "string",
         "required": false,
         "description": "Optional. Base64-encoded encrypted Telegram Passport element data provided by the user, available for “personal_details”, “passport”, “driver_license”, “identity_card”, “internal_passport” and “address” types. Can be decrypted and verified using the accompanying EncryptedCredentials."
       },
       {
         "name": "phone_number",
-        "type": "String",
+        "type": "string",
         "required": false,
         "description": "Optional. User's verified phone number, available only for “phone_number” type"
       },
       {
         "name": "email",
-        "type": "String",
+        "type": "string",
         "required": false,
         "description": "Optional. User's verified email address, available only for “email” type"
       },
       {
         "name": "files",
-        "type": "Array of PassportFile",
+        "type": "PassportFile[]",
         "required": false,
         "description": "Optional. Array of encrypted files with documents provided by the user, available for “utility_bill”, “bank_statement”, “rental_agreement”, “passport_registration” and “temporary_registration” types. Files can be decrypted and verified using the accompanying EncryptedCredentials."
       },
@@ -5487,13 +5487,13 @@
       },
       {
         "name": "translation",
-        "type": "Array of PassportFile",
+        "type": "PassportFile[]",
         "required": false,
         "description": "Optional. Array of encrypted files with translated versions of documents provided by the user. Available if requested for “passport”, “driver_license”, “identity_card”, “internal_passport”, “utility_bill”, “bank_statement”, “rental_agreement”, “passport_registration” and “temporary_registration” types. Files can be decrypted and verified using the accompanying EncryptedCredentials."
       },
       {
         "name": "hash",
-        "type": "String",
+        "type": "string",
         "required": true,
         "description": "Base64-encoded element hash for using in PassportElementErrorUnspecified"
       }
@@ -5507,19 +5507,19 @@
     "fields": [
       {
         "name": "data",
-        "type": "String",
+        "type": "string",
         "required": true,
         "description": "Base64-encoded encrypted JSON-serialized data with unique user's payload, data hashes and secrets required for EncryptedPassportElement decryption and authentication"
       },
       {
         "name": "hash",
-        "type": "String",
+        "type": "string",
         "required": true,
         "description": "Base64-encoded data hash for data authentication"
       },
       {
         "name": "secret",
-        "type": "String",
+        "type": "string",
         "required": true,
         "description": "Base64-encoded secret, encrypted with the bot's public RSA key, required for data decryption"
       }
@@ -5540,31 +5540,31 @@
     "fields": [
       {
         "name": "source",
-        "type": "String",
+        "type": "string",
         "required": true,
         "description": "Error source, must be data"
       },
       {
         "name": "type",
-        "type": "String",
+        "type": "string",
         "required": true,
         "description": "The section of the user's Telegram Passport which has the error, one of “personal_details”, “passport”, “driver_license”, “identity_card”, “internal_passport”, “address”"
       },
       {
         "name": "field_name",
-        "type": "String",
+        "type": "string",
         "required": true,
         "description": "Name of the data field which has the error"
       },
       {
         "name": "data_hash",
-        "type": "String",
+        "type": "string",
         "required": true,
         "description": "Base64-encoded data hash"
       },
       {
         "name": "message",
-        "type": "String",
+        "type": "string",
         "required": true,
         "description": "Error message"
       }
@@ -5578,25 +5578,25 @@
     "fields": [
       {
         "name": "source",
-        "type": "String",
+        "type": "string",
         "required": true,
         "description": "Error source, must be front_side"
       },
       {
         "name": "type",
-        "type": "String",
+        "type": "string",
         "required": true,
         "description": "The section of the user's Telegram Passport which has the issue, one of “passport”, “driver_license”, “identity_card”, “internal_passport”"
       },
       {
         "name": "file_hash",
-        "type": "String",
+        "type": "string",
         "required": true,
         "description": "Base64-encoded hash of the file with the front side of the document"
       },
       {
         "name": "message",
-        "type": "String",
+        "type": "string",
         "required": true,
         "description": "Error message"
       }
@@ -5610,25 +5610,25 @@
     "fields": [
       {
         "name": "source",
-        "type": "String",
+        "type": "string",
         "required": true,
         "description": "Error source, must be reverse_side"
       },
       {
         "name": "type",
-        "type": "String",
+        "type": "string",
         "required": true,
         "description": "The section of the user's Telegram Passport which has the issue, one of “driver_license”, “identity_card”"
       },
       {
         "name": "file_hash",
-        "type": "String",
+        "type": "string",
         "required": true,
         "description": "Base64-encoded hash of the file with the reverse side of the document"
       },
       {
         "name": "message",
-        "type": "String",
+        "type": "string",
         "required": true,
         "description": "Error message"
       }
@@ -5642,25 +5642,25 @@
     "fields": [
       {
         "name": "source",
-        "type": "String",
+        "type": "string",
         "required": true,
         "description": "Error source, must be selfie"
       },
       {
         "name": "type",
-        "type": "String",
+        "type": "string",
         "required": true,
         "description": "The section of the user's Telegram Passport which has the issue, one of “passport”, “driver_license”, “identity_card”, “internal_passport”"
       },
       {
         "name": "file_hash",
-        "type": "String",
+        "type": "string",
         "required": true,
         "description": "Base64-encoded hash of the file with the selfie"
       },
       {
         "name": "message",
-        "type": "String",
+        "type": "string",
         "required": true,
         "description": "Error message"
       }
@@ -5674,25 +5674,25 @@
     "fields": [
       {
         "name": "source",
-        "type": "String",
+        "type": "string",
         "required": true,
         "description": "Error source, must be file"
       },
       {
         "name": "type",
-        "type": "String",
+        "type": "string",
         "required": true,
         "description": "The section of the user's Telegram Passport which has the issue, one of “utility_bill”, “bank_statement”, “rental_agreement”, “passport_registration”, “temporary_registration”"
       },
       {
         "name": "file_hash",
-        "type": "String",
+        "type": "string",
         "required": true,
         "description": "Base64-encoded file hash"
       },
       {
         "name": "message",
-        "type": "String",
+        "type": "string",
         "required": true,
         "description": "Error message"
       }
@@ -5706,25 +5706,25 @@
     "fields": [
       {
         "name": "source",
-        "type": "String",
+        "type": "string",
         "required": true,
         "description": "Error source, must be files"
       },
       {
         "name": "type",
-        "type": "String",
+        "type": "string",
         "required": true,
         "description": "The section of the user's Telegram Passport which has the issue, one of “utility_bill”, “bank_statement”, “rental_agreement”, “passport_registration”, “temporary_registration”"
       },
       {
         "name": "file_hashes",
-        "type": "Array of String",
+        "type": "string[]",
         "required": true,
         "description": "List of base64-encoded file hashes"
       },
       {
         "name": "message",
-        "type": "String",
+        "type": "string",
         "required": true,
         "description": "Error message"
       }
@@ -5738,25 +5738,25 @@
     "fields": [
       {
         "name": "source",
-        "type": "String",
+        "type": "string",
         "required": true,
         "description": "Error source, must be translation_file"
       },
       {
         "name": "type",
-        "type": "String",
+        "type": "string",
         "required": true,
         "description": "Type of element of the user's Telegram Passport which has the issue, one of “passport”, “driver_license”, “identity_card”, “internal_passport”, “utility_bill”, “bank_statement”, “rental_agreement”, “passport_registration”, “temporary_registration”"
       },
       {
         "name": "file_hash",
-        "type": "String",
+        "type": "string",
         "required": true,
         "description": "Base64-encoded file hash"
       },
       {
         "name": "message",
-        "type": "String",
+        "type": "string",
         "required": true,
         "description": "Error message"
       }
@@ -5770,25 +5770,25 @@
     "fields": [
       {
         "name": "source",
-        "type": "String",
+        "type": "string",
         "required": true,
         "description": "Error source, must be translation_files"
       },
       {
         "name": "type",
-        "type": "String",
+        "type": "string",
         "required": true,
         "description": "Type of element of the user's Telegram Passport which has the issue, one of “passport”, “driver_license”, “identity_card”, “internal_passport”, “utility_bill”, “bank_statement”, “rental_agreement”, “passport_registration”, “temporary_registration”"
       },
       {
         "name": "file_hashes",
-        "type": "Array of String",
+        "type": "string[]",
         "required": true,
         "description": "List of base64-encoded file hashes"
       },
       {
         "name": "message",
-        "type": "String",
+        "type": "string",
         "required": true,
         "description": "Error message"
       }
@@ -5802,25 +5802,25 @@
     "fields": [
       {
         "name": "source",
-        "type": "String",
+        "type": "string",
         "required": true,
         "description": "Error source, must be unspecified"
       },
       {
         "name": "type",
-        "type": "String",
+        "type": "string",
         "required": true,
         "description": "Type of element of the user's Telegram Passport which has the issue"
       },
       {
         "name": "element_hash",
-        "type": "String",
+        "type": "string",
         "required": true,
         "description": "Base64-encoded element hash"
       },
       {
         "name": "message",
-        "type": "String",
+        "type": "string",
         "required": true,
         "description": "Error message"
       }
@@ -5834,31 +5834,31 @@
     "fields": [
       {
         "name": "title",
-        "type": "String",
+        "type": "string",
         "required": true,
         "description": "Title of the game"
       },
       {
         "name": "description",
-        "type": "String",
+        "type": "string",
         "required": true,
         "description": "Description of the game"
       },
       {
         "name": "photo",
-        "type": "Array of PhotoSize",
+        "type": "PhotoSize[]",
         "required": true,
         "description": "Photo that will be displayed in the game message in chats."
       },
       {
         "name": "text",
-        "type": "String",
+        "type": "string",
         "required": false,
         "description": "Optional. Brief description of the game or high scores included in the game message. Can be automatically edited to include current high scores for the game when the bot calls setGameScore, or manually edited using editMessageText. 0-4096 characters."
       },
       {
         "name": "text_entities",
-        "type": "Array of MessageEntity",
+        "type": "MessageEntity[]",
         "required": false,
         "description": "Optional. Special entities that appear in text, such as usernames, URLs, bot commands, etc."
       },
@@ -5885,7 +5885,7 @@
     "fields": [
       {
         "name": "position",
-        "type": "Integer",
+        "type": "int",
         "required": true,
         "description": "Position in high score table for the game"
       },
@@ -5897,7 +5897,7 @@
       },
       {
         "name": "score",
-        "type": "Integer",
+        "type": "int",
         "required": true,
         "description": "Score"
       }

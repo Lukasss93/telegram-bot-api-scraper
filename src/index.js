@@ -2,7 +2,7 @@ const axios = require('axios');
 const jsdom = require("jsdom");
 const {JSDOM} = jsdom;
 const colors = require('colors');
-const {isUpperCase, isLowerCase, getType, getFirstElementSibling} = require("./utils");
+const {isUpperCase, isLowerCase, getType, getFirstElementSibling, sanitizeType} = require("./utils");
 const fs = require("fs");
 
 const baseUrl = 'https://core.telegram.org/bots/api';
@@ -66,7 +66,7 @@ async function run() {
 
                     fields.push({
                         name: cells[0].textContent.trim(),
-                        type: cells[1].textContent.trim(),
+                        type: sanitizeType(cells[1].textContent.trim()),
                         required: !cells[2].textContent.trim().toLowerCase().includes('optional.'),
                         description: cells[2].textContent.trim()
                     });
@@ -94,7 +94,7 @@ async function run() {
 
                     parameters.push({
                         name: cells[0].textContent.trim(),
-                        type: cells[1].textContent.trim(),
+                        type: sanitizeType(cells[1].textContent.trim()),
                         required: cells[2].textContent.trim().toLowerCase() === 'yes',
                         description: cells[3].textContent.trim()
                     });
