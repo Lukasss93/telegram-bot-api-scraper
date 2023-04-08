@@ -734,6 +734,18 @@
                 "description": "Optional. Message is a service message about a successful payment, information about the payment. More about payments »"
             },
             {
+                "name": "user_shared",
+                "type": "UserShared",
+                "required": false,
+                "description": "Optional. Service message: a user was shared with the bot"
+            },
+            {
+                "name": "chat_shared",
+                "type": "ChatShared",
+                "required": false,
+                "description": "Optional. Service message: a chat was shared with the bot"
+            },
+            {
                 "name": "connected_website",
                 "type": "string",
                 "required": false,
@@ -970,7 +982,7 @@
                 "description": "Duration of the video in seconds as defined by sender"
             },
             {
-                "name": "thumb",
+                "name": "thumbnail",
                 "type": "PhotoSize",
                 "required": false,
                 "description": "Optional. Animation thumbnail as defined by sender"
@@ -1050,7 +1062,7 @@
                 "description": "Optional. File size in bytes. It can be bigger than 2^31 and some programming languages may have difficulty/silent defects in interpreting it. But it has at most 52 significant bits, so a signed 64-bit integer or double-precision float type are safe for storing this value."
             },
             {
-                "name": "thumb",
+                "name": "thumbnail",
                 "type": "PhotoSize",
                 "required": false,
                 "description": "Optional. Thumbnail of the album cover to which the music file belongs"
@@ -1076,7 +1088,7 @@
                 "description": "Unique identifier for this file, which is supposed to be the same over time and for different bots. Can't be used to download or reuse the file."
             },
             {
-                "name": "thumb",
+                "name": "thumbnail",
                 "type": "PhotoSize",
                 "required": false,
                 "description": "Optional. Document thumbnail as defined by sender"
@@ -1138,7 +1150,7 @@
                 "description": "Duration of the video in seconds as defined by sender"
             },
             {
-                "name": "thumb",
+                "name": "thumbnail",
                 "type": "PhotoSize",
                 "required": false,
                 "description": "Optional. Video thumbnail"
@@ -1194,7 +1206,7 @@
                 "description": "Duration of the video in seconds as defined by sender"
             },
             {
-                "name": "thumb",
+                "name": "thumbnail",
                 "type": "PhotoSize",
                 "required": false,
                 "description": "Optional. Video thumbnail"
@@ -1664,6 +1676,46 @@
         "fields": []
     },
     {
+        "name": "UserShared",
+        "description": "This object contains information about the user whose identifier was shared with the bot using a KeyboardButtonRequestUser button.",
+        "url": "https://core.telegram.org/bots/api#usershared",
+        "type": "object",
+        "fields": [
+            {
+                "name": "request_id",
+                "type": "int",
+                "required": true,
+                "description": "Identifier of the request"
+            },
+            {
+                "name": "user_id",
+                "type": "int",
+                "required": true,
+                "description": "Identifier of the shared user. This number may have more than 32 significant bits and some programming languages may have difficulty/silent defects in interpreting it. But it has at most 52 significant bits, so a 64-bit integer or double-precision float type are safe for storing this identifier. The bot may not have access to the user and could be unable to use this identifier, unless the user is already known to the bot by some other means."
+            }
+        ]
+    },
+    {
+        "name": "ChatShared",
+        "description": "This object contains information about the chat whose identifier was shared with the bot using a KeyboardButtonRequestChat button.",
+        "url": "https://core.telegram.org/bots/api#chatshared",
+        "type": "object",
+        "fields": [
+            {
+                "name": "request_id",
+                "type": "int",
+                "required": true,
+                "description": "Identifier of the request"
+            },
+            {
+                "name": "chat_id",
+                "type": "int",
+                "required": true,
+                "description": "Identifier of the shared chat. This number may have more than 32 significant bits and some programming languages may have difficulty/silent defects in interpreting it. But it has at most 52 significant bits, so a 64-bit integer or double-precision float type are safe for storing this identifier. The bot may not have access to the chat and could be unable to use this identifier, unless the chat is already known to the bot by some other means."
+            }
+        ]
+    },
+    {
         "name": "WriteAccessAllowed",
         "description": "This object represents a service message about a user allowing a bot added to the attachment menu to write messages. Currently holds no information.",
         "url": "https://core.telegram.org/bots/api#writeaccessallowed",
@@ -1831,7 +1883,7 @@
     },
     {
         "name": "KeyboardButton",
-        "description": "This object represents one button of the reply keyboard. For simple text buttons String can be used instead of this object to specify text of the button. Optional fields web_app, request_contact, request_location, and request_poll are mutually exclusive.",
+        "description": "This object represents one button of the reply keyboard. For simple text buttons, String can be used instead of this object to specify the button text. The optional fields web_app, request_user, request_chat, request_contact, request_location, and request_poll are mutually exclusive.",
         "url": "https://core.telegram.org/bots/api#keyboardbutton",
         "type": "object",
         "fields": [
@@ -1840,6 +1892,18 @@
                 "type": "string",
                 "required": true,
                 "description": "Text of the button. If none of the optional fields are used, it will be sent as a message when the button is pressed"
+            },
+            {
+                "name": "request_user",
+                "type": "KeyboardButtonRequestUser",
+                "required": false,
+                "description": "Optional. If specified, pressing the button will open a list of suitable users. Tapping on any user will send their identifier to the bot in a “user_shared” service message. Available in private chats only."
+            },
+            {
+                "name": "request_chat",
+                "type": "KeyboardButtonRequestChat",
+                "required": false,
+                "description": "Optional. If specified, pressing the button will open a list of suitable chats. Tapping on a chat will send its identifier to the bot in a “chat_shared” service message. Available in private chats only."
             },
             {
                 "name": "request_contact",
@@ -1864,6 +1928,88 @@
                 "type": "WebAppInfo",
                 "required": false,
                 "description": "Optional. If specified, the described Web App will be launched when the button is pressed. The Web App will be able to send a “web_app_data” service message. Available in private chats only."
+            }
+        ]
+    },
+    {
+        "name": "KeyboardButtonRequestUser",
+        "description": "This object defines the criteria used to request a suitable user. The identifier of the selected user will be shared with the bot when the corresponding button is pressed. More about requesting users »",
+        "url": "https://core.telegram.org/bots/api#keyboardbuttonrequestuser",
+        "type": "object",
+        "fields": [
+            {
+                "name": "request_id",
+                "type": "int",
+                "required": true,
+                "description": "Signed 32-bit identifier of the request, which will be received back in the UserShared object. Must be unique within the message"
+            },
+            {
+                "name": "user_is_bot",
+                "type": "bool",
+                "required": false,
+                "description": "Optional. Pass True to request a bot, pass False to request a regular user. If not specified, no additional restrictions are applied."
+            },
+            {
+                "name": "user_is_premium",
+                "type": "bool",
+                "required": false,
+                "description": "Optional. Pass True to request a premium user, pass False to request a non-premium user. If not specified, no additional restrictions are applied."
+            }
+        ]
+    },
+    {
+        "name": "KeyboardButtonRequestChat",
+        "description": "This object defines the criteria used to request a suitable chat. The identifier of the selected chat will be shared with the bot when the corresponding button is pressed. More about requesting chats »",
+        "url": "https://core.telegram.org/bots/api#keyboardbuttonrequestchat",
+        "type": "object",
+        "fields": [
+            {
+                "name": "request_id",
+                "type": "int",
+                "required": true,
+                "description": "Signed 32-bit identifier of the request, which will be received back in the ChatShared object. Must be unique within the message"
+            },
+            {
+                "name": "chat_is_channel",
+                "type": "bool",
+                "required": true,
+                "description": "Pass True to request a channel chat, pass False to request a group or a supergroup chat."
+            },
+            {
+                "name": "chat_is_forum",
+                "type": "bool",
+                "required": false,
+                "description": "Optional. Pass True to request a forum supergroup, pass False to request a non-forum chat. If not specified, no additional restrictions are applied."
+            },
+            {
+                "name": "chat_has_username",
+                "type": "bool",
+                "required": false,
+                "description": "Optional. Pass True to request a supergroup or a channel with a username, pass False to request a chat without a username. If not specified, no additional restrictions are applied."
+            },
+            {
+                "name": "chat_is_created",
+                "type": "bool",
+                "required": false,
+                "description": "Optional. Pass True to request a chat owned by the user. Otherwise, no additional restrictions are applied."
+            },
+            {
+                "name": "user_administrator_rights",
+                "type": "ChatAdministratorRights",
+                "required": false,
+                "description": "Optional. A JSON-serialized object listing the required administrator rights of the user in the chat. The rights must be a superset of bot_administrator_rights. If not specified, no additional restrictions are applied."
+            },
+            {
+                "name": "bot_administrator_rights",
+                "type": "ChatAdministratorRights",
+                "required": false,
+                "description": "Optional. A JSON-serialized object listing the required administrator rights of the bot in the chat. The rights must be a subset of user_administrator_rights. If not specified, no additional restrictions are applied."
+            },
+            {
+                "name": "bot_is_member",
+                "type": "bool",
+                "required": false,
+                "description": "Optional. Pass True to request a chat with the bot as a member. Otherwise, no additional restrictions are applied."
             }
         ]
     },
@@ -2447,6 +2593,66 @@
                 "description": "True, if the user is a member of the chat at the moment of the request"
             },
             {
+                "name": "can_send_messages",
+                "type": "bool",
+                "required": true,
+                "description": "True, if the user is allowed to send text messages, contacts, invoices, locations and venues"
+            },
+            {
+                "name": "can_send_audios",
+                "type": "bool",
+                "required": true,
+                "description": "True, if the user is allowed to send audios"
+            },
+            {
+                "name": "can_send_documents",
+                "type": "bool",
+                "required": true,
+                "description": "True, if the user is allowed to send documents"
+            },
+            {
+                "name": "can_send_photos",
+                "type": "bool",
+                "required": true,
+                "description": "True, if the user is allowed to send photos"
+            },
+            {
+                "name": "can_send_videos",
+                "type": "bool",
+                "required": true,
+                "description": "True, if the user is allowed to send videos"
+            },
+            {
+                "name": "can_send_video_notes",
+                "type": "bool",
+                "required": true,
+                "description": "True, if the user is allowed to send video notes"
+            },
+            {
+                "name": "can_send_voice_notes",
+                "type": "bool",
+                "required": true,
+                "description": "True, if the user is allowed to send voice notes"
+            },
+            {
+                "name": "can_send_polls",
+                "type": "bool",
+                "required": true,
+                "description": "True, if the user is allowed to send polls"
+            },
+            {
+                "name": "can_send_other_messages",
+                "type": "bool",
+                "required": true,
+                "description": "True, if the user is allowed to send animations, games, stickers and use inline bots"
+            },
+            {
+                "name": "can_add_web_page_previews",
+                "type": "bool",
+                "required": true,
+                "description": "True, if the user is allowed to add web page previews to their messages"
+            },
+            {
                 "name": "can_change_info",
                 "type": "bool",
                 "required": true,
@@ -2469,36 +2675,6 @@
                 "type": "bool",
                 "required": true,
                 "description": "True, if the user is allowed to create forum topics"
-            },
-            {
-                "name": "can_send_messages",
-                "type": "bool",
-                "required": true,
-                "description": "True, if the user is allowed to send text messages, contacts, locations and venues"
-            },
-            {
-                "name": "can_send_media_messages",
-                "type": "bool",
-                "required": true,
-                "description": "True, if the user is allowed to send audios, documents, photos, videos, video notes and voice notes"
-            },
-            {
-                "name": "can_send_polls",
-                "type": "bool",
-                "required": true,
-                "description": "True, if the user is allowed to send polls"
-            },
-            {
-                "name": "can_send_other_messages",
-                "type": "bool",
-                "required": true,
-                "description": "True, if the user is allowed to send animations, games, stickers and use inline bots"
-            },
-            {
-                "name": "can_add_web_page_previews",
-                "type": "bool",
-                "required": true,
-                "description": "True, if the user is allowed to add web page previews to their messages"
             },
             {
                 "name": "until_date",
@@ -2617,6 +2793,12 @@
                 "description": "User that sent the join request"
             },
             {
+                "name": "user_chat_id",
+                "type": "int",
+                "required": true,
+                "description": "Identifier of a private chat with the user who sent the join request. This number may have more than 32 significant bits and some programming languages may have difficulty/silent defects in interpreting it. But it has at most 52 significant bits, so a 64-bit integer or double-precision float type are safe for storing this identifier. The bot can use this identifier for 24 hours to send messages until the join request is processed, assuming no other administrator contacted the user."
+            },
+            {
                 "name": "date",
                 "type": "int",
                 "required": true,
@@ -2646,31 +2828,61 @@
                 "name": "can_send_messages",
                 "type": "bool",
                 "required": false,
-                "description": "Optional. True, if the user is allowed to send text messages, contacts, locations and venues"
+                "description": "Optional. True, if the user is allowed to send text messages, contacts, invoices, locations and venues"
             },
             {
-                "name": "can_send_media_messages",
+                "name": "can_send_audios",
                 "type": "bool",
                 "required": false,
-                "description": "Optional. True, if the user is allowed to send audios, documents, photos, videos, video notes and voice notes, implies can_send_messages"
+                "description": "Optional. True, if the user is allowed to send audios"
+            },
+            {
+                "name": "can_send_documents",
+                "type": "bool",
+                "required": false,
+                "description": "Optional. True, if the user is allowed to send documents"
+            },
+            {
+                "name": "can_send_photos",
+                "type": "bool",
+                "required": false,
+                "description": "Optional. True, if the user is allowed to send photos"
+            },
+            {
+                "name": "can_send_videos",
+                "type": "bool",
+                "required": false,
+                "description": "Optional. True, if the user is allowed to send videos"
+            },
+            {
+                "name": "can_send_video_notes",
+                "type": "bool",
+                "required": false,
+                "description": "Optional. True, if the user is allowed to send video notes"
+            },
+            {
+                "name": "can_send_voice_notes",
+                "type": "bool",
+                "required": false,
+                "description": "Optional. True, if the user is allowed to send voice notes"
             },
             {
                 "name": "can_send_polls",
                 "type": "bool",
                 "required": false,
-                "description": "Optional. True, if the user is allowed to send polls, implies can_send_messages"
+                "description": "Optional. True, if the user is allowed to send polls"
             },
             {
                 "name": "can_send_other_messages",
                 "type": "bool",
                 "required": false,
-                "description": "Optional. True, if the user is allowed to send animations, games, stickers and use inline bots, implies can_send_media_messages"
+                "description": "Optional. True, if the user is allowed to send animations, games, stickers and use inline bots"
             },
             {
                 "name": "can_add_web_page_previews",
                 "type": "bool",
                 "required": false,
-                "description": "Optional. True, if the user is allowed to add web page previews to their messages, implies can_send_media_messages"
+                "description": "Optional. True, if the user is allowed to add web page previews to their messages"
             },
             {
                 "name": "can_change_info",
@@ -2900,6 +3112,34 @@
         ]
     },
     {
+        "name": "BotDescription",
+        "description": "This object represents the bot's description.",
+        "url": "https://core.telegram.org/bots/api#botdescription",
+        "type": "object",
+        "fields": [
+            {
+                "name": "description",
+                "type": "string",
+                "required": true,
+                "description": "The bot's description"
+            }
+        ]
+    },
+    {
+        "name": "BotShortDescription",
+        "description": "This object represents the bot's short description.",
+        "url": "https://core.telegram.org/bots/api#botshortdescription",
+        "type": "object",
+        "fields": [
+            {
+                "name": "short_description",
+                "type": "string",
+                "required": true,
+                "description": "The bot's short description"
+            }
+        ]
+    },
+    {
         "name": "MenuButton",
         "description": "This object describes the bot's menu button in a private chat. It should be one of",
         "url": "https://core.telegram.org/bots/api#menubutton",
@@ -3050,7 +3290,7 @@
                 "description": "File to send. Pass a file_id to send a file that exists on the Telegram servers (recommended), pass an HTTP URL for Telegram to get a file from the Internet, or pass “attach://<file_attach_name>” to upload a new one using multipart/form-data under <file_attach_name> name. More information on Sending Files »"
             },
             {
-                "name": "thumb",
+                "name": "thumbnail",
                 "type": "InputFile|string",
                 "required": false,
                 "description": "Optional. Thumbnail of the file sent; can be ignored if thumbnail generation for the file is supported server-side. The thumbnail should be in JPEG format and less than 200 kB in size. A thumbnail's width and height should not exceed 320. Ignored if the file is not uploaded using multipart/form-data. Thumbnails can't be reused and can be only uploaded as a new file, so you can pass “attach://<file_attach_name>” if the thumbnail was uploaded using multipart/form-data under <file_attach_name>. More information on Sending Files »"
@@ -3124,7 +3364,7 @@
                 "description": "File to send. Pass a file_id to send a file that exists on the Telegram servers (recommended), pass an HTTP URL for Telegram to get a file from the Internet, or pass “attach://<file_attach_name>” to upload a new one using multipart/form-data under <file_attach_name> name. More information on Sending Files »"
             },
             {
-                "name": "thumb",
+                "name": "thumbnail",
                 "type": "InputFile|string",
                 "required": false,
                 "description": "Optional. Thumbnail of the file sent; can be ignored if thumbnail generation for the file is supported server-side. The thumbnail should be in JPEG format and less than 200 kB in size. A thumbnail's width and height should not exceed 320. Ignored if the file is not uploaded using multipart/form-data. Thumbnails can't be reused and can be only uploaded as a new file, so you can pass “attach://<file_attach_name>” if the thumbnail was uploaded using multipart/form-data under <file_attach_name>. More information on Sending Files »"
@@ -3192,7 +3432,7 @@
                 "description": "File to send. Pass a file_id to send a file that exists on the Telegram servers (recommended), pass an HTTP URL for Telegram to get a file from the Internet, or pass “attach://<file_attach_name>” to upload a new one using multipart/form-data under <file_attach_name> name. More information on Sending Files »"
             },
             {
-                "name": "thumb",
+                "name": "thumbnail",
                 "type": "InputFile|string",
                 "required": false,
                 "description": "Optional. Thumbnail of the file sent; can be ignored if thumbnail generation for the file is supported server-side. The thumbnail should be in JPEG format and less than 200 kB in size. A thumbnail's width and height should not exceed 320. Ignored if the file is not uploaded using multipart/form-data. Thumbnails can't be reused and can be only uploaded as a new file, so you can pass “attach://<file_attach_name>” if the thumbnail was uploaded using multipart/form-data under <file_attach_name>. More information on Sending Files »"
@@ -3254,7 +3494,7 @@
                 "description": "File to send. Pass a file_id to send a file that exists on the Telegram servers (recommended), pass an HTTP URL for Telegram to get a file from the Internet, or pass “attach://<file_attach_name>” to upload a new one using multipart/form-data under <file_attach_name> name. More information on Sending Files »"
             },
             {
-                "name": "thumb",
+                "name": "thumbnail",
                 "type": "InputFile|string",
                 "required": false,
                 "description": "Optional. Thumbnail of the file sent; can be ignored if thumbnail generation for the file is supported server-side. The thumbnail should be in JPEG format and less than 200 kB in size. A thumbnail's width and height should not exceed 320. Ignored if the file is not uploaded using multipart/form-data. Thumbnails can't be reused and can be only uploaded as a new file, so you can pass “attach://<file_attach_name>” if the thumbnail was uploaded using multipart/form-data under <file_attach_name>. More information on Sending Files »"
@@ -3355,7 +3595,7 @@
                 "description": "True, if the sticker is a video sticker"
             },
             {
-                "name": "thumb",
+                "name": "thumbnail",
                 "type": "PhotoSize",
                 "required": false,
                 "description": "Optional. Sticker thumbnail in the .WEBP or .JPG format"
@@ -3389,6 +3629,12 @@
                 "type": "string",
                 "required": false,
                 "description": "Optional. For custom emoji stickers, unique identifier of the custom emoji"
+            },
+            {
+                "name": "needs_repainting",
+                "type": "True",
+                "required": false,
+                "description": "Optional. True, if the sticker must be repainted to a text color in messages, the color of the Telegram Premium badge in emoji status, white color on chat photos, or another appropriate color in other places"
             },
             {
                 "name": "file_size",
@@ -3441,7 +3687,7 @@
                 "description": "List of all set stickers"
             },
             {
-                "name": "thumb",
+                "name": "thumbnail",
                 "type": "PhotoSize",
                 "required": false,
                 "description": "Optional. Sticker set thumbnail in the .WEBP, .TGS, or .WEBM format"
@@ -3477,6 +3723,38 @@
                 "type": "float",
                 "required": true,
                 "description": "Mask scaling coefficient. For example, 2.0 means double size."
+            }
+        ]
+    },
+    {
+        "name": "InputSticker",
+        "description": "This object describes a sticker to be added to a sticker set.",
+        "url": "https://core.telegram.org/bots/api#inputsticker",
+        "type": "object",
+        "fields": [
+            {
+                "name": "sticker",
+                "type": "InputFile|string",
+                "required": true,
+                "description": "The added sticker. Pass a file_id as a String to send a file that already exists on the Telegram servers, pass an HTTP URL as a String for Telegram to get a file from the Internet, upload a new one using multipart/form-data, or pass “attach://<file_attach_name>” to upload a new one using multipart/form-data under <file_attach_name> name. Animated and video stickers can't be uploaded via HTTP URL. More information on Sending Files »"
+            },
+            {
+                "name": "emoji_list",
+                "type": "string[]",
+                "required": true,
+                "description": "List of 1-20 emoji associated with the sticker"
+            },
+            {
+                "name": "mask_position",
+                "type": "MaskPosition",
+                "required": false,
+                "description": "Optional. Position where the mask should be placed on faces. For “mask” stickers only."
+            },
+            {
+                "name": "keywords",
+                "type": "string[]",
+                "required": false,
+                "description": "Optional. List of 0-20 search keywords for the sticker with total length of up to 64 characters. For “regular” and “custom_emoji” stickers only."
             }
         ]
     },
@@ -3586,19 +3864,19 @@
                 "description": "Optional. Short description of the result"
             },
             {
-                "name": "thumb_url",
+                "name": "thumbnail_url",
                 "type": "string",
                 "required": false,
                 "description": "Optional. Url of the thumbnail for the result"
             },
             {
-                "name": "thumb_width",
+                "name": "thumbnail_width",
                 "type": "int",
                 "required": false,
                 "description": "Optional. Thumbnail width"
             },
             {
-                "name": "thumb_height",
+                "name": "thumbnail_height",
                 "type": "int",
                 "required": false,
                 "description": "Optional. Thumbnail height"
@@ -3630,7 +3908,7 @@
                 "description": "A valid URL of the photo. Photo must be in JPEG format. Photo size must not exceed 5MB"
             },
             {
-                "name": "thumb_url",
+                "name": "thumbnail_url",
                 "type": "string",
                 "required": true,
                 "description": "URL of the thumbnail for the photo"
@@ -3734,13 +4012,13 @@
                 "description": "Optional. Duration of the GIF in seconds"
             },
             {
-                "name": "thumb_url",
+                "name": "thumbnail_url",
                 "type": "string",
                 "required": true,
                 "description": "URL of the static (JPEG or GIF) or animated (MPEG4) thumbnail for the result"
             },
             {
-                "name": "thumb_mime_type",
+                "name": "thumbnail_mime_type",
                 "type": "string",
                 "required": false,
                 "description": "Optional. MIME type of the thumbnail, must be one of “image/jpeg”, “image/gif”, or “video/mp4”. Defaults to “image/jpeg”"
@@ -3826,13 +4104,13 @@
                 "description": "Optional. Video duration in seconds"
             },
             {
-                "name": "thumb_url",
+                "name": "thumbnail_url",
                 "type": "string",
                 "required": true,
                 "description": "URL of the static (JPEG or GIF) or animated (MPEG4) thumbnail for the result"
             },
             {
-                "name": "thumb_mime_type",
+                "name": "thumbnail_mime_type",
                 "type": "string",
                 "required": false,
                 "description": "Optional. MIME type of the thumbnail, must be one of “image/jpeg”, “image/gif”, or “video/mp4”. Defaults to “image/jpeg”"
@@ -3906,7 +4184,7 @@
                 "description": "MIME type of the content of the video URL, “text/html” or “video/mp4”"
             },
             {
-                "name": "thumb_url",
+                "name": "thumbnail_url",
                 "type": "string",
                 "required": true,
                 "description": "URL of the thumbnail (JPEG only) for the video"
@@ -4188,19 +4466,19 @@
                 "description": "Optional. Content of the message to be sent instead of the file"
             },
             {
-                "name": "thumb_url",
+                "name": "thumbnail_url",
                 "type": "string",
                 "required": false,
                 "description": "Optional. URL of the thumbnail (JPEG only) for the file"
             },
             {
-                "name": "thumb_width",
+                "name": "thumbnail_width",
                 "type": "int",
                 "required": false,
                 "description": "Optional. Thumbnail width"
             },
             {
-                "name": "thumb_height",
+                "name": "thumbnail_height",
                 "type": "int",
                 "required": false,
                 "description": "Optional. Thumbnail height"
@@ -4280,19 +4558,19 @@
                 "description": "Optional. Content of the message to be sent instead of the location"
             },
             {
-                "name": "thumb_url",
+                "name": "thumbnail_url",
                 "type": "string",
                 "required": false,
                 "description": "Optional. Url of the thumbnail for the result"
             },
             {
-                "name": "thumb_width",
+                "name": "thumbnail_width",
                 "type": "int",
                 "required": false,
                 "description": "Optional. Thumbnail width"
             },
             {
-                "name": "thumb_height",
+                "name": "thumbnail_height",
                 "type": "int",
                 "required": false,
                 "description": "Optional. Thumbnail height"
@@ -4378,19 +4656,19 @@
                 "description": "Optional. Content of the message to be sent instead of the venue"
             },
             {
-                "name": "thumb_url",
+                "name": "thumbnail_url",
                 "type": "string",
                 "required": false,
                 "description": "Optional. Url of the thumbnail for the result"
             },
             {
-                "name": "thumb_width",
+                "name": "thumbnail_width",
                 "type": "int",
                 "required": false,
                 "description": "Optional. Thumbnail width"
             },
             {
-                "name": "thumb_height",
+                "name": "thumbnail_height",
                 "type": "int",
                 "required": false,
                 "description": "Optional. Thumbnail height"
@@ -4452,19 +4730,19 @@
                 "description": "Optional. Content of the message to be sent instead of the contact"
             },
             {
-                "name": "thumb_url",
+                "name": "thumbnail_url",
                 "type": "string",
                 "required": false,
                 "description": "Optional. Url of the thumbnail for the result"
             },
             {
-                "name": "thumb_width",
+                "name": "thumbnail_width",
                 "type": "int",
                 "required": false,
                 "description": "Optional. Thumbnail width"
             },
             {
-                "name": "thumb_height",
+                "name": "thumbnail_height",
                 "type": "int",
                 "required": false,
                 "description": "Optional. Thumbnail height"
