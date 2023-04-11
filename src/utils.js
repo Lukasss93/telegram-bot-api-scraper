@@ -62,8 +62,10 @@ function sanitizeType(type) {
         return Array.from(type, (m) => {
             return m[2]
                     .replace(/Float number/g, 'Float')
-                    .replace(/(Integer|String|Boolean|Float)/g, match => match.toLowerCase())
+                    .replace(/(Integer|String|Boolean|Float|False|True)/g, match => match.toLowerCase())
                     .replace('integer', 'int')
+                    .replace('false', 'bool')
+                    .replace('true', 'bool')
                     .replace('boolean', 'bool') + "[]";
         }).join("|");
     }
@@ -74,8 +76,10 @@ function sanitizeType(type) {
     //replace scalar values to lowercase
     type = type
             .replace(/Float number/g, 'Float')
-            .replace(/(Integer|String|Boolean|Float)/g, match => match.toLowerCase())
+            .replace(/(Integer|String|Boolean|Float|False|True)/g, match => match.toLowerCase())
             .replace('integer', 'int')
+            .replace('false', 'bool')
+            .replace('true', 'bool')
             .replace('boolean', 'bool');
 
     //count "Array of"
