@@ -90,6 +90,36 @@ function sanitizeType(type) {
     return type;
 }
 
+function getLinks(htmlNode) {
+
+    const text = htmlNode.textContent;
+
+    const results = [];
+
+    const links = htmlNode.querySelectorAll('a');
+
+    links.forEach(link => {
+        const offset = text.indexOf(link.textContent);
+        const length = link.textContent.length;
+        let url = link.getAttribute('href');
+
+        //if link starts with #, append the url
+        if (url.startsWith('#')) {
+            url = 'https://core.telegram.org/bots/api' + url;
+        } else if (url.startsWith('/')) {
+            url = 'https://core.telegram.org' + url;
+        }
+
+        results.push({
+            offset,
+            length,
+            link: url
+        });
+    });
+
+    return results;
+}
+
 module.exports = {
     isLowerCase,
     isUpperCase,
@@ -97,5 +127,6 @@ module.exports = {
     includesInArray,
     isIgnored,
     getFirstElementSibling,
-    sanitizeType
+    sanitizeType,
+    getLinks
 };

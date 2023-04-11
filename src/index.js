@@ -2,7 +2,15 @@ const axios = require('axios');
 const jsdom = require("jsdom");
 const {JSDOM} = jsdom;
 const colors = require('colors');
-const {isUpperCase, isLowerCase, getType, getFirstElementSibling, sanitizeType, isIgnored} = require("./utils");
+const {
+    isUpperCase,
+    isLowerCase,
+    getType,
+    getFirstElementSibling,
+    sanitizeType,
+    isIgnored,
+    getLinks
+} = require("./utils");
 const fs = require("fs");
 
 const baseUrl = 'https://core.telegram.org/bots/api';
@@ -25,6 +33,7 @@ async function run() {
     for (let tag of h4Tags) {
         const name = tag.textContent.trim();
         const description = tag.nextElementSibling.textContent ?? '-';
+        const description_links = getLinks(tag.nextElementSibling);
         const type = getType(name, description);
 
         //check if the type is valid
@@ -52,6 +61,7 @@ async function run() {
         let item = {
             name,
             description,
+            description_links,
             url,
             type
         };
@@ -76,7 +86,8 @@ async function run() {
                         name: cells[0].textContent.trim(),
                         type: sanitizeType(cells[1].textContent.trim()),
                         required: !cells[2].textContent.trim().toLowerCase().includes('optional.'),
-                        description: cells[2].textContent.trim()
+                        description: cells[2].textContent.trim(),
+                        description_links: getLinks(cells[2]),
                     });
                 }
             }
@@ -104,7 +115,8 @@ async function run() {
                         name: cells[0].textContent.trim(),
                         type: sanitizeType(cells[1].textContent.trim()),
                         required: cells[2].textContent.trim().toLowerCase() === 'yes',
-                        description: cells[3].textContent.trim()
+                        description: cells[3].textContent.trim(),
+                        description_links: getLinks(cells[3]),
                     });
                 }
             }
