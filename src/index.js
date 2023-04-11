@@ -129,10 +129,10 @@ async function run() {
     }
 
     //write objects to json file
-    fs.writeFileSync('../build/objects.json', JSON.stringify(data['object'], null, 4));
+    fs.writeFileSync('../build/objects.json', JSON.stringify(data['object'], null, 2));
 
     //write methods to json file
-    fs.writeFileSync('../build/methods.json', JSON.stringify(data['method'], null, 4));
+    fs.writeFileSync('../build/methods.json', JSON.stringify(data['method'], null, 2));
 
     console.log('Done!'.green);
 }
