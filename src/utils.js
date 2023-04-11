@@ -20,6 +20,19 @@ function getType(title, description) {
     return 'unknown';
 }
 
+function isIgnored(objectName) {
+    return [
+        'chatmember',
+        'botcommandscope',
+        'menubutton',
+        'inputmedia',
+        'inputfile',
+        'inline-mode-objects',
+        'inline-mode-methods',
+        'passportelementerror'
+    ].includes(objectName);
+}
+
 function includesInArray(value, find) {
     for (let item of find) {
         if (value.includes(item)) {
@@ -44,13 +57,13 @@ function getFirstElementSibling(current, next, stop = null) {
 
 function sanitizeType(type) {
     //corner case: array of x, x and x
-    if(!!type.match(/Array of (.*)(, )?(.*) and (.*)/g)){
+    if (!!type.match(/Array of (.*)(, )?(.*) and (.*)/g)) {
         type = type.matchAll(/(Array of |, | and )*(\w+)/g);
         return Array.from(type, (m) => {
             return m[2]
                     .replace(/Float number/g, 'Float')
                     .replace(/(Integer|String|Boolean|Float)/g, match => match.toLowerCase())
-                    .replace('integer','int')
+                    .replace('integer', 'int')
                     .replace('boolean', 'bool') + "[]";
         }).join("|");
     }
@@ -62,7 +75,7 @@ function sanitizeType(type) {
     type = type
             .replace(/Float number/g, 'Float')
             .replace(/(Integer|String|Boolean|Float)/g, match => match.toLowerCase())
-            .replace('integer','int')
+            .replace('integer', 'int')
             .replace('boolean', 'bool');
 
     //count "Array of"
@@ -72,7 +85,7 @@ function sanitizeType(type) {
     type = type.replace(/Array of /g, '');
 
     //add "[]" to the end of type
-    type+='[]'.repeat(arrays);
+    type += '[]'.repeat(arrays);
 
     return type;
 }
@@ -82,6 +95,7 @@ module.exports = {
     isUpperCase,
     getType,
     includesInArray,
+    isIgnored,
     getFirstElementSibling,
     sanitizeType
 };

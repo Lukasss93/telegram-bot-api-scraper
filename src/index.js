@@ -2,7 +2,7 @@ const axios = require('axios');
 const jsdom = require("jsdom");
 const {JSDOM} = jsdom;
 const colors = require('colors');
-const {isUpperCase, isLowerCase, getType, getFirstElementSibling, sanitizeType} = require("./utils");
+const {isUpperCase, isLowerCase, getType, getFirstElementSibling, sanitizeType, isIgnored} = require("./utils");
 const fs = require("fs");
 
 const baseUrl = 'https://core.telegram.org/bots/api';
@@ -39,6 +39,14 @@ async function run() {
 
         //get url
         const url = baseUrl + tag.getElementsByClassName('anchor')[0].getAttribute('href');
+        
+        //get code
+        const code = tag.getElementsByClassName('anchor')[0].getAttribute('name').trim();
+        
+        //check if the object is ignored
+        if(type === 'object' && isIgnored(code)) {
+            continue;
+        }
 
         //create item
         let item = {
