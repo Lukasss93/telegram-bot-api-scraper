@@ -1,0 +1,682 @@
+[
+  {
+    "name": "ChatAction",
+    "type": "string",
+    "cases": [
+      {
+        "name": "TYPING",
+        "value": "typing"
+      },
+      {
+        "name": "UPLOAD_PHOTO",
+        "value": "upload_photo"
+      },
+      {
+        "name": "RECORD_VIDEO",
+        "value": "record_video"
+      },
+      {
+        "name": "UPLOAD_VIDEO",
+        "value": "upload_video"
+      },
+      {
+        "name": "RECORD_VOICE",
+        "value": "record_voice"
+      },
+      {
+        "name": "UPLOAD_VOICE",
+        "value": "upload_voice"
+      },
+      {
+        "name": "UPLOAD_DOCUMENT",
+        "value": "upload_document"
+      },
+      {
+        "name": "CHOOSE_STICKER",
+        "value": "choose_sticker"
+      },
+      {
+        "name": "FIND_LOCATION",
+        "value": "find_location"
+      },
+      {
+        "name": "RECORD_VIDEO_NOTE",
+        "value": "record_video_note"
+      },
+      {
+        "name": "UPLOAD_VIDEO_NOTE",
+        "value": "upload_video_note"
+      }
+    ]
+  },
+  {
+    "name": "ChatMemberStatus",
+    "type": "string",
+    "cases": [
+      {
+        "name": "CREATOR",
+        "value": "creator"
+      },
+      {
+        "name": "ADMINISTRATOR",
+        "value": "administrator"
+      },
+      {
+        "name": "MEMBER",
+        "value": "member"
+      },
+      {
+        "name": "RESTRICTED",
+        "value": "restricted"
+      },
+      {
+        "name": "LEFT",
+        "value": "left"
+      },
+      {
+        "name": "KICKED",
+        "value": "kicked"
+      }
+    ]
+  },
+  {
+    "name": "ChatType",
+    "type": "string",
+    "cases": [
+      {
+        "name": "SENDER",
+        "value": "sender"
+      },
+      {
+        "name": "PRIVATE",
+        "value": "private"
+      },
+      {
+        "name": "GROUP",
+        "value": "group"
+      },
+      {
+        "name": "SUPERGROUP",
+        "value": "supergroup"
+      },
+      {
+        "name": "CHANNEL",
+        "value": "channel"
+      }
+    ]
+  },
+  {
+    "name": "DiceEmoji",
+    "type": "string",
+    "cases": [
+      {
+        "name": "DICE",
+        "value": "🎲"
+      },
+      {
+        "name": "DART",
+        "value": "🎯"
+      },
+      {
+        "name": "BASKETBALL",
+        "value": "🏀"
+      },
+      {
+        "name": "FOOTBALL",
+        "value": "⚽"
+      },
+      {
+        "name": "SLOT",
+        "value": "🎰"
+      },
+      {
+        "name": "BOWLING",
+        "value": "🎳"
+      }
+    ]
+  },
+  {
+    "name": "ForumIconColor",
+    "type": "int",
+    "cases": [
+      {
+        "name": "BLUE",
+        "value": 7322096
+      },
+      {
+        "name": "YELLOW",
+        "value": 16766590
+      },
+      {
+        "name": "PURPLE",
+        "value": 13338331
+      },
+      {
+        "name": "GREEN",
+        "value": 9367192
+      },
+      {
+        "name": "RED",
+        "value": 16749490
+      },
+      {
+        "name": "ORANGE",
+        "value": 16478047
+      }
+    ]
+  },
+  {
+    "name": "MaskPositionPoint",
+    "type": "string",
+    "cases": [
+      {
+        "name": "FOREHEAD",
+        "value": "forehead"
+      },
+      {
+        "name": "EYES",
+        "value": "eyes"
+      },
+      {
+        "name": "MOUTH",
+        "value": "mouth"
+      },
+      {
+        "name": "CHIN",
+        "value": "chin"
+      }
+    ]
+  },
+  {
+    "name": "MenuButtonType",
+    "type": "string",
+    "cases": [
+      {
+        "name": "COMMANDS",
+        "value": "commands"
+      },
+      {
+        "name": "WEB_APP",
+        "value": "web_app"
+      },
+      {
+        "name": "DEFAULT",
+        "value": "default"
+      }
+    ]
+  },
+  {
+    "name": "MessageEntityType",
+    "type": "string",
+    "cases": [
+      {
+        "name": "MENTION",
+        "value": "mention"
+      },
+      {
+        "name": "HASHTAG",
+        "value": "hashtag"
+      },
+      {
+        "name": "CASHTAG",
+        "value": "cashtag"
+      },
+      {
+        "name": "BOT_COMMAND",
+        "value": "bot_command"
+      },
+      {
+        "name": "URL",
+        "value": "url"
+      },
+      {
+        "name": "EMAIL",
+        "value": "email"
+      },
+      {
+        "name": "PHONE_NUMBER",
+        "value": "phone_number"
+      },
+      {
+        "name": "BOLD",
+        "value": "bold"
+      },
+      {
+        "name": "ITALIC",
+        "value": "italic"
+      },
+      {
+        "name": "UNDERLINE",
+        "value": "underline"
+      },
+      {
+        "name": "STRIKETHROUGH",
+        "value": "strikethrough"
+      },
+      {
+        "name": "SPOILER",
+        "value": "spoiler"
+      },
+      {
+        "name": "CODE",
+        "value": "code"
+      },
+      {
+        "name": "PRE",
+        "value": "pre"
+      },
+      {
+        "name": "TEXT_LINK",
+        "value": "text_link"
+      },
+      {
+        "name": "TEXT_MENTION",
+        "value": "text_mention"
+      },
+      {
+        "name": "CUSTOM_EMOJI",
+        "value": "custom_emoji"
+      }
+    ]
+  },
+  {
+    "name": "MessageType",
+    "type": "string",
+    "cases": [
+      {
+        "name": "TEXT",
+        "value": "text"
+      },
+      {
+        "name": "ANIMATION",
+        "value": "animation"
+      },
+      {
+        "name": "AUDIO",
+        "value": "audio"
+      },
+      {
+        "name": "DOCUMENT",
+        "value": "document"
+      },
+      {
+        "name": "PHOTO",
+        "value": "photo"
+      },
+      {
+        "name": "STICKER",
+        "value": "sticker"
+      },
+      {
+        "name": "VIDEO",
+        "value": "video"
+      },
+      {
+        "name": "VIDEO_NOTE",
+        "value": "video_note"
+      },
+      {
+        "name": "VOICE",
+        "value": "voice"
+      },
+      {
+        "name": "CONTACT",
+        "value": "contact"
+      },
+      {
+        "name": "DICE",
+        "value": "dice"
+      },
+      {
+        "name": "GAME",
+        "value": "game"
+      },
+      {
+        "name": "POLL",
+        "value": "poll"
+      },
+      {
+        "name": "VENUE",
+        "value": "venue"
+      },
+      {
+        "name": "LOCATION",
+        "value": "location"
+      },
+      {
+        "name": "NEW_CHAT_MEMBERS",
+        "value": "new_chat_members"
+      },
+      {
+        "name": "LEFT_CHAT_MEMBER",
+        "value": "left_chat_member"
+      },
+      {
+        "name": "NEW_CHAT_TITLE",
+        "value": "new_chat_title"
+      },
+      {
+        "name": "NEW_CHAT_PHOTO",
+        "value": "new_chat_photo"
+      },
+      {
+        "name": "DELETE_CHAT_PHOTO",
+        "value": "delete_chat_photo"
+      },
+      {
+        "name": "GROUP_CHAT_CREATED",
+        "value": "group_chat_created"
+      },
+      {
+        "name": "SUPERGROUP_CHAT_CREATED",
+        "value": "supergroup_chat_created"
+      },
+      {
+        "name": "CHANNEL_CHAT_CREATED",
+        "value": "channel_chat_created"
+      },
+      {
+        "name": "MESSAGE_AUTO_DELETE_TIMER_CHANGED",
+        "value": "message_auto_delete_timer_changed"
+      },
+      {
+        "name": "MIGRATE_TO_CHAT_ID",
+        "value": "migrate_to_chat_id"
+      },
+      {
+        "name": "MIGRATE_FROM_CHAT_ID",
+        "value": "migrate_from_chat_id"
+      },
+      {
+        "name": "PINNED_MESSAGE",
+        "value": "pinned_message"
+      },
+      {
+        "name": "INVOICE",
+        "value": "invoice"
+      },
+      {
+        "name": "SUCCESSFUL_PAYMENT",
+        "value": "successful_payment"
+      },
+      {
+        "name": "CONNECTED_WEBSITE",
+        "value": "connected_website"
+      },
+      {
+        "name": "PASSPORT_DATA",
+        "value": "passport_data"
+      },
+      {
+        "name": "PROXIMITY_ALERT_TRIGGERED",
+        "value": "proximity_alert_triggered"
+      },
+      {
+        "name": "FORUM_TOPIC_CREATED",
+        "value": "forum_topic_created"
+      },
+      {
+        "name": "FORUM_TOPIC_EDITED",
+        "value": "forum_topic_edited"
+      },
+      {
+        "name": "FORUM_TOPIC_CLOSED",
+        "value": "forum_topic_closed"
+      },
+      {
+        "name": "FORUM_TOPIC_REOPENED",
+        "value": "forum_topic_reopened"
+      },
+      {
+        "name": "VIDEO_CHAT_SCHEDULED",
+        "value": "video_chat_scheduled"
+      },
+      {
+        "name": "VIDEO_CHAT_STARTED",
+        "value": "video_chat_started"
+      },
+      {
+        "name": "VIDEO_CHAT_ENDED",
+        "value": "video_chat_ended"
+      },
+      {
+        "name": "VIDEO_CHAT_PARTICIPANTS_INVITED",
+        "value": "video_chat_participants_invited"
+      },
+      {
+        "name": "WEB_APP_DATA",
+        "value": "web_app_data"
+      }
+    ]
+  },
+  {
+    "name": "ParseMode",
+    "type": "string",
+    "cases": [
+      {
+        "name": "MARKDOWN",
+        "value": "MarkdownV2"
+      },
+      {
+        "name": "MARKDOWN_LEGACY",
+        "value": "Markdown"
+      },
+      {
+        "name": "HTML",
+        "value": "HTML"
+      }
+    ]
+  },
+  {
+    "name": "PassportSource",
+    "type": "string",
+    "cases": [
+      {
+        "name": "DATA",
+        "value": "data"
+      },
+      {
+        "name": "FRONT_SIDE",
+        "value": "front_side"
+      },
+      {
+        "name": "REVERSE_SIDE",
+        "value": "reverse_side"
+      },
+      {
+        "name": "SELFIE",
+        "value": "selfie"
+      },
+      {
+        "name": "FILE",
+        "value": "file"
+      },
+      {
+        "name": "FILES",
+        "value": "files"
+      },
+      {
+        "name": "TRANSLATION_FILE",
+        "value": "translation_file"
+      },
+      {
+        "name": "TRANSLATION_FILES",
+        "value": "translation_files"
+      },
+      {
+        "name": "UNSPECIFIED",
+        "value": "unspecified"
+      }
+    ]
+  },
+  {
+    "name": "PassportType",
+    "type": "string",
+    "cases": [
+      {
+        "name": "PERSONAL_DETAILS",
+        "value": "personal_details"
+      },
+      {
+        "name": "PASSPORT",
+        "value": "passport"
+      },
+      {
+        "name": "DRIVER_LICENSE",
+        "value": "driver_license"
+      },
+      {
+        "name": "IDENTITY_CARD",
+        "value": "identity_card"
+      },
+      {
+        "name": "INTERNAL_PASSPORT",
+        "value": "internal_passport"
+      },
+      {
+        "name": "ADDRESS",
+        "value": "address"
+      },
+      {
+        "name": "UTILITY_BILL",
+        "value": "utility_bill"
+      },
+      {
+        "name": "BANK_STATEMENT",
+        "value": "bank_statement"
+      },
+      {
+        "name": "RENTAL_AGREEMENT",
+        "value": "rental_agreement"
+      },
+      {
+        "name": "PASSPORT_REGISTRATION",
+        "value": "passport_registration"
+      },
+      {
+        "name": "TEMPORARY_REGISTRATION",
+        "value": "temporary_registration"
+      },
+      {
+        "name": "PHONE_NUMBER",
+        "value": "phone_number"
+      },
+      {
+        "name": "EMAIL",
+        "value": "email"
+      }
+    ]
+  },
+  {
+    "name": "PollType",
+    "type": "string",
+    "cases": [
+      {
+        "name": "REGULAR",
+        "value": "regular"
+      },
+      {
+        "name": "QUIZ",
+        "value": "quiz"
+      }
+    ]
+  },
+  {
+    "name": "StickerFormat",
+    "type": "string",
+    "cases": [
+      {
+        "name": "STATIC",
+        "value": "static"
+      },
+      {
+        "name": "ANIMATED",
+        "value": "animated"
+      },
+      {
+        "name": "VIDEO",
+        "value": "video"
+      }
+    ]
+  },
+  {
+    "name": "StickerType",
+    "type": "string",
+    "cases": [
+      {
+        "name": "REGULAR",
+        "value": "regular"
+      },
+      {
+        "name": "MASK",
+        "value": "mask"
+      },
+      {
+        "name": "CUSTOM_EMOJI",
+        "value": "custom_emoji"
+      }
+    ]
+  },
+  {
+    "name": "UpdateType",
+    "type": "string",
+    "cases": [
+      {
+        "name": "MESSAGE",
+        "value": "message"
+      },
+      {
+        "name": "EDITED_MESSAGE",
+        "value": "edited_message"
+      },
+      {
+        "name": "CHANNEL_POST",
+        "value": "channel_post"
+      },
+      {
+        "name": "EDITED_CHANNEL_POST",
+        "value": "edited_channel_post"
+      },
+      {
+        "name": "INLINE_QUERY",
+        "value": "inline_query"
+      },
+      {
+        "name": "CHOSEN_INLINE_RESULT",
+        "value": "chosen_inline_result"
+      },
+      {
+        "name": "CALLBACK_QUERY",
+        "value": "callback_query"
+      },
+      {
+        "name": "SHIPPING_QUERY",
+        "value": "shipping_query"
+      },
+      {
+        "name": "PRE_CHECKOUT_QUERY",
+        "value": "pre_checkout_query"
+      },
+      {
+        "name": "POLL",
+        "value": "poll"
+      },
+      {
+        "name": "POLL_ANSWER",
+        "value": "poll_answer"
+      },
+      {
+        "name": "MY_CHAT_MEMBER",
+        "value": "my_chat_member"
+      },
+      {
+        "name": "CHAT_MEMBER",
+        "value": "chat_member"
+      },
+      {
+        "name": "CHAT_JOIN_REQUEST",
+        "value": "chat_join_request"
+      }
+    ]
+  }
+]
