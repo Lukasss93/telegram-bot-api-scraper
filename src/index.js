@@ -9,7 +9,7 @@ const {
     getFirstElementSibling,
     sanitizeType,
     isIgnored,
-    getLinks
+    getLinks, getReturnType
 } = require("./utils");
 const fs = require("fs");
 
@@ -97,6 +97,9 @@ async function run() {
 
         //get methods parameters
         if (type === 'method') {
+            //add return type
+            item['return'] = getReturnType(description);
+            
             let parameters = [];
 
             //get table

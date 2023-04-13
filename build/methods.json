@@ -16,6 +16,7 @@
     ],
     "url": "https://core.telegram.org/bots/api#getupdates",
     "type": "method",
+    "return": "Update[]",
     "parameters": [
       {
         "name": "offset",
@@ -71,6 +72,7 @@
     ],
     "url": "https://core.telegram.org/bots/api#setwebhook",
     "type": "method",
+    "return": "bool",
     "parameters": [
       {
         "name": "url",
@@ -147,6 +149,7 @@
     ],
     "url": "https://core.telegram.org/bots/api#deletewebhook",
     "type": "method",
+    "return": "bool",
     "parameters": [
       {
         "name": "drop_pending_updates",
@@ -174,6 +177,7 @@
     ],
     "url": "https://core.telegram.org/bots/api#getwebhookinfo",
     "type": "method",
+    "return": "WebhookInfo",
     "parameters": []
   },
   {
@@ -188,6 +192,7 @@
     ],
     "url": "https://core.telegram.org/bots/api#getme",
     "type": "method",
+    "return": "User",
     "parameters": []
   },
   {
@@ -196,6 +201,7 @@
     "description_links": [],
     "url": "https://core.telegram.org/bots/api#logout",
     "type": "method",
+    "return": "bool",
     "parameters": []
   },
   {
@@ -204,6 +210,7 @@
     "description_links": [],
     "url": "https://core.telegram.org/bots/api#close",
     "type": "method",
+    "return": "bool",
     "parameters": []
   },
   {
@@ -218,6 +225,7 @@
     ],
     "url": "https://core.telegram.org/bots/api#sendmessage",
     "type": "method",
+    "return": "Message",
     "parameters": [
       {
         "name": "chat_id",
@@ -333,6 +341,7 @@
     ],
     "url": "https://core.telegram.org/bots/api#forwardmessage",
     "type": "method",
+    "return": "Message",
     "parameters": [
       {
         "name": "chat_id",
@@ -406,6 +415,7 @@
     ],
     "url": "https://core.telegram.org/bots/api#copymessage",
     "type": "method",
+    "return": "message",
     "parameters": [
       {
         "name": "chat_id",
@@ -528,6 +538,7 @@
     ],
     "url": "https://core.telegram.org/bots/api#sendphoto",
     "type": "method",
+    "return": "Message",
     "parameters": [
       {
         "name": "chat_id",
@@ -656,6 +667,7 @@
     ],
     "url": "https://core.telegram.org/bots/api#sendaudio",
     "type": "method",
+    "return": "Message",
     "parameters": [
       {
         "name": "chat_id",
@@ -811,6 +823,7 @@
     ],
     "url": "https://core.telegram.org/bots/api#senddocument",
     "type": "method",
+    "return": "Message",
     "parameters": [
       {
         "name": "chat_id",
@@ -957,6 +970,7 @@
     ],
     "url": "https://core.telegram.org/bots/api#sendvideo",
     "type": "method",
+    "return": "Message",
     "parameters": [
       {
         "name": "chat_id",
@@ -1126,6 +1140,7 @@
     ],
     "url": "https://core.telegram.org/bots/api#sendanimation",
     "type": "method",
+    "return": "Message",
     "parameters": [
       {
         "name": "chat_id",
@@ -1298,6 +1313,7 @@
     ],
     "url": "https://core.telegram.org/bots/api#sendvoice",
     "type": "method",
+    "return": "Message",
     "parameters": [
       {
         "name": "chat_id",
@@ -1431,6 +1447,7 @@
     ],
     "url": "https://core.telegram.org/bots/api#sendvideonote",
     "type": "method",
+    "return": "Message",
     "parameters": [
       {
         "name": "chat_id",
@@ -1552,6 +1569,7 @@
     ],
     "url": "https://core.telegram.org/bots/api#sendmediagroup",
     "type": "method",
+    "return": "Message[]",
     "parameters": [
       {
         "name": "chat_id",
@@ -1622,6 +1640,7 @@
     ],
     "url": "https://core.telegram.org/bots/api#sendlocation",
     "type": "method",
+    "return": "Message",
     "parameters": [
       {
         "name": "chat_id",
@@ -1751,6 +1770,7 @@
     ],
     "url": "https://core.telegram.org/bots/api#sendvenue",
     "type": "method",
+    "return": "Message",
     "parameters": [
       {
         "name": "chat_id",
@@ -1894,6 +1914,7 @@
     ],
     "url": "https://core.telegram.org/bots/api#sendcontact",
     "type": "method",
+    "return": "Message",
     "parameters": [
       {
         "name": "chat_id",
@@ -2009,6 +2030,7 @@
     ],
     "url": "https://core.telegram.org/bots/api#sendpoll",
     "type": "method",
+    "return": "Message",
     "parameters": [
       {
         "name": "chat_id",
@@ -2180,6 +2202,7 @@
     ],
     "url": "https://core.telegram.org/bots/api#senddice",
     "type": "method",
+    "return": "Message",
     "parameters": [
       {
         "name": "chat_id",
@@ -2262,6 +2285,7 @@
     "description_links": [],
     "url": "https://core.telegram.org/bots/api#sendchataction",
     "type": "method",
+    "return": "bool",
     "parameters": [
       {
         "name": "chat_id",
@@ -2339,6 +2363,7 @@
     ],
     "url": "https://core.telegram.org/bots/api#getuserprofilephotos",
     "type": "method",
+    "return": "UserProfilePhotos",
     "parameters": [
       {
         "name": "user_id",
@@ -2380,6 +2405,7 @@
     ],
     "url": "https://core.telegram.org/bots/api#getfile",
     "type": "method",
+    "return": "File",
     "parameters": [
       {
         "name": "file_id",
@@ -2402,6 +2428,7 @@
     ],
     "url": "https://core.telegram.org/bots/api#banchatmember",
     "type": "method",
+    "return": "bool",
     "parameters": [
       {
         "name": "chat_id",
@@ -2439,6 +2466,7 @@
     "description_links": [],
     "url": "https://core.telegram.org/bots/api#unbanchatmember",
     "type": "method",
+    "return": "bool",
     "parameters": [
       {
         "name": "chat_id",
@@ -2469,6 +2497,7 @@
     "description_links": [],
     "url": "https://core.telegram.org/bots/api#restrictchatmember",
     "type": "method",
+    "return": "bool",
     "parameters": [
       {
         "name": "chat_id",
@@ -2513,6 +2542,7 @@
     "description_links": [],
     "url": "https://core.telegram.org/bots/api#promotechatmember",
     "type": "method",
+    "return": "bool",
     "parameters": [
       {
         "name": "chat_id",
@@ -2620,6 +2650,7 @@
     "description_links": [],
     "url": "https://core.telegram.org/bots/api#setchatadministratorcustomtitle",
     "type": "method",
+    "return": "bool",
     "parameters": [
       {
         "name": "chat_id",
@@ -2656,6 +2687,7 @@
     ],
     "url": "https://core.telegram.org/bots/api#banchatsenderchat",
     "type": "method",
+    "return": "bool",
     "parameters": [
       {
         "name": "chat_id",
@@ -2679,6 +2711,7 @@
     "description_links": [],
     "url": "https://core.telegram.org/bots/api#unbanchatsenderchat",
     "type": "method",
+    "return": "bool",
     "parameters": [
       {
         "name": "chat_id",
@@ -2702,6 +2735,7 @@
     "description_links": [],
     "url": "https://core.telegram.org/bots/api#setchatpermissions",
     "type": "method",
+    "return": "bool",
     "parameters": [
       {
         "name": "chat_id",
@@ -2732,6 +2766,7 @@
     "description_links": [],
     "url": "https://core.telegram.org/bots/api#exportchatinvitelink",
     "type": "method",
+    "return": "string",
     "parameters": [
       {
         "name": "chat_id",
@@ -2759,6 +2794,7 @@
     ],
     "url": "https://core.telegram.org/bots/api#createchatinvitelink",
     "type": "method",
+    "return": "ChatInviteLink",
     "parameters": [
       {
         "name": "chat_id",
@@ -2809,6 +2845,7 @@
     ],
     "url": "https://core.telegram.org/bots/api#editchatinvitelink",
     "type": "method",
+    "return": "ChatInviteLink",
     "parameters": [
       {
         "name": "chat_id",
@@ -2866,6 +2903,7 @@
     ],
     "url": "https://core.telegram.org/bots/api#revokechatinvitelink",
     "type": "method",
+    "return": "ChatInviteLink",
     "parameters": [
       {
         "name": "chat_id",
@@ -2889,6 +2927,7 @@
     "description_links": [],
     "url": "https://core.telegram.org/bots/api#approvechatjoinrequest",
     "type": "method",
+    "return": "bool",
     "parameters": [
       {
         "name": "chat_id",
@@ -2912,6 +2951,7 @@
     "description_links": [],
     "url": "https://core.telegram.org/bots/api#declinechatjoinrequest",
     "type": "method",
+    "return": "bool",
     "parameters": [
       {
         "name": "chat_id",
@@ -2935,6 +2975,7 @@
     "description_links": [],
     "url": "https://core.telegram.org/bots/api#setchatphoto",
     "type": "method",
+    "return": "bool",
     "parameters": [
       {
         "name": "chat_id",
@@ -2958,6 +2999,7 @@
     "description_links": [],
     "url": "https://core.telegram.org/bots/api#deletechatphoto",
     "type": "method",
+    "return": "bool",
     "parameters": [
       {
         "name": "chat_id",
@@ -2974,6 +3016,7 @@
     "description_links": [],
     "url": "https://core.telegram.org/bots/api#setchattitle",
     "type": "method",
+    "return": "bool",
     "parameters": [
       {
         "name": "chat_id",
@@ -2997,6 +3040,7 @@
     "description_links": [],
     "url": "https://core.telegram.org/bots/api#setchatdescription",
     "type": "method",
+    "return": "bool",
     "parameters": [
       {
         "name": "chat_id",
@@ -3020,6 +3064,7 @@
     "description_links": [],
     "url": "https://core.telegram.org/bots/api#pinchatmessage",
     "type": "method",
+    "return": "bool",
     "parameters": [
       {
         "name": "chat_id",
@@ -3050,6 +3095,7 @@
     "description_links": [],
     "url": "https://core.telegram.org/bots/api#unpinchatmessage",
     "type": "method",
+    "return": "bool",
     "parameters": [
       {
         "name": "chat_id",
@@ -3073,6 +3119,7 @@
     "description_links": [],
     "url": "https://core.telegram.org/bots/api#unpinallchatmessages",
     "type": "method",
+    "return": "bool",
     "parameters": [
       {
         "name": "chat_id",
@@ -3089,6 +3136,7 @@
     "description_links": [],
     "url": "https://core.telegram.org/bots/api#leavechat",
     "type": "method",
+    "return": "bool",
     "parameters": [
       {
         "name": "chat_id",
@@ -3111,6 +3159,7 @@
     ],
     "url": "https://core.telegram.org/bots/api#getchat",
     "type": "method",
+    "return": "Chat",
     "parameters": [
       {
         "name": "chat_id",
@@ -3133,6 +3182,7 @@
     ],
     "url": "https://core.telegram.org/bots/api#getchatadministrators",
     "type": "method",
+    "return": "ChatMember[]",
     "parameters": [
       {
         "name": "chat_id",
@@ -3149,6 +3199,7 @@
     "description_links": [],
     "url": "https://core.telegram.org/bots/api#getchatmembercount",
     "type": "method",
+    "return": "int",
     "parameters": [
       {
         "name": "chat_id",
@@ -3171,6 +3222,7 @@
     ],
     "url": "https://core.telegram.org/bots/api#getchatmember",
     "type": "method",
+    "return": "ChatMember",
     "parameters": [
       {
         "name": "chat_id",
@@ -3200,6 +3252,7 @@
     ],
     "url": "https://core.telegram.org/bots/api#setchatstickerset",
     "type": "method",
+    "return": "bool",
     "parameters": [
       {
         "name": "chat_id",
@@ -3229,6 +3282,7 @@
     ],
     "url": "https://core.telegram.org/bots/api#deletechatstickerset",
     "type": "method",
+    "return": "bool",
     "parameters": [
       {
         "name": "chat_id",
@@ -3251,6 +3305,7 @@
     ],
     "url": "https://core.telegram.org/bots/api#getforumtopiciconstickers",
     "type": "method",
+    "return": "Sticker[]",
     "parameters": []
   },
   {
@@ -3265,6 +3320,7 @@
     ],
     "url": "https://core.telegram.org/bots/api#createforumtopic",
     "type": "method",
+    "return": "ForumTopic",
     "parameters": [
       {
         "name": "chat_id",
@@ -3308,6 +3364,7 @@
     "description_links": [],
     "url": "https://core.telegram.org/bots/api#editforumtopic",
     "type": "method",
+    "return": "bool",
     "parameters": [
       {
         "name": "chat_id",
@@ -3351,6 +3408,7 @@
     "description_links": [],
     "url": "https://core.telegram.org/bots/api#closeforumtopic",
     "type": "method",
+    "return": "bool",
     "parameters": [
       {
         "name": "chat_id",
@@ -3374,6 +3432,7 @@
     "description_links": [],
     "url": "https://core.telegram.org/bots/api#reopenforumtopic",
     "type": "method",
+    "return": "bool",
     "parameters": [
       {
         "name": "chat_id",
@@ -3397,6 +3456,7 @@
     "description_links": [],
     "url": "https://core.telegram.org/bots/api#deleteforumtopic",
     "type": "method",
+    "return": "bool",
     "parameters": [
       {
         "name": "chat_id",
@@ -3420,6 +3480,7 @@
     "description_links": [],
     "url": "https://core.telegram.org/bots/api#unpinallforumtopicmessages",
     "type": "method",
+    "return": "bool",
     "parameters": [
       {
         "name": "chat_id",
@@ -3443,6 +3504,7 @@
     "description_links": [],
     "url": "https://core.telegram.org/bots/api#editgeneralforumtopic",
     "type": "method",
+    "return": "bool",
     "parameters": [
       {
         "name": "chat_id",
@@ -3466,6 +3528,7 @@
     "description_links": [],
     "url": "https://core.telegram.org/bots/api#closegeneralforumtopic",
     "type": "method",
+    "return": "bool",
     "parameters": [
       {
         "name": "chat_id",
@@ -3482,6 +3545,7 @@
     "description_links": [],
     "url": "https://core.telegram.org/bots/api#reopengeneralforumtopic",
     "type": "method",
+    "return": "bool",
     "parameters": [
       {
         "name": "chat_id",
@@ -3498,6 +3562,7 @@
     "description_links": [],
     "url": "https://core.telegram.org/bots/api#hidegeneralforumtopic",
     "type": "method",
+    "return": "bool",
     "parameters": [
       {
         "name": "chat_id",
@@ -3514,6 +3579,7 @@
     "description_links": [],
     "url": "https://core.telegram.org/bots/api#unhidegeneralforumtopic",
     "type": "method",
+    "return": "bool",
     "parameters": [
       {
         "name": "chat_id",
@@ -3536,6 +3602,7 @@
     ],
     "url": "https://core.telegram.org/bots/api#answercallbackquery",
     "type": "method",
+    "return": "bool",
     "parameters": [
       {
         "name": "callback_query_id",
@@ -3602,6 +3669,7 @@
     ],
     "url": "https://core.telegram.org/bots/api#setmycommands",
     "type": "method",
+    "return": "bool",
     "parameters": [
       {
         "name": "commands",
@@ -3644,6 +3712,7 @@
     ],
     "url": "https://core.telegram.org/bots/api#deletemycommands",
     "type": "method",
+    "return": "bool",
     "parameters": [
       {
         "name": "scope",
@@ -3679,6 +3748,7 @@
     ],
     "url": "https://core.telegram.org/bots/api#getmycommands",
     "type": "method",
+    "return": "BotCommand[]",
     "parameters": [
       {
         "name": "scope",
@@ -3708,6 +3778,7 @@
     "description_links": [],
     "url": "https://core.telegram.org/bots/api#setmydescription",
     "type": "method",
+    "return": "bool",
     "parameters": [
       {
         "name": "description",
@@ -3737,6 +3808,7 @@
     ],
     "url": "https://core.telegram.org/bots/api#getmydescription",
     "type": "method",
+    "return": "BotDescription",
     "parameters": [
       {
         "name": "language_code",
@@ -3753,6 +3825,7 @@
     "description_links": [],
     "url": "https://core.telegram.org/bots/api#setmyshortdescription",
     "type": "method",
+    "return": "bool",
     "parameters": [
       {
         "name": "short_description",
@@ -3782,6 +3855,7 @@
     ],
     "url": "https://core.telegram.org/bots/api#getmyshortdescription",
     "type": "method",
+    "return": "BotShortDescription",
     "parameters": [
       {
         "name": "language_code",
@@ -3798,6 +3872,7 @@
     "description_links": [],
     "url": "https://core.telegram.org/bots/api#setchatmenubutton",
     "type": "method",
+    "return": "bool",
     "parameters": [
       {
         "name": "chat_id",
@@ -3833,6 +3908,7 @@
     ],
     "url": "https://core.telegram.org/bots/api#getchatmenubutton",
     "type": "method",
+    "return": "MenuButton",
     "parameters": [
       {
         "name": "chat_id",
@@ -3849,6 +3925,7 @@
     "description_links": [],
     "url": "https://core.telegram.org/bots/api#setmydefaultadministratorrights",
     "type": "method",
+    "return": "bool",
     "parameters": [
       {
         "name": "rights",
@@ -3878,6 +3955,7 @@
     ],
     "url": "https://core.telegram.org/bots/api#getmydefaultadministratorrights",
     "type": "method",
+    "return": "ChatAdministratorRights",
     "parameters": [
       {
         "name": "for_channels",
@@ -3905,6 +3983,7 @@
     ],
     "url": "https://core.telegram.org/bots/api#editmessagetext",
     "type": "method",
+    "return": "Message|bool",
     "parameters": [
       {
         "name": "chat_id",
@@ -3988,6 +4067,7 @@
     ],
     "url": "https://core.telegram.org/bots/api#editmessagecaption",
     "type": "method",
+    "return": "Message|bool",
     "parameters": [
       {
         "name": "chat_id",
@@ -4064,6 +4144,7 @@
     ],
     "url": "https://core.telegram.org/bots/api#editmessagemedia",
     "type": "method",
+    "return": "Message|bool",
     "parameters": [
       {
         "name": "chat_id",
@@ -4125,6 +4206,7 @@
     ],
     "url": "https://core.telegram.org/bots/api#editmessagelivelocation",
     "type": "method",
+    "return": "Message|bool",
     "parameters": [
       {
         "name": "chat_id",
@@ -4209,6 +4291,7 @@
     ],
     "url": "https://core.telegram.org/bots/api#stopmessagelivelocation",
     "type": "method",
+    "return": "Message|bool",
     "parameters": [
       {
         "name": "chat_id",
@@ -4258,6 +4341,7 @@
     ],
     "url": "https://core.telegram.org/bots/api#editmessagereplymarkup",
     "type": "method",
+    "return": "Message|bool",
     "parameters": [
       {
         "name": "chat_id",
@@ -4307,6 +4391,7 @@
     ],
     "url": "https://core.telegram.org/bots/api#stoppoll",
     "type": "method",
+    "return": "Poll",
     "parameters": [
       {
         "name": "chat_id",
@@ -4343,6 +4428,7 @@
     "description_links": [],
     "url": "https://core.telegram.org/bots/api#deletemessage",
     "type": "method",
+    "return": "bool",
     "parameters": [
       {
         "name": "chat_id",
@@ -4382,6 +4468,7 @@
     ],
     "url": "https://core.telegram.org/bots/api#sendsticker",
     "type": "method",
+    "return": "Message",
     "parameters": [
       {
         "name": "chat_id",
@@ -4483,6 +4570,7 @@
     ],
     "url": "https://core.telegram.org/bots/api#getstickerset",
     "type": "method",
+    "return": "StickerSet",
     "parameters": [
       {
         "name": "name",
@@ -4505,6 +4593,7 @@
     ],
     "url": "https://core.telegram.org/bots/api#getcustomemojistickers",
     "type": "method",
+    "return": "Sticker[]",
     "parameters": [
       {
         "name": "custom_emoji_ids",
@@ -4537,6 +4626,7 @@
     ],
     "url": "https://core.telegram.org/bots/api#uploadstickerfile",
     "type": "method",
+    "return": "File",
     "parameters": [
       {
         "name": "user_id",
@@ -4583,6 +4673,7 @@
     "description_links": [],
     "url": "https://core.telegram.org/bots/api#createnewstickerset",
     "type": "method",
+    "return": "bool",
     "parameters": [
       {
         "name": "user_id",
@@ -4641,6 +4732,7 @@
     "description_links": [],
     "url": "https://core.telegram.org/bots/api#addstickertoset",
     "type": "method",
+    "return": "bool",
     "parameters": [
       {
         "name": "user_id",
@@ -4671,6 +4763,7 @@
     "description_links": [],
     "url": "https://core.telegram.org/bots/api#setstickerpositioninset",
     "type": "method",
+    "return": "bool",
     "parameters": [
       {
         "name": "sticker",
@@ -4694,6 +4787,7 @@
     "description_links": [],
     "url": "https://core.telegram.org/bots/api#deletestickerfromset",
     "type": "method",
+    "return": "bool",
     "parameters": [
       {
         "name": "sticker",
@@ -4710,6 +4804,7 @@
     "description_links": [],
     "url": "https://core.telegram.org/bots/api#setstickeremojilist",
     "type": "method",
+    "return": "bool",
     "parameters": [
       {
         "name": "sticker",
@@ -4733,6 +4828,7 @@
     "description_links": [],
     "url": "https://core.telegram.org/bots/api#setstickerkeywords",
     "type": "method",
+    "return": "bool",
     "parameters": [
       {
         "name": "sticker",
@@ -4762,6 +4858,7 @@
     ],
     "url": "https://core.telegram.org/bots/api#setstickermaskposition",
     "type": "method",
+    "return": "bool",
     "parameters": [
       {
         "name": "sticker",
@@ -4785,6 +4882,7 @@
     "description_links": [],
     "url": "https://core.telegram.org/bots/api#setstickersettitle",
     "type": "method",
+    "return": "bool",
     "parameters": [
       {
         "name": "name",
@@ -4808,6 +4906,7 @@
     "description_links": [],
     "url": "https://core.telegram.org/bots/api#setstickersetthumbnail",
     "type": "method",
+    "return": "bool",
     "parameters": [
       {
         "name": "name",
@@ -4864,6 +4963,7 @@
     "description_links": [],
     "url": "https://core.telegram.org/bots/api#setcustomemojistickersetthumbnail",
     "type": "method",
+    "return": "bool",
     "parameters": [
       {
         "name": "name",
@@ -4887,6 +4987,7 @@
     "description_links": [],
     "url": "https://core.telegram.org/bots/api#deletestickerset",
     "type": "method",
+    "return": "bool",
     "parameters": [
       {
         "name": "name",
@@ -4903,6 +5004,7 @@
     "description_links": [],
     "url": "https://core.telegram.org/bots/api#answerinlinequery",
     "type": "method",
+    "return": "bool",
     "parameters": [
       {
         "name": "inline_query_id",
@@ -4983,6 +5085,7 @@
     ],
     "url": "https://core.telegram.org/bots/api#answerwebappquery",
     "type": "method",
+    "return": "SentWebAppMessage",
     "parameters": [
       {
         "name": "web_app_query_id",
@@ -5012,6 +5115,7 @@
     ],
     "url": "https://core.telegram.org/bots/api#sendinvoice",
     "type": "method",
+    "return": "Message",
     "parameters": [
       {
         "name": "chat_id",
@@ -5247,6 +5351,7 @@
     "description_links": [],
     "url": "https://core.telegram.org/bots/api#createinvoicelink",
     "type": "method",
+    "return": "string",
     "parameters": [
       {
         "name": "title",
@@ -5420,6 +5525,7 @@
     ],
     "url": "https://core.telegram.org/bots/api#answershippingquery",
     "type": "method",
+    "return": "bool",
     "parameters": [
       {
         "name": "shipping_query_id",
@@ -5463,6 +5569,7 @@
     ],
     "url": "https://core.telegram.org/bots/api#answerprecheckoutquery",
     "type": "method",
+    "return": "bool",
     "parameters": [
       {
         "name": "pre_checkout_query_id",
@@ -5493,6 +5600,7 @@
     "description_links": [],
     "url": "https://core.telegram.org/bots/api#setpassportdataerrors",
     "type": "method",
+    "return": "bool",
     "parameters": [
       {
         "name": "user_id",
@@ -5522,6 +5630,7 @@
     ],
     "url": "https://core.telegram.org/bots/api#sendgame",
     "type": "method",
+    "return": "Message",
     "parameters": [
       {
         "name": "chat_id",
@@ -5611,6 +5720,7 @@
     ],
     "url": "https://core.telegram.org/bots/api#setgamescore",
     "type": "method",
+    "return": "Message|bool",
     "parameters": [
       {
         "name": "user_id",
@@ -5675,6 +5785,7 @@
     ],
     "url": "https://core.telegram.org/bots/api#getgamehighscores",
     "type": "method",
+    "return": "GameHighScore[]",
     "parameters": [
       {
         "name": "user_id",
