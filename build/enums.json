@@ -206,6 +206,40 @@
     ]
   },
   {
+    "name": "BotCommandScopeType",
+    "type": "string",
+    "cases": [
+      {
+        "name": "DEFAULT",
+        "value": "default"
+      },
+      {
+        "name": "ALL_PRIVATE_CHATS",
+        "value": "all_private_chats"
+      },
+      {
+        "name": "ALL_GROUP_CHATS",
+        "value": "all_group_chats"
+      },
+      {
+        "name": "ALL_CHAT_ADMINISTRATORS",
+        "value": "all_chat_administrators"
+      },
+      {
+        "name": "CHAT",
+        "value": "chat"
+      },
+      {
+        "name": "CHAT_ADMINISTRATORS",
+        "value": "chat_administrators"
+      },
+      {
+        "name": "CHAT_MEMBER",
+        "value": "chat_member"
+      }
+    ]
+  },
+  {
     "name": "MessageEntityType",
     "type": "string",
     "cases": [
