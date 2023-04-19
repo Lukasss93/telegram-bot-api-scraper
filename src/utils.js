@@ -29,7 +29,8 @@ function isIgnored(objectName) {
         'inputfile',
         'inline-mode-objects',
         'inline-mode-methods',
-        'passportelementerror'
+        'passportelementerror',
+        'inlinequeryresult',
     ].includes(objectName);
 }
 
@@ -134,7 +135,7 @@ function getReturnType(description) {
         /On success, the .* (?<type>.*) is returned\./,
         /On success, returns a (?<type>.*) object\./,
         /On success, (?<type>.*) is returned\./,
-        
+
         /Returns an (?<type>Array of .*) objects/,
         /Returns the .* as (?<type>.*) on success\./,
         /Returns the .* (?<type>.*) on success\./,
@@ -156,15 +157,15 @@ function getReturnType(description) {
 
         const type1 = matcher['groups']['type'] ?? null;
         const type2 = matcher['groups']?.['type2'] ?? null;
-        
-        match+=sanitizeType(type1);
+
+        match += sanitizeType(type1);
 
         if (type2 !== null) {
             match += '|' + sanitizeType(type2);
         }
         break;
     }
-    
+
     return match;
 }
 
