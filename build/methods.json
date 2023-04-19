@@ -415,7 +415,7 @@
     ],
     "url": "https://core.telegram.org/bots/api#copymessage",
     "type": "method",
-    "return": "message",
+    "return": "MessageId",
     "parameters": [
       {
         "name": "chat_id",

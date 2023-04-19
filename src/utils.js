@@ -137,12 +137,12 @@ function getReturnType(description) {
         /On success, (?<type>.*) is returned\./,
 
         /Returns an (?<type>Array of .*) objects/,
+        /Returns a (?<type>.*) object on success\./,
+        /Returns a (?<type>.*) object\./,
+        /Returns the (?<type>.*) of the sent message on success/,
         /Returns the .* as (?<type>.*) on success\./,
         /Returns the .* (?<type>.*) on success\./,
         /Returns the .* as (a )?(?<type>.*) object\./,
-        /Returns a (?<type>.*) object\./,
-        /Returns the (?<type>.*) of the sent message on success/,
-        /Returns a (?<type>.*) object on success\./,
         /Returns .* a (?<type>.*) object/,
         /Returns (?<type>.*) on success/,
     ];
