@@ -1,6 +1,6 @@
 # Telegram Bot API Scraper
 
-[![API](https://img.shields.io/badge/Telegram%20Bot%20API-6.6%09--%20March%209%2C%202023-blue.svg)](https://core.telegram.org/bots/api)
+[![API](https://img.shields.io/badge/Telegram%20Bot%20API-6.7%09--%20April%2021%2C%202023-blue.svg)](https://core.telegram.org/bots/api)
 [![License](https://poser.pugx.org/lukasss93/telegrambot-php/license)](https://packagist.org/packages/lukasss93/telegrambot-php)
 
 The script `src/index.js` parse the [Telegram Bot API](https://core.telegram.org/bots/api) page
