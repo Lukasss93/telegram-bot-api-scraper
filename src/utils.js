@@ -31,6 +31,7 @@ function isIgnored(objectName) {
         'inline-mode-methods',
         'passportelementerror',
         'inlinequeryresult',
+        'inputmessagecontent',
     ].includes(objectName);
 }
 
