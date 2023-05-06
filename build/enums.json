@@ -790,6 +790,10 @@
       {
         "name": "VOICE",
         "value": "voice"
+      },
+      {
+        "name": "STICKER",
+        "value": "sticker"
       }
     ]
   }
