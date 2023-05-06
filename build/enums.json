@@ -712,5 +712,31 @@
         "value": "chat_join_request"
       }
     ]
+  },
+  {
+    "name": "InputMediaType",
+    "type": "string",
+    "cases": [
+      {
+        "name": "ANIMATION",
+        "value": "animation"
+      },
+      {
+        "name": "DOCUMENT",
+        "value": "document"
+      },
+      {
+        "name": "AUDIO",
+        "value": "audio"
+      },
+      {
+        "name": "PHOTO",
+        "value": "photo"
+      },
+      {
+        "name": "VIDEO",
+        "value": "video"
+      }
+    ]
   }
 ]
