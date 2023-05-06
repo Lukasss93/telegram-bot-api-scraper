@@ -738,5 +738,59 @@
         "value": "video"
       }
     ]
+  },
+  {
+    "name": "InlineQueryResultType",
+    "type": "string",
+    "cases": [
+      {
+        "name": "ARTICLE",
+        "value": "article"
+      },
+      {
+        "name": "AUDIO",
+        "value": "audio"
+      },
+      {
+        "name": "CONTACT",
+        "value": "contact"
+      },
+      {
+        "name": "GAME",
+        "value": "game"
+      },
+      {
+        "name": "DOCUMENT",
+        "value": "document"
+      },
+      {
+        "name": "GIF",
+        "value": "gif"
+      },
+      {
+        "name": "LOCATION",
+        "value": "location"
+      },
+      {
+        "name": "MPEG4_GIF",
+        "value": "mpeg4_gif"
+      },
+      {
+        "name": "PHOTO",
+        "value": "photo"
+      },
+      {
+        "name": "VENUE",
+        "value": "venue"
+      },
+      {
+        "name": "VIDEO",
+        "value": "video"
+      },
+      {
+        "name": "VOICE",
+        "value": "voice"
+      }
+    ]
   }
 ]
