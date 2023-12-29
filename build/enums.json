@@ -1116,5 +1116,19 @@
         "value": "channel"
       }
     ]
+  },
+  {
+    "name": "ReactionType",
+    "type": "string",
+    "cases": [
+      {
+        "name": "EMOJI",
+        "value": "emoji"
+      },
+      {
+        "name": "CUSTOM_EMOJI",
+        "value": "custom_emoji"
+      }
+    ]
   }
 ]
