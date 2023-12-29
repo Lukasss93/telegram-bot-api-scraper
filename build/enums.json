@@ -1094,5 +1094,27 @@
         "value": "sticker"
       }
     ]
+  },
+  {
+    "name": "MessageOriginType",
+    "type": "string",
+    "cases": [
+      {
+        "name": "USER",
+        "value": "user"
+      },
+      {
+        "name": "HIDDEN_USER",
+        "value": "hidden_user"
+      },
+      {
+        "name": "CHAT",
+        "value": "chat"
+      },
+      {
+        "name": "CHANNEL",
+        "value": "channel"
+      }
+    ]
   }
 ]
