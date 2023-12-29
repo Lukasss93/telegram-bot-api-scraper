@@ -136,6 +136,304 @@
     ]
   },
   {
+    "name": "ReactionTypeEmoji",
+    "type": "string",
+    "cases": [
+      {
+        "name": "THUMBS_UP",
+        "value": "👍"
+      },
+      {
+        "name": "THUMBS_DOWN",
+        "value": "👎"
+      },
+      {
+        "name": "HEART",
+        "value": "❤️"
+      },
+      {
+        "name": "FIRE",
+        "value": "🔥"
+      },
+      {
+        "name": "SMILING_FACE_WITH_HEARTS",
+        "value": "🥰"
+      },
+      {
+        "name": "APPLAUSE",
+        "value": "👏"
+      },
+      {
+        "name": "BEAMING_FACE",
+        "value": "😁"
+      },
+      {
+        "name": "THINKING_FACE",
+        "value": "🤔"
+      },
+      {
+        "name": "EXPLODING_HEAD",
+        "value": "🤯"
+      },
+      {
+        "name": "SCREAMING_FACE",
+        "value": "😱"
+      },
+      {
+        "name": "FACE_WITH_SYMBOLS_ON_MOUTH",
+        "value": "🤬"
+      },
+      {
+        "name": "CRYING_FACE",
+        "value": "😢"
+      },
+      {
+        "name": "PARTY_POPPER",
+        "value": "🎉"
+      },
+      {
+        "name": "STAR_STRUCK",
+        "value": "🤩"
+      },
+      {
+        "name": "FACE_VOMITING",
+        "value": "🤮"
+      },
+      {
+        "name": "POO",
+        "value": "💩"
+      },
+      {
+        "name": "FOLDED_HANDS",
+        "value": "🙏"
+      },
+      {
+        "name": "OK_HAND",
+        "value": "👌"
+      },
+      {
+        "name": "DOVE",
+        "value": "🕊️"
+      },
+      {
+        "name": "CLOWN_FACE",
+        "value": "🤡"
+      },
+      {
+        "name": "YAWNING_FACE",
+        "value": "🥱"
+      },
+      {
+        "name": "WOOZY_FACE",
+        "value": "🥴"
+      },
+      {
+        "name": "SMILING_FACE_WITH_HEART_EYES",
+        "value": "😍"
+      },
+      {
+        "name": "WHALE",
+        "value": "🐳"
+      },
+      {
+        "name": "FIRING_HEART",
+        "value": "❤\u200D\uD83D\uDD25"
+      },
+      {
+        "name": "NEW_MOON_FACE",
+        "value": "🌚"
+      },
+      {
+        "name": "HOT_DOG",
+        "value": "🌭"
+      },
+      {
+        "name": "100",
+        "value": "💯"
+      },
+      {
+        "name": "ROLLING_ON_THE_FLOOR_LAUGHING",
+        "value": "🤣"
+      },
+      {
+        "name": "HIGH_VOLTAGE",
+        "value": "⚡"
+      },
+      {
+        "name": "BANANA",
+        "value": "🍌"
+      },
+      {
+        "name": "TROPHY",
+        "value": "🏆"
+      },
+      {
+        "name": "BROKEN_HEART",
+        "value": "💔"
+      },
+      {
+        "name": "FACE_WITH_RAISED_EYEBROW",
+        "value": "🤨"
+      },
+      {
+        "name": "NEUTRAL_FACE",
+        "value": "😐"
+      },
+      {
+        "name": "STRAWBERRY",
+        "value": "🍓"
+      },
+      {
+        "name": "CHAMPAGNE",
+        "value": "🍾"
+      },
+      {
+        "name": "KISS",
+        "value": "💋"
+      },
+      {
+        "name": "MIDDLE_FINGER",
+        "value": "🖕"
+      },
+      {
+        "name": "SMILING_FACE_WITH_HORNS",
+        "value": "😈"
+      },
+      {
+        "name": "SLEEPING_FACE",
+        "value": "😴"
+      },
+      {
+        "name": "LOUDLY_CRYING_FACE",
+        "value": "😭"
+      },
+      {
+        "name": "NERD_FACE",
+        "value": "🤓"
+      },
+      {
+        "name": "GHOST",
+        "value": "👻"
+      },
+      {
+        "name": "MAN_TECHNOLOGIST",
+        "value": "👨🏻‍💻"
+      },
+      {
+        "name": "EYES",
+        "value": "👀"
+      },
+      {
+        "name": "JACK_O_LANTERN",
+        "value": "🎃"
+      },
+      {
+        "name": "SEE_NO_EVIL",
+        "value": "🙈"
+      },
+      {
+        "name": "SMILING_FACE_WITH_HALO",
+        "value": "😇"
+      },
+      {
+        "name": "FEARFUL_FACE",
+        "value": "😨"
+      },
+      {
+        "name": "HANDSHAKE",
+        "value": "🤝"
+      },
+      {
+        "name": "WRITING_HAND",
+        "value": "✍️"
+      },
+      {
+        "name": "HUGGING_FACE",
+        "value": "🤗"
+      },
+      {
+        "name": "SALUTING_FACE",
+        "value": "🫡"
+      },
+      {
+        "name": "SANTA_CLAUS",
+        "value": "🎅"
+      },
+      {
+        "name": "CHRISTMAS_TREE",
+        "value": "🎄"
+      },
+      {
+        "name": "SNOWMAN",
+        "value": "⛄"
+      },
+      {
+        "name": "NAIL_POLISH",
+        "value": "💅"
+      },
+      {
+        "name": "ZANY_FACE",
+        "value": "🤪"
+      },
+      {
+        "name": "MOAI",
+        "value": "🗿"
+      },
+      {
+        "name": "COOL",
+        "value": "🆒"
+      },
+      {
+        "name": "HEART_WITH_ARROW",
+        "value": "💘"
+      },
+      {
+        "name": "HEAR_NO_EVIL",
+        "value": "🙉"
+      },
+      {
+        "name": "UNICORN",
+        "value": "🦄"
+      },
+      {
+        "name": "KISSING_FACE",
+        "value": "😘"
+      },
+      {
+        "name": "PILL",
+        "value": "💊"
+      },
+      {
+        "name": "SPEAK_NO_EVIL",
+        "value": "🙊"
+      },
+      {
+        "name": "SMILING_FACE_WITH_SUNGLASSES",
+        "value": "😎"
+      },
+      {
+        "name": "ALIEN_MONSTER",
+        "value": "👾"
+      },
+      {
+        "name": "SHRUGGING_MAN",
+        "value": "🤷‍♂️"
+      },
+      {
+        "name": "SHRUGGING_NEUTRAL",
+        "value": "🤷"
+      },
+      {
+        "name": "SHRUGGING_WOMAN",
+        "value": "🤷‍♀️"
+      },
+      {
+        "name": "ENRAGED_FACE",
+        "value": "😡"
+      }
+    ]
+  },
+  {
     "name": "ForumIconColor",
     "type": "int",
     "cases": [
