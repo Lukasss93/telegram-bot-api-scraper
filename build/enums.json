@@ -1118,7 +1118,7 @@
     ]
   },
   {
-    "name": "ReactionType",
+    "name": "ReactionTypeType",
     "type": "string",
     "cases": [
       {
@@ -1128,6 +1128,24 @@
       {
         "name": "CUSTOM_EMOJI",
         "value": "custom_emoji"
+      }
+    ]
+  },
+  {
+    "name": "ChatBoostSourceSource",
+    "type": "string",
+    "cases": [
+      {
+        "name": "PREMIUM",
+        "value": "premium"
+      },
+      {
+        "name": "GIFT_CODE",
+        "value": "gift_code"
+      },
+      {
+        "name": "GIVEAWAY",
+        "value": "giveaway"
       }
     ]
   }
