@@ -13,6 +13,7 @@ for bot frameworks, better documentations, etc...
 
 - [Telegram Bot API Objects](build/objects.json)
 - [Telegram Bot API Methods](build/methods.json)
+- [Enums](build/enums.json)
 
 ## License
 
