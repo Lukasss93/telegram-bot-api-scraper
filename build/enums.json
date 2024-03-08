@@ -590,6 +590,10 @@
         "value": "spoiler"
       },
       {
+        "name": "BLOCKQUOTE",
+        "value": "blockquote"
+      },
+      {
         "name": "CODE",
         "value": "code"
       },
@@ -676,6 +680,10 @@
         "value": "location"
       },
       {
+        "name": "STORY",
+        "value": "story"
+      },
+      {
         "name": "NEW_CHAT_MEMBERS",
         "value": "new_chat_members"
       },
@@ -732,6 +740,14 @@
         "value": "successful_payment"
       },
       {
+        "name": "USERS_SHARED",
+        "value": "users_shared"
+      },
+      {
+        "name": "CHAT_SHARED",
+        "value": "chat_shared"
+      },
+      {
         "name": "CONNECTED_WEBSITE",
         "value": "connected_website"
       },
@@ -742,6 +758,10 @@
       {
         "name": "PROXIMITY_ALERT_TRIGGERED",
         "value": "proximity_alert_triggered"
+      },
+      {
+        "name": "BOOST_ADDED",
+        "value": "boost_added"
       },
       {
         "name": "FORUM_TOPIC_CREATED",
@@ -758,6 +778,22 @@
       {
         "name": "FORUM_TOPIC_REOPENED",
         "value": "forum_topic_reopened"
+      },
+      {
+        "name": "GIVEAWAY_CREATED",
+        "value": "giveaway_created"
+      },
+      {
+        "name": "GIVEAWAY",
+        "value": "giveaway"
+      },
+      {
+        "name": "GIVEAWAY_WINNERS",
+        "value": "giveaway_winners"
+      },
+      {
+        "name": "GIVEAWAY_COMPLETED",
+        "value": "giveaway_completed"
       },
       {
         "name": "VIDEO_CHAT_SCHEDULED",
@@ -970,6 +1006,14 @@
         "value": "edited_channel_post"
       },
       {
+        "name": "MESSAGE_REACTION",
+        "value": "message_reaction"
+      },
+      {
+        "name": "MESSAGE_REACTION_COUNT",
+        "value": "message_reaction_count"
+      },
+      {
         "name": "INLINE_QUERY",
         "value": "inline_query"
       },
@@ -1008,6 +1052,14 @@
       {
         "name": "CHAT_JOIN_REQUEST",
         "value": "chat_join_request"
+      },
+      {
+        "name": "CHAT_BOOST",
+        "value": "chat_boost"
+      },
+      {
+        "name": "REMOVED_CHAT_BOOST",
+        "value": "removed_chat_boost"
       }
     ]
   },
